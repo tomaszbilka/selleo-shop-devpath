@@ -1,0 +1,23 @@
+.slider 
+    height: 550px
+    background-color: $secondary-color
+    position: relative
+
+    &__dotsContainer
+        position: absolute
+        bottom: 10px
+        left: 50%
+        transform: translateX(-50%)
+        @include flex
+
+    &__arrowContainer
+        position: absolute
+        top: 50%
+
+        &--left
+            left:10px
+        
+        &--right
+            right:10px
+
+    

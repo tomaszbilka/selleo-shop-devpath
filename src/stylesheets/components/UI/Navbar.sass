@@ -1,0 +1,57 @@
+.main-nav
+    $root: &
+    height: 60px
+    background-color: $primary-color
+    widtd: 100%
+
+    &__list 
+        @include flex
+        margin: 0
+        padding: 0
+
+        &__dropdown-btn
+            position: relative 
+
+            &:hover #{$root}__list__item__dropdown-content
+                display: block     
+
+        &__item 
+            color: $white-color
+            font-size: 14px
+            letter-spacing: 0.5px
+            margin: 0 $m-base
+            cursor: pointer
+            position: relative
+            line-height: 60px
+
+            &__dropdown-content 
+                display: none
+                font-size: 14px
+                position: absolute
+                top: 60px
+                left: 20px
+                padding-left: 0
+                cursor: pointer
+                width: 150px
+                z-index: 2
+
+                & li
+                    border: 1px solid #ccc  
+                    padding: 5px 10px   
+
+                    &:hover
+                        @include hover
+    
+            &:hover
+                @include hover  
+
+            &__arrow  
+                font-size: 10px
+                position: absolute
+                top: 1px
+                right: -8px  
+
+        
+  
+            
+            

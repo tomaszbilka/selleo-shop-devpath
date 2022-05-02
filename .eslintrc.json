@@ -20,9 +20,9 @@
   "rules": {
     "prettier/prettier": ["error"],
     "react/no-multi-comp": 1,
-    "react/no-typos": 1,
     "react/no-deprecated": 1,
     "react/jsx-key": 1,
-    "react/jsx-no-undef": 1
+    "react/jsx-no-undef": 1,
+    "react/prop-types": 0
   }
 }

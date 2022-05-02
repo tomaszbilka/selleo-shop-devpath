@@ -1,0 +1,34 @@
+.slider-content
+        @include alignX
+        display: none
+        height: 100%
+
+        &--active
+            @include flex
+
+        &__element
+            margin: 0
+
+            &__subtitle
+                font-size: 24px
+                color: $font-less-dark 
+                font-family: Raleway
+                animation: fadeIn 0.8s ease 
+
+            &__title
+                font-size: 72px
+                color: $font-dark 
+                font-family: Raleway
+                margin: 10px 0
+                animation: fadeIn 1.2s ease 
+
+            &__description
+                margin-right: 100px
+                color: $font-less-dark
+                animation: fadeIn 1.6s ease 
+
+            &__image
+                width: 320px
+                height: auto
+                animation: fadeInFar 1s ease 
+
