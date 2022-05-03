@@ -1,10 +1,16 @@
 .gridItem
+    $root: &
     @include flex($direction: column)
     margin: 0 10px 30px 10px
     cursor: pointer
+    position: relative
 
     &:hover img
         transform: scale(1.1) rotate(5deg)
+
+    &:hover #{$root}__show-icon,
+    &:hover #{$root}__show-button
+        display: block
          
     &__img-wrap
         width: 190px
@@ -21,3 +27,19 @@
         & p
             font-family: Montserrat
             font-size: 0.8rem
+
+    &__show-icon
+        display: none
+        animation: fadeInShort 0.6s ease 
+        position: absolute
+        top: 50px
+        right: 10px
+
+    &__show-button
+        display: none
+        animation: fadeInShort 0.6s ease 
+        position: absolute
+        bottom: 50px
+        width: 100%
+        text-align: center
+        
