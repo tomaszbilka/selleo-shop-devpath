@@ -32,3 +32,32 @@
                 height: auto
                 animation: fadeInFar 1s ease 
 
+@media (max-width: $xl)
+    .slider-content__element
+        &__title
+            font-size: 50px
+        &__image
+            width: 200px
+
+@media (max-width: $l)
+    .slider-content
+        &--active
+            @include flex($direction: column-reverse)
+
+        &__element
+            @include flex($direction: column)
+            &__description
+                margin-right: 0
+            &__image
+                margin-bottom: 50px
+                max-height: 180px
+
+@media (max-width: $s)
+    .slider-content
+        &__element
+            &__subtitle
+                font-size: 20px
+            &__title
+                font-size: 36px
+            &__image
+                margin-bottom: 20px

@@ -23,6 +23,6 @@
     "react/no-deprecated": 1,
     "react/jsx-key": 1,
     "react/jsx-no-undef": 1,
-    "react/prop-types": 0
+    "react/prop-types": 1
   }
 }

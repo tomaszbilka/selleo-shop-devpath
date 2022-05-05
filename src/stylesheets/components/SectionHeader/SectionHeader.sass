@@ -1,0 +1,23 @@
+.title-container
+    @include flex($direction: column)
+
+    &__title
+        font-size: 48px
+        margin-bottom: 15px
+        font-weight: 700
+        font-family: Raleway
+        color: $font-dark
+
+    &__description
+        color: $font-less-dark
+        max-width: 465px
+        font-family: Open Sans
+        text-align: center
+
+@media (max-width: $s)
+    .title-container
+        &__title
+            font-size: 36px
+        &__description
+            font-size: 15px
+            max-width: 100%

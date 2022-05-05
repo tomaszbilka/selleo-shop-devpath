@@ -1,13 +1,16 @@
 .button-round
     $root: &
-    background-color: #fff
+    background-color: $white-color
     border: none
     border-radius: 50%
     cursor: pointer
     position: relative
+    height: 30px
+    width: 30px
+    font-size: 15px
 
     &:hover
-        color: #fff
+        color: $white-color
         background-color: $accent-color
         transition: all 0.3s ease 0s
 
@@ -26,6 +29,9 @@
             right: calc(100% + 4px)
             width: 80px
             display: none
+            font-size: 10px
+            top: 50%
+            transform: translateY(-50%)
             
             &::after       
                 content: ''

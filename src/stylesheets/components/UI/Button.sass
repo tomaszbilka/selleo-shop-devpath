@@ -1,9 +1,10 @@
 .button 
     color: $white-color
     font-size: 16px
+    width: 150px
+    height: 50px
     font-family: Raleway
     margin-top: 3rem
-    height: 50px
     background-color: $accent-color
     border: none
     cursor: pointer
@@ -13,5 +14,19 @@
     &:hover
         background-color: $font-dark
         color: $accent-color
+
+    &.-small
+        width: 90px
+        height: 35px
+        font-size: 10px
+
+    &.-color-reverse
+        color: $white-color
+        background-color: $primary-color
+
+        &:hover
+            background-color: $accent-color
+            color: $white-color
+        
         
 

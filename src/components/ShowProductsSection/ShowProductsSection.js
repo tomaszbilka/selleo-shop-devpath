@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import GridProducts from '../Products/GridProducts';
+import SectionHeader from '../SectionHeader/SectionHeader';
 import ButtonSlim from '../UI/ButtonSlim';
 
 const ShowProductsSection = () => {
@@ -10,13 +11,13 @@ const ShowProductsSection = () => {
   };
 
   return (
-    <section className="showContainer">
-      <h2>Our Products</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo
-        tempor incididunt ut labore
-      </p>
-      <div className="showContainer__btnContainer">
+    <section className="show-container">
+      <SectionHeader
+        title="Our Products"
+        description="Lorem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo
+        tempor incididunt ut labore"
+      />
+      <div className="show-container__btn-container">
         <ButtonSlim
           title="New Arrival"
           activeTitle={isActive}
