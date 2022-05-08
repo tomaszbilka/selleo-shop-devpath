@@ -1,8 +1,10 @@
 .grid
-    @include flex($main: space-between)
-    flex-wrap: wrap
-    @include alignX
-    width: 100%
+  @include flex($main: space-between)
+  flex-wrap: wrap
+  @include alignX
+  width: 100%
 
-
+@media (max-width: $s)
+  .grid
+    @include flex($direction: column)
     

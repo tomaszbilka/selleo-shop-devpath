@@ -1,5 +1,5 @@
-import SectionHeader from '../../SectionHeader/SectionHeader';
-import BlogGrid from '../BlogGrid';
+import SectionHeader from 'components/SectionHeader';
+import BlogGrid from 'components/BlogSection/BlogGrid';
 
 const BlogLayout = () => {
   return (

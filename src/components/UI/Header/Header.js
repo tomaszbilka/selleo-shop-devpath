@@ -1,4 +1,3 @@
-import ReactDOM from 'react-dom';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,7 +7,8 @@ import {
   faCartShopping,
   faChair,
 } from '@fortawesome/free-solid-svg-icons';
-import Search from '../../Search';
+import SearchModal from 'components/Modals/SearchModal';
+import Modal from 'components/Modals/Modal';
 
 const Header = () => {
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
@@ -25,14 +25,14 @@ const Header = () => {
     console.log('open cart modal');
   };
 
-  const searchModal = ReactDOM.createPortal(
-    <Search closeModal={closeSearchModalHandler} />,
-    document.getElementById('modal')
-  );
-
   return (
     <header className="header">
-      {isSearchModalOpen && searchModal}
+      {isSearchModalOpen && (
+        <Modal
+          element={<SearchModal closeModal={closeSearchModalHandler} />}
+          onClick={closeSearchModalHandler}
+        />
+      )}
       <div className="header__logo">
         <Link to="/">
           <FontAwesomeIcon icon={faChair} className="header__logo__icon" />

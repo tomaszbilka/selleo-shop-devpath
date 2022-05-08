@@ -1,5 +1,5 @@
-import posts from '../../../utils/blogData';
-import BlogPost from '../BlogPost';
+import posts from 'utils/blogData';
+import BlogPost from 'components/BlogSection/BlogPost';
 
 const BlogGrid = () => {
   const redirectToPostPage = (id) => {

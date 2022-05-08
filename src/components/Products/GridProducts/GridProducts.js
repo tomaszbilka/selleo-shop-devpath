@@ -1,4 +1,4 @@
-import GridItem from '../GridItem/GridItem';
+import GridItem from 'components/Products/GridItem';
 
 const data = [
   {

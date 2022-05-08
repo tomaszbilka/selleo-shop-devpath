@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
-import ButtonRound from '../../UI/ButtonRound';
+import ButtonLong from 'components/UI/ButtonLong';
+import ButtonRound from 'components/UI/ButtonRound';
 import { faHeart, faBarChart } from '@fortawesome/free-regular-svg-icons';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import ButtonLong from '../../UI/ButtonLong';
 
 const GridItem = ({ image, title, price, id }) => {
   const iconFav = <FontAwesomeIcon icon={faHeart} />;

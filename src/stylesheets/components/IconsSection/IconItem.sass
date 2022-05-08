@@ -1,44 +1,44 @@
 .icon-section
-    $root: &
-    width: 180px
-    height: 180px
+  $root: &
+  width: 180px
+  height: 180px
+  border-radius: 50%
+  margin: 0 15px
+
+  &__icon
+    @include flex
+    font-size: 4rem
+    color: $font-less-dark
+    position: relative
+    width: 100%
+    height: 100%
     border-radius: 50%
     margin: 0 15px
 
-    &__icon
-        @include flex
-        font-size: 4rem
-        color: $font-less-dark
-        position: relative
-        width: 100%
-        height: 100%
-        border-radius: 50%
-        margin: 0 15px
+    &__border
+      border: 2px solid $font-less-dark
+      width: 100%
+      height: 100%
+      border-radius: 50%
+      position: absolute
+      top: 0
+      left: 0
 
-        &__border
-            border: 2px solid $font-less-dark
-            width: 100%
-            height: 100%
-            border-radius: 50%
-            position: absolute
-            top: 0
-            left: 0
+    &:hover
+      color: $accent-color
 
-        &:hover
-            color: $accent-color
+    &:hover #{$root}__icon__border
+      border: 2px dashed $accent-color
+      animation: borderRotate 8s linear infinite
 
-        &:hover #{$root}__icon__border
-            border: 2px dashed $accent-color
-            animation: borderRotate 8s linear infinite
-
-        &__container
-            @include flex($direction: column)
+    &__container
+      @include flex($direction: column)
                 
-            #{$root}__icon__text
-                font-size: 1rem
-                font-family: Raleway
-                margin: 12px 0 0 0
+      #{$root}__icon__text
+        font-size: 1rem
+        font-family: Raleway
+        margin: 12px 0 0 0
 
 @media (max-width: $xl)
-    .icon-section
-        margin: 15px
+  .icon-section
+    margin: 15px

@@ -1,11 +1,11 @@
 import { useState } from 'react';
-import ReactDOM from 'react-dom';
-import Header from '../Header';
-import Navbar from '../Navbar';
-import PropTypes from 'prop-types';
-import Footer from '../Footer/Footer';
-import CartModal from '../../CartModal';
+import Header from 'components/UI/Header';
+import Navbar from 'components/UI/Navbar';
+import Footer from 'components/UI/Footer';
+import CartModal from 'components/Modals/CartModal';
 import CartButton from 'components/CartButton';
+import PropTypes from 'prop-types';
+import Modal from 'components/Modals/Modal';
 
 const Layout = ({ children }) => {
   const [isCartModalOpen, setIsCartModalOpen] = useState(false);
@@ -18,17 +18,17 @@ const Layout = ({ children }) => {
     setIsCartModalOpen(true);
   };
 
-  const cartModal = ReactDOM.createPortal(
-    <CartModal onClick={closeCartModalHandler} />,
-    document.getElementById('modal')
-  );
-
   return (
     <>
       <Header />
       <Navbar />
       <main>{children}</main>
-      {isCartModalOpen && cartModal}
+      {isCartModalOpen && (
+        <Modal
+          element={<CartModal onClick={closeCartModalHandler} />}
+          onClick={closeCartModalHandler}
+        />
+      )}
       <CartButton onClick={openCartModalHandler} />
       <Footer />
     </>

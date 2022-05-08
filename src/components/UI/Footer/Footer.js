@@ -1,6 +1,6 @@
-import facebookIcon from '../../../images/icons/facebook-brands.svg';
-import instagramIcon from '../../../images/icons/instagram-brands.svg';
-import pinterestIcon from '../../../images/icons/pinterest-brands.svg';
+import { ReactComponent as IconFacebook } from 'images/icons/facebook-brands.svg';
+import { ReactComponent as IconPinterest } from 'images/icons/pinterest-brands.svg';
+import { ReactComponent as IconInstagram } from 'images/icons/instagram-brands.svg';
 
 const Footer = () => {
   return (
@@ -13,9 +13,9 @@ const Footer = () => {
           quis nostrud.
         </p>
         <div className="footer__section__icons">
-          <img src={facebookIcon} />
-          <img src={instagramIcon} />
-          <img src={pinterestIcon} />
+          <IconFacebook className="footer__section__icons__icon" />
+          <IconInstagram className="footer__section__icons__icon" />
+          <IconPinterest className="footer__section__icons__icon" />
         </div>
       </div>
       <div className="footer__section footer__section--middle">

@@ -1,5 +1,5 @@
-import linkIcons from '../../../utils/iconsSectionData';
-import IconItem from '../IconItem';
+import linkIcons from 'utils/iconsSectionData';
+import IconItem from 'components/IconsSection/IconItem';
 
 const IconsSection = () => {
   return (

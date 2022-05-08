@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import Button from '../../UI/Button';
+import Button from 'components/UI/Button';
 
 const SliderContent = ({
   title,

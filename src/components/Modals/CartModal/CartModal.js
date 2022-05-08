@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import Overlay from '../UI/Overlay';
+import Overlay from 'components/UI/Overlay';
 
 const CartModal = ({ onClick }) => {
   return (
@@ -8,7 +8,11 @@ const CartModal = ({ onClick }) => {
       <div className="cart-modal">
         <div className="cart-modal__header">
           <h3 className="cart-modal__header__title">CART</h3>
-          <div onClick={onClick} className="cart-modal__header__close"></div>
+          <button
+            type="button"
+            onClick={onClick}
+            className="cart-modal__header__close"
+          ></button>
         </div>
         <div className="cart-modal__items">no products</div>
         <div className="cart-modal__controls">

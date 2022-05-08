@@ -1,51 +1,56 @@
 .gridItem
-    $root: &
-    @include flex($direction: column)
-    margin: 0 0 30px 0
-    cursor: pointer
-    position: relative
+  $root: &
+  @include flex($direction: column)
+  margin: 0 0 30px 0
+  cursor: pointer
+  position: relative
 
-    &:hover img
-        transform: scale(1.1) rotate(5deg)
+  &:hover img
+    transform: scale(1.1) rotate(5deg)
 
-    &:hover #{$root}__show-icon,
-    &:hover #{$root}__show-button
-        display: block
+  &:hover #{$root}__show-icon,
+  &:hover #{$root}__show-button
+    display: block
          
-    &__img-wrap
-        width: 200px
-        height: 230px
-        overflow: hidden
+  &__img-wrap
+    width: 200px
+    height: 230px
+    overflow: hidden
 
-        &__image
-            width: 100%
+    &__image
+      width: 100%
     
-    &__description
-        text-align: center
-        margin-top: 10px
+  &__description
+    text-align: center
+    margin-top: 10px
 
-        &__text
-            font-family: Montserrat
-            font-size: 0.8rem
+    &__text
+      font-family: Montserrat
+      font-size: 0.8rem
 
-    &__first-icon
-        position: absolute
-        right: 10px
-        top: 10px
+  &__first-icon
+    position: absolute
+    right: 10px
+    top: 10px
 
-    &__show-icon
-        display: none
-        animation: fadeInShort 0.6s ease 
-        position: absolute
-        top: 50px
-        right: 10px
+  &__show-icon
+    display: none
+    animation: fadeInShort 0.6s ease 
+    position: absolute
+    top: 50px
+    right: 10px
 
-    &__show-button
-        display: none
-        animation: fadeInShort 0.6s ease 
-        position: absolute
-        bottom: 50px
-        width: 100%
-        text-align: center
+  &__show-button
+    display: none
+    animation: fadeInShort 0.6s ease 
+    position: absolute
+    bottom: 50px
+    width: 100%
+    text-align: center
         
 
+@media (max-width: $s)
+  .gridItem
+    &__img-wrap
+      width: 100%
+      height: auto
