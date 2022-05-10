@@ -1,0 +1,8 @@
+.blog-grid
+  @include flex($cross: flex-start, $main: space-between)
+  flex-wrap: wrap
+  width: 100%
+
+@media (max-width: $l)
+  .blog-grid
+    @include flex($direction: column)

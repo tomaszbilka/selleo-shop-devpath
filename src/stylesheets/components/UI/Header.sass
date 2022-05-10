@@ -1,64 +1,64 @@
 .header 
-    height: 100px
-    @include flex($main: space-between)
-    @include alignX
+  height: 100px
+  @include flex($main: space-between)
+  @include alignX
 
-    &__logo 
-        color: $primary-color
+  &__logo 
+    color: $primary-color
 
-        &__icon
-            color: $accent-color
-            font-size: 2rem
-            margin-right: $m-s
+    &__icon
+      color: $accent-color
+      font-size: 2rem
+      margin-right: $m-s
         
-        &__text
-            font-size: 2rem
-            font-weight: bold
+    &__text
+      font-size: 2rem
+      font-weight: bold
 
-    &__top-menu 
-        @include flex
+  &__top-menu 
+      @include flex
 
-        &__control
-            position: relative
-            margin: 0 $m-base
+      &__control
+        position: relative
+        margin: 0 $m-base
 
-            &__icon 
-                font-size: 24px
-                color: $primary-color
-                cursor: pointer
+        &__icon 
+          font-size: 24px
+          color: $primary-color
+          cursor: pointer
 
-                &:hover
-                    @include hover     
+          &:hover
+            @include hover     
 
-            &__cart-info
-                background-color: $accent-color
-                border-radius: 50%
-                color: $white-color
-                font-size: 0.8rem
-                height: 17px
-                line-height: 17px
-                position: absolute
-                right: -8px
-                top: -8px
-                text-align: center
-                width: 17px
+        &__cart-info
+          background-color: $accent-color
+          border-radius: 50%
+          color: $white-color
+          font-size: 0.8rem
+          height: 17px
+          line-height: 17px
+          position: absolute
+          right: -8px
+          top: -8px
+          text-align: center
+          width: 17px
 
-            &:nth-child(1)::before
-                background-color: rgb(235,235,235)
-                content: ""
-                height: 24px
-                position: absolute
-                right: -24px
-                top: 0px
-                width: 2px
+        &:nth-child(1)::before
+          background-color: rgb(235,235,235)
+          content: ""
+          height: 24px
+          position: absolute
+          right: -24px
+          top: 0px
+          width: 2px
 
-            &:nth-child(2)::before
-                content: ""
-                right: -24px
-                top: 0px
-                width: 2px
-                height: 24px
-                position: absolute
-                background-color: rgb(235,235,235)
+        &:nth-child(2)::before
+          content: ""
+          right: -24px
+          top: 0px
+          width: 2px
+          height: 24px
+          position: absolute
+          background-color: rgb(235,235,235)
             
 

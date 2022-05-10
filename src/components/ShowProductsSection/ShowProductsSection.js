@@ -1,6 +1,10 @@
 import { useState } from 'react';
-import GridProducts from '../Products/GridProducts';
-import ButtonSlim from '../UI/ButtonSlim';
+import GridProducts from 'components/Products/GridProducts';
+import SectionHeader from 'components/SectionHeader';
+import ButtonSlim from 'components/UI/ButtonSlim';
+
+const description =
+  'Lorem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo tempor incididunt ut labore';
 
 const ShowProductsSection = () => {
   const [isActive, setIsActive] = useState('New Arrival');
@@ -10,13 +14,9 @@ const ShowProductsSection = () => {
   };
 
   return (
-    <section className="showContainer">
-      <h2>Our Products</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo
-        tempor incididunt ut labore
-      </p>
-      <div className="showContainer__btnContainer">
+    <section className="show-container">
+      <SectionHeader title="Our Products" description={description} />
+      <div className="show-container__btn-container">
         <ButtonSlim
           title="New Arrival"
           activeTitle={isActive}

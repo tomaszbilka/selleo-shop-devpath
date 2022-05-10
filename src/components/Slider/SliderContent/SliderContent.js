@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import Button from '../../UI/Button';
+import Button from 'components/UI/Button';
 
 const SliderContent = ({
   title,
@@ -25,7 +25,7 @@ const SliderContent = ({
         <h3 className="slider-content__element__subtitle">{subtitle}</h3>
         <h1 className="slider-content__element__title">{title}</h1>
         <p className="slider-content__element__description">{description}</p>
-        <Button title="Shop Now" onClick={onClickHandler} />
+        <Button title="Shop Now" onClick={onClickHandler} className="button" />
       </div>
       <div className="slider-content__element">
         <img

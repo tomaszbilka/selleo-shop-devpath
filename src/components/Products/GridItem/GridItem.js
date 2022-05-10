@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types';
-import ButtonRound from '../../UI/ButtonRound';
+import ButtonLong from 'components/UI/ButtonLong';
+import ButtonRound from 'components/UI/ButtonRound';
 import { faHeart, faBarChart } from '@fortawesome/free-regular-svg-icons';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import ButtonLong from '../../UI/ButtonLong';
 
 const GridItem = ({ image, title, price, id }) => {
   const iconFav = <FontAwesomeIcon icon={faHeart} />;
@@ -32,26 +32,23 @@ const GridItem = ({ image, title, price, id }) => {
         <img src={image} className="gridItem__img-wrap__image" />
       </div>
       <div className="gridItem__description">
-        <p>{title}</p>
-        <p>{price}</p>
+        <p className="gridItem__description__text">{title}</p>
+        <p className="gridItem__description__text">{price}</p>
       </div>
-      <ButtonRound
-        icon={iconFav}
-        size="30px"
-        iconSize="15px"
-        onClick={favoriteToggleHandler}
-        position="absolute"
-        right="10px"
-        top="10px"
-        info="add to favorites"
-      />
+      <div className="gridItem__first-icon">
+        <ButtonRound
+          icon={iconFav}
+          onClick={favoriteToggleHandler}
+          info="add to favorites"
+          className="button-round"
+        />
+      </div>
       <div className="gridItem__show-icon">
         <ButtonRound
           icon={iconDetail}
-          size="30px"
-          iconSize="15px"
           onClick={showDetailModalHandler}
           info="show details"
+          className="button-round"
         />
       </div>
       <div className="gridItem__show-button">
@@ -69,6 +66,7 @@ GridItem.propTypes = {
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
 };
 
 export default GridItem;

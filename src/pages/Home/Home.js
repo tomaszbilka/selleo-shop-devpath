@@ -1,6 +1,7 @@
-import Slider from '../../components/Slider';
-import IconsSection from '../../components/IconsSection';
-import ShowProductsSection from '../../components/ShowProductsSection';
+import Slider from 'components/Slider';
+import IconsSection from 'components/IconsSection';
+import ShowProductsSection from 'components/ShowProductsSection';
+import BlogLayout from 'components/BlogSection/BlogLayout';
 
 const Home = () => {
   return (
@@ -8,6 +9,7 @@ const Home = () => {
       <Slider />
       <IconsSection />
       <ShowProductsSection />
+      <BlogLayout />
     </>
   );
 };

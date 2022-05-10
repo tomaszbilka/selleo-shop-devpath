@@ -1,0 +1,35 @@
+@mixin closeBtn
+  width: 25px
+  height: 25px
+  cursor: pointer
+  position: relative
+  border: none
+  background-color: transparent
+
+  &::after
+    content: ''
+    height: 2px
+    width: 25px
+    background-color: $accent-color
+    position: absolute
+    left: 0
+    top: 50%
+    transform: rotate(45deg)
+    transition: all 0.3s linear
+
+  &::before
+    content: ''
+    height: 2px
+    width: 25px
+    background-color: $accent-color
+    position: absolute
+    left: 0
+    top: 50%
+    transform: rotate(-45deg)
+    transition: all 0.3s linear
+
+  &:hover::after
+    transform: rotate(135deg)
+
+  &:hover::before
+    transform: rotate(-135deg)

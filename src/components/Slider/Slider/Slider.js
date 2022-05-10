@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import SliderContent from '../SliderContent';
-import sliderData from '../../../utils/sliderData';
-import BottomDots from '../BottomDots/BottomDots';
-import RoundButton from '../RoundButton';
+import SliderContent from 'components/Slider/SliderContent';
+import sliderData from 'utils/sliderData';
+import BottomDots from 'components/Slider/BottomDots/BottomDots';
+import RoundButton from 'components/Slider/RoundButton';
 
 const Slider = () => {
   const [activeIndex, setActiveIndex] = useState(0);

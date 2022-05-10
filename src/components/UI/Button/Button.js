@@ -1,17 +1,8 @@
 import PropTypes from 'prop-types';
 
-const Button = ({ title, width, onClick }) => {
-  const customStyle = {
-    width: width,
-  };
-
+const Button = ({ className, title, onClick }) => {
   return (
-    <button
-      onClick={onClick}
-      className="button"
-      style={customStyle}
-      type="button"
-    >
+    <button onClick={onClick} className={className} type="button">
       {title}
     </button>
   );
@@ -20,12 +11,11 @@ const Button = ({ title, width, onClick }) => {
 Button.propTypes = {
   title: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
-  width: PropTypes.string,
-  bgColor: PropTypes.string,
+  className: PropTypes.string,
 };
 
 Button.defaultProps = {
-  width: '150px',
+  className: 'button',
 };
 
 export default Button;
