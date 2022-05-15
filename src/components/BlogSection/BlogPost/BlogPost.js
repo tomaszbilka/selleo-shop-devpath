@@ -1,13 +1,16 @@
+import { useNavigate } from 'react-router-dom';
 import Button from 'components/UI/Button';
 import PropTypes from 'prop-types';
 
-const BlogPost = ({ title, author, date, content, imageUrl, id, onClick }) => {
+const BlogPost = ({ title, author, date, content, imageUrl, id }) => {
+  const navigate = useNavigate();
+
   const showPostDetailHandler = () => {
-    onClick(id);
+    navigate(`/blog/${id}`);
   };
 
   return (
-    <button className="post" onClick={showPostDetailHandler} type="button">
+    <div className="post" onClick={showPostDetailHandler} type="button">
       <div className="post__img-container">
         <img src={imageUrl} className="post__img-container__img" />
       </div>
@@ -24,7 +27,7 @@ const BlogPost = ({ title, author, date, content, imageUrl, id, onClick }) => {
           onClick={showPostDetailHandler}
         />
       </div>
-    </button>
+    </div>
   );
 };
 
@@ -34,8 +37,7 @@ BlogPost.propTypes = {
   date: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
   imageUrl: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
-  onClick: PropTypes.func.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default BlogPost;
