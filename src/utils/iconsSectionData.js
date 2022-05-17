@@ -1,18 +1,16 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faSocks,
   faChair,
   faLaptop,
-  faTshirt,
+  faBed,
+  faKitchenSet,
 } from '@fortawesome/free-solid-svg-icons';
 
 const linkIcons = [
   {
     path: '/products',
-    component: (
-      <FontAwesomeIcon icon={faSocks} className="icons-section-icon" />
-    ),
-    title: 'wardrobes',
+    component: <FontAwesomeIcon icon={faBed} className="icons-section-icon" />,
+    title: 'beds',
   },
   {
     path: '/products',
@@ -31,9 +29,9 @@ const linkIcons = [
   {
     path: '/products',
     component: (
-      <FontAwesomeIcon icon={faTshirt} className="icons-section-icon" />
+      <FontAwesomeIcon icon={faKitchenSet} className="icons-section-icon" />
     ),
-    title: 'clothes',
+    title: 'kitchen',
   },
 ];
 

@@ -1,8 +1,14 @@
+import { Link } from 'react-router-dom';
+
 const Navbar = () => {
   return (
     <nav className="main-nav">
       <ul className="main-nav__list">
-        <li className="main-nav__list__item">Home</li>
+        <li>
+          <Link className="main-nav__list__item" to="/">
+            Home
+          </Link>
+        </li>
         <li className="main-nav__list__dropdown-btn">
           <div className="main-nav__list__item">
             Products <span className="main-nav__list__item__arrow">&or;</span>

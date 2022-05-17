@@ -5,7 +5,7 @@ import { faHeart, faBarChart } from '@fortawesome/free-regular-svg-icons';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const GridItem = ({ image, title, price, id }) => {
+const GridItem = ({ imageUrl, name, price, id }) => {
   const iconFav = <FontAwesomeIcon icon={faHeart} />;
   const iconDetail = <FontAwesomeIcon icon={faBarChart} />;
   const iconBtn = <FontAwesomeIcon icon={faCartShopping} />;
@@ -29,11 +29,11 @@ const GridItem = ({ image, title, price, id }) => {
   return (
     <li className="gridItem" onClick={showProductHandler}>
       <div className="gridItem__img-wrap">
-        <img src={image} className="gridItem__img-wrap__image" />
+        <img src={imageUrl} className="gridItem__img-wrap__image" />
       </div>
       <div className="gridItem__description">
-        <p className="gridItem__description__text">{title}</p>
-        <p className="gridItem__description__text">{price}</p>
+        <p className="gridItem__description__text">{name}</p>
+        <p className="gridItem__description__text">${price / 100}</p>
       </div>
       <div className="gridItem__first-icon">
         <ButtonRound
@@ -63,8 +63,8 @@ const GridItem = ({ image, title, price, id }) => {
 };
 
 GridItem.propTypes = {
-  image: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  imageUrl: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
 };

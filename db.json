@@ -1,0 +1,253 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "sofa",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lobortis mi at mi congue pellentesque. Vestibulum at purus sit amet orci tempor feugiat. Fusce sit amet mollis ligula. Curabitur euismod, elit non tempor interdum, risus leo consectetur leo, sit amet maximus urna sapien vel ligula. Nunc iaculis nibh nec elementum pellentesque. Morbi at ullamcorper ante. Vivamus ut tempor nulla.",
+      "price": "6999",
+      "imageUrl": "https://placeimg.com/250/300/people",
+      "featured": true,
+      "on_sale": false,
+      "is_new": true,
+      "category_id": 1
+    },
+    {
+      "id": 2,
+      "name": "chair",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lobortis mi at mi congue pellentesque. Vestibulum at purus sit amet orci tempor feugiat. Fusce sit amet mollis ligula. Curabitur euismod, elit non tempor interdum, risus leo consectetur leo, sit amet maximus urna sapien vel ligula.",
+      "price": "2999",
+      "imageUrl": "https://placeimg.com/250/300/people",
+      "featured": false,
+      "on_sale": true,
+      "is_new": false,
+      "category_id": 1
+    },
+    {
+      "id": 3,
+      "name": "armchair",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lobortis mi at mi congue pellentesque. Vestibulum at purus sit amet orci tempor feugiat. Fusce sit amet mollis ligula. Curabitur euismod, elit non tempor interdum, risus leo consectetur leo, sit amet maximus urna sapien vel ligula. Nunc iaculis nibh nec elementum pellentesque. Morbi at ullamcorper ante. Vivamus ut tempor nulla. Nunc iaculis nibh nec elementum pellentesque. Morbi at ullamcorper ante. Vivamus ut tempor nulla",
+      "price": "10989",
+      "imageUrl": "https://placeimg.com/250/300/people",
+      "featured": true,
+      "on_sale": false,
+      "is_new": false,
+      "category_id": 1
+    },
+    {
+      "id": 4,
+      "name": "pouffe",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lobortis mi at mi congue pellentesque. Vestibulum at purus sit amet orci tempor feugiat. Fusce sit amet mollis ligula. Curabitur euismod, elit non tempor interdum, risus leo consectetur leo, sit amet maximus urna sapien vel ligula. Nunc iaculis nibh nec elementum pellentesque. Morbi at ullamcorper ante. Vivamus ut tempor nulla. Nunc iaculis nibh nec elementum pellentesque. Morbi at ullamcorper ante. Vivamus ut tempor nulla",
+      "price": "799",
+      "imageUrl": "https://placeimg.com/250/300/people",
+      "featured": false,
+      "on_sale": false,
+      "is_new": false,
+      "category_id": 1
+    },
+    {
+      "id": 5,
+      "name": "seat",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lobortis mi at mi congue pellentesque. Vestibulum at purus sit amet orci tempor feugiat. Fusce sit amet mollis ligula.",
+      "price": "799",
+      "imageUrl": "https://placeimg.com/250/300/people",
+      "featured": true,
+      "on_sale": false,
+      "is_new": true,
+      "category_id": 1
+    },
+    {
+      "id": 6,
+      "name": "hammock",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lobortis mi at mi congue pellentesque. Vestibulum at purus sit amet orci tempor feugiat. Fusce sit amet mollis ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lobortis mi at mi congue pellentesque.",
+      "price": "799",
+      "imageUrl": "https://placeimg.com/250/300/people",
+      "featured": false,
+      "on_sale": false,
+      "is_new": true,
+      "category_id": 1
+    },
+    {
+      "id": 7,
+      "name": "couch",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lobortis mi at mi congue pellentesque. Vestibulum at purus sit amet orci tempor feugiat. Fusce sit amet mollis ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lobortis mi at mi congue pellentesque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lobortis mi at mi congue pellentesque.",
+      "price": "11999",
+      "imageUrl": "https://placeimg.com/250/300/people",
+      "featured": false,
+      "on_sale": false,
+      "is_new": false,
+      "category_id": 1
+    },
+    {
+      "id": 8,
+      "name": "King size bed",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lobortis mi at mi congue pellentesque. Vestibulum at purus sit amet orci tempor feugiat. Fusce sit amet mollis ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lobortis mi at mi congue pellentesque. ",
+      "price": "19799",
+      "imageUrl": "https://placeimg.com/250/300/nature",
+      "featured": true,
+      "on_sale": false,
+      "is_new": false,
+      "category_id": 2
+    },
+    {
+      "id": 9,
+      "name": "Bunk bed",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lobortis mi at mi congue pellentesque. Vestibulum at purus sit amet orci tempor feugiat. Fusce sit amet mollis ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lobortis mi at mi congue pellentesque. ",
+      "price": "23899",
+      "imageUrl": "https://placeimg.com/250/300/nature",
+      "featured": true,
+      "on_sale": false,
+      "is_new": true,
+      "category_id": 2
+    },
+    {
+      "id": 10,
+      "name": "Sunbed",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lobortis mi at mi congue pellentesque. Vestibulum at purus sit amet orci tempor feugiat. Fusce sit amet mollis ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lobortis mi at mi congue pellentesque. ",
+      "price": "13799",
+      "imageUrl": "https://placeimg.com/250/300/nature",
+      "featured": true,
+      "on_sale": false,
+      "is_new": true,
+      "category_id": 2
+    },
+    {
+      "id": 11,
+      "name": "Mattress",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lobortis mi at mi congue pellentesque. Vestibulum at purus sit amet orci tempor feugiat.",
+      "price": "13799",
+      "imageUrl": "https://placeimg.com/250/300/nature",
+      "featured": false,
+      "on_sale": true,
+      "is_new": false,
+      "category_id": 2
+    },
+    {
+      "id": 12,
+      "name": "Desk",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lobortis mi at mi congue pellentesque. Vestibulum at purus sit amet orci tempor feugiat.",
+      "price": "10799",
+      "imageUrl": "https://placeimg.com/250/300/arch",
+      "featured": false,
+      "on_sale": true,
+      "is_new": true,
+      "category_id": 3
+    },
+    {
+      "id": 13,
+      "name": "Bookstand",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lobortis mi at mi congue pellentesque. Vestibulum at purus sit amet orci tempor feugiat. Vestibulum at purus sit amet orci tempor feugiat. Fusce sit amet mollis ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lobortis mi at mi congue pellentesque.",
+      "price": "10799",
+      "imageUrl": "https://placeimg.com/250/300/arch",
+      "featured": false,
+      "on_sale": true,
+      "is_new": false,
+      "category_id": 3
+    },
+    {
+      "id": 14,
+      "name": "Pencile",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lobortis mi at mi congue pellentesque. Vestibulum at purus sit amet orci tempor feugiat. ",
+      "price": "599",
+      "imageUrl": "https://placeimg.com/250/300/arch",
+      "featured": false,
+      "on_sale": false,
+      "is_new": false,
+      "category_id": 3
+    },
+    {
+      "id": 14,
+      "name": "Wardrobe",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lobortis mi at mi congue pellentesque. Vestibulum at purus sit amet orci tempor feugiat. Vestibulum at purus sit amet orci tempor feugiat ",
+      "price": "1599",
+      "imageUrl": "https://placeimg.com/250/300/arch",
+      "featured": false,
+      "on_sale": false,
+      "is_new": true,
+      "category_id": 3
+    },
+    {
+      "id": 15,
+      "name": "Office Lamp",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lobortis mi at mi congue pellentesque. Vestibulum at purus sitt. Vestibulum at purus sit amet orci tempor feugiat ",
+      "price": "12599",
+      "imageUrl": "https://placeimg.com/250/300/arch",
+      "featured": true,
+      "on_sale": true,
+      "is_new": false,
+      "category_id": 3
+    },
+    {
+      "id": 16,
+      "name": "Sef of plates",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lobortis mi at mi congue pellentesque. Vestibulum at purus sit amet orci tempor feugiat. Vestibulum at purus sit amet orci tempor feugiat ",
+      "price": "9599",
+      "imageUrl": "https://placeimg.com/250/300/tech",
+      "featured": true,
+      "on_sale": true,
+      "is_new": true,
+      "category_id": 4
+    },
+    {
+      "id": 17,
+      "name": "Cabinet",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lobortis mi at mi congue pellentesque. Vestibulum at purus sit amet orci tempor feugiat. Vestibulum at purus sit amet orci tempor feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit ",
+      "price": "98599",
+      "imageUrl": "https://placeimg.com/250/300/tech",
+      "featured": false,
+      "on_sale": true,
+      "is_new": false,
+      "category_id": 4
+    },
+    {
+      "id": 18,
+      "name": "Sink",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lobortis mi at mi congue pellentesque. Vestibulum at purus sit amet orci tempor feugiat. Vestibulum at purus sit amet orci tempor feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+      "price": "9599",
+      "imageUrl": "https://placeimg.com/250/300/tech",
+      "featured": false,
+      "on_sale": false,
+      "is_new": false,
+      "category_id": 4
+    },
+    {
+      "id": 19,
+      "name": "Kitchen table",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lobortis mi at mi congue pellentesque. Vestibulum at purus sit amet orci tempor feugiat. Vestibulum at purus sit amet orci tempor feugiat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ",
+      "price": "11599",
+      "imageUrl": "https://placeimg.com/250/300/tech",
+      "featured": true,
+      "on_sale": true,
+      "is_new": false,
+      "category_id": 4
+    },
+    {
+      "id": 20,
+      "name": "Kitchen chair",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas lobortis mi at mi congue pellentesque. Vestibulum at purus sit amet orci tempor feugiat. Vestibulum at purus sit amet orci tempor feugiat.",
+      "price": "8899",
+      "imageUrl": "https://placeimg.com/250/300/tech",
+      "featured": true,
+      "on_sale": true,
+      "is_new": true,
+      "category_id": 4
+    }
+  ],
+  "categories": [
+    {
+      "category_name": "seats",
+      "id": 1
+    },
+    {
+      "category_name": "beds",
+      "id": 2
+    },
+    {
+      "category_name": "office",
+      "id": 3
+    },
+    {
+      "category_name": "kitchen",
+      "id": 4
+    }
+  ]
+}
