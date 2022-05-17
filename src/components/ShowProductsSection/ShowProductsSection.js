@@ -21,20 +21,20 @@ const ShowProductsSection = () => {
 
   useEffect(() => {
     if (status === 'fulfilled') {
-      setSelectedProducts(products.filter((el) => el.is_new));
+      setSelectedProducts(products.filter((product) => product.is_new));
     }
   }, [status]);
 
   const changeActiveButtonsHandler = (title) => {
     setIsActive(title);
     if (title === 'Featured') {
-      setSelectedProducts(products.filter((el) => el.featured));
+      setSelectedProducts(products.filter((product) => product.featured));
     }
     if (title === 'On Sale') {
-      setSelectedProducts(products.filter((el) => el.on_sale));
+      setSelectedProducts(products.filter((product) => product.on_sale));
     }
     if (title === 'New Arrival') {
-      setSelectedProducts(products.filter((el) => el.is_new));
+      setSelectedProducts(products.filter((product) => product.is_new));
     }
   };
 

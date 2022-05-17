@@ -5,12 +5,17 @@ import PropTypes from 'prop-types';
 const BlogPost = ({ title, author, date, content, imageUrl, id }) => {
   const navigate = useNavigate();
 
-  const showPostDetailHandler = () => {
+  const redirectToPostDetail = () => {
     navigate(`/blog/${id}`);
   };
 
   return (
-    <div className="post" onClick={showPostDetailHandler} type="button">
+    <div
+      role="button"
+      className="post"
+      onClick={redirectToPostDetail}
+      type="button"
+    >
       <div className="post__img-container">
         <img src={imageUrl} className="post__img-container__img" />
       </div>
@@ -24,7 +29,7 @@ const BlogPost = ({ title, author, date, content, imageUrl, id }) => {
         <Button
           title="Read More"
           className="button -small -color-reverse"
-          onClick={showPostDetailHandler}
+          onClick={redirectToPostDetail}
         />
       </div>
     </div>
