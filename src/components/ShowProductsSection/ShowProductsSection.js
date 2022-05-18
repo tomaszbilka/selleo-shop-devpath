@@ -1,6 +1,11 @@
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { getProducts, getStatus } from 'store/products/selectors';
+import {
+  getStatus,
+  getFeaturedProducts,
+  getOnSaleProducts,
+  getIsNewProducts,
+} from 'store/products/selectors';
 import GridProducts from 'components/Products/GridProducts';
 import SectionHeader from 'components/SectionHeader';
 import ButtonSlim from 'components/UI/ButtonSlim';
@@ -16,25 +21,27 @@ const ShowProductsSection = () => {
   const [isActive, setIsActive] = useState('New Arrival');
   const [selectedProducts, setSelectedProducts] = useState([]);
 
-  const products = useSelector(getProducts);
   const status = useSelector(getStatus);
+  const featuredProducts = useSelector(getFeaturedProducts);
+  const onSaleProducts = useSelector(getOnSaleProducts);
+  const newProducts = useSelector(getIsNewProducts);
 
   useEffect(() => {
     if (status === 'fulfilled') {
-      setSelectedProducts(products.filter((product) => product.is_new));
+      setSelectedProducts(newProducts);
     }
   }, [status]);
 
   const changeActiveButtonsHandler = (title) => {
     setIsActive(title);
     if (title === 'Featured') {
-      setSelectedProducts(products.filter((product) => product.featured));
+      setSelectedProducts(featuredProducts);
     }
     if (title === 'On Sale') {
-      setSelectedProducts(products.filter((product) => product.on_sale));
+      setSelectedProducts(onSaleProducts);
     }
     if (title === 'New Arrival') {
-      setSelectedProducts(products.filter((product) => product.is_new));
+      setSelectedProducts(newProducts);
     }
   };
 

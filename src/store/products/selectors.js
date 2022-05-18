@@ -6,6 +6,14 @@ export const getStatus = (state) => {
   return state.products.status;
 };
 
-//filters
+export const getFeaturedProducts = (state) => {
+  return getProducts(state).filter((product) => product.featured);
+};
 
-//reselect - catchowanie danych
+export const getOnSaleProducts = (state) => {
+  return getProducts(state).filter((product) => product.on_sale);
+};
+
+export const getIsNewProducts = (state) => {
+  return getProducts(state).filter((product) => product.is_new);
+};

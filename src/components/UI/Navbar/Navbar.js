@@ -1,6 +1,11 @@
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { getCategories } from 'store/categories/selectors';
 
 const Navbar = () => {
+  const categories = useSelector(getCategories);
+  console.log(categories);
+
   return (
     <nav className="main-nav">
       <ul className="main-nav__list">
