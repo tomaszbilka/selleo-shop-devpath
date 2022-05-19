@@ -1,0 +1,44 @@
+.detail
+  @include flex
+  @include alignX
+  margin-top: 50px
+  margin-bottom: 50px
+  background-color: $white-color
+
+  &__image-wrap
+    flex: 1
+    @include flex
+    
+    &__img
+      width: 100%
+  
+  &__info
+    @include flex($direction: column, $cross: flex-start)
+    margin-left: 40px
+    flex: 2
+
+    &__stock
+      margin: 10px 0
+      font-size: 12px
+
+      &__name
+        font-weight: bold
+        margin-right: 10px
+
+    &__title
+      font-size: 38px
+
+    &__price
+      font: italic
+      margin: 10px 0
+
+    &__text
+      line-height: 25px
+
+    &__buttons
+      margin-bottom: 20px
+      @include flex($cross: flex-end)
+      
+
+
+

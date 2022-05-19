@@ -11,6 +11,8 @@ import SectionHeader from 'components/SectionHeader';
 import ButtonSlim from 'components/UI/ButtonSlim';
 import Error from 'components/UI/Error';
 import LoadingSpinner from 'components/UI/LoadingSpinner';
+import Wrapper from 'components/UI/Wrapper';
+import ButtonSlimContainer from 'components/UI/ButtonSlimContainer';
 
 const description =
   'Lorem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo tempor incididunt ut labore';
@@ -46,9 +48,9 @@ const ShowProductsSection = () => {
   };
 
   return (
-    <section className="show-container">
+    <Wrapper>
       <SectionHeader title="Our Products" description={description} />
-      <div className="show-container__btn-container">
+      <ButtonSlimContainer>
         <ButtonSlim
           title="New Arrival"
           activeTitle={isActive}
@@ -64,11 +66,11 @@ const ShowProductsSection = () => {
           activeTitle={isActive}
           onClick={changeActiveButtonsHandler}
         />
-      </div>
+      </ButtonSlimContainer>
       {status === 'rejected' && <Error>{errorMsg}</Error>}
       {status === 'pending' && <LoadingSpinner size="small" />}
       {status === 'fulfilled' && <GridProducts products={selectedProducts} />}
-    </section>
+    </Wrapper>
   );
 };
 

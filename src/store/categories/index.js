@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { fetchCategoriesApi } from 'utils/api';
 import { keyBy } from 'lodash';
 
 const initialState = {
@@ -9,13 +10,11 @@ const initialState = {
 export const fetchCategories = createAsyncThunk(
   'categories/fetchCategories',
   async () => {
-    const response = await fetch('http://localhost:3004/categories');
-    if (!response.ok) {
+    const response = await fetchCategoriesApi();
+    if (!response.statusText === 'OK' || !response.data) {
       throw new Error('Can not fetch data!');
     }
-    const data = await response.json();
-    console.log('CATEGORIES:' + data);
-    return keyBy(data, 'id');
+    return keyBy(response.data, 'id');
   }
 );
 
