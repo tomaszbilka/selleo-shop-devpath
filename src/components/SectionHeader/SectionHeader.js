@@ -1,9 +1,7 @@
 import PropTypes from 'prop-types';
 
-const SectionHeader = ({ title, description, isMarginTop }) => {
-  const style = isMarginTop
-    ? 'title-container -margin-top '
-    : 'title-container';
+const SectionHeader = ({ title, description, extraClassName }) => {
+  const style = `title-container ${extraClassName}`;
 
   return (
     <div className={style}>
@@ -16,11 +14,11 @@ const SectionHeader = ({ title, description, isMarginTop }) => {
 SectionHeader.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
-  isMarginTop: PropTypes.bool,
+  marginTop: PropTypes.string,
 };
 
 SectionHeader.defaultProps = {
-  isMarginTop: false,
+  marginTop: '',
 };
 
 export default SectionHeader;

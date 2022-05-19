@@ -14,29 +14,29 @@
   
   &__info
     @include flex($direction: column, $cross: flex-start)
-    margin-left: 40px
+    margin-left: $marg-5
     flex: 2
 
     &__stock
-      margin: 10px 0
-      font-size: 12px
+      margin: $marg-base 0
+      font-size: $s-2
 
       &__name
         font-weight: bold
-        margin-right: 10px
+        margin-right: $marg-base
 
     &__title
-      font-size: 38px
+      font-size: $b-3
 
     &__price
-      font: italic
-      margin: 10px 0
+      font-style: italic
+      margin: $marg-base 0
 
     &__text
       line-height: 25px
 
     &__buttons
-      margin-bottom: 20px
+      margin-bottom: $marg-3
       @include flex($cross: flex-end)
       
 

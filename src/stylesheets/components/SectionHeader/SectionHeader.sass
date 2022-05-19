@@ -2,11 +2,11 @@
   @include flex($direction: column)
 
   &.-margin-top
-    margin-top: 150px
+    margin-top: $marg-8
 
   &__title
-    font-size: 48px
-    margin-bottom: 15px
+    font-size: $b-4
+    margin-bottom: $marg-2
     font-weight: 700
     font-family: Raleway
     color: $font-dark
@@ -20,7 +20,7 @@
 @media (max-width: $s)
   .title-container
     &__title
-      font-size: 36px
+      font-size: $b-2
       &__description
-        font-size: 15px
+        font-size: $s-4
         max-width: 100%

@@ -41,7 +41,10 @@ const Products = () => {
 
   return (
     <Wrapper>
-      <SectionHeader title={productCategory.toUpperCase()} isMarginTop={true} />
+      <SectionHeader
+        title={productCategory.toUpperCase()}
+        extraClassName="-margin-top"
+      />
       <ButtonSlimContainer>
         <ButtonSlim
           title="seats"

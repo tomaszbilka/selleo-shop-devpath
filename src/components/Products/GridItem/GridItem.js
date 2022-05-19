@@ -20,7 +20,8 @@ const GridItem = ({ imageUrl, name, price, id, description, inStock }) => {
     console.log('add to favorite');
   };
 
-  const showProductHandler = () => {
+  const redirectToDetailPage = (e) => {
+    e.stopPropagation();
     navigate(`/product/${id}`);
   };
 
@@ -37,17 +38,7 @@ const GridItem = ({ imageUrl, name, price, id, description, inStock }) => {
   };
 
   return (
-    <li className="gridItem" onClick={showProductHandler}>
-      {isDetailModalVisible && (
-        <Modal
-          element={
-            <ShowProductDetail
-              product={{ imageUrl, name, price, id, description, inStock }}
-            />
-          }
-          onClick={closeDetailsModalHandler}
-        />
-      )}
+    <li className="gridItem" onClick={redirectToDetailPage}>
       <div className="gridItem__img-wrap">
         <img src={imageUrl} className="gridItem__img-wrap__image" />
       </div>
@@ -78,6 +69,16 @@ const GridItem = ({ imageUrl, name, price, id, description, inStock }) => {
           icon={iconBtn}
         />
       </div>
+      {isDetailModalVisible && (
+        <Modal
+          element={
+            <ShowProductDetail
+              product={{ imageUrl, name, price, id, description, inStock }}
+            />
+          }
+          onClick={closeDetailsModalHandler}
+        />
+      )}
     </li>
   );
 };

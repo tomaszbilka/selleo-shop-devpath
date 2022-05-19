@@ -1,5 +1,3 @@
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 import Home from 'pages/Home';
 import Products from 'pages/Products';
@@ -10,19 +8,8 @@ import UserSettings from 'pages/UserSettings';
 import Login from 'pages/Login';
 import Layout from 'components/UI/Layout';
 import Blog from 'pages/Blog';
-import { fetchProducts } from 'store/products';
-import { fetchCategories } from 'store/categories';
 
 function App() {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchCategories());
-  }, [dispatch]);
-
-  useEffect(() => {
-    dispatch(fetchProducts());
-  }, [dispatch]);
   return (
     <Layout>
       <Routes>
