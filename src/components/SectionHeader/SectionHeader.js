@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types';
 
-const SectionHeader = ({ title, description }) => {
+const SectionHeader = ({ title, description, extraClassName }) => {
+  const style = `title-container ${extraClassName}`;
+
   return (
-    <div className="title-container">
+    <div className={style}>
       <h2 className="title-container__title">{title}</h2>
       <p className="title-container__description">{description}</p>
     </div>
@@ -11,7 +13,12 @@ const SectionHeader = ({ title, description }) => {
 
 SectionHeader.propTypes = {
   title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.string,
+  marginTop: PropTypes.string,
+};
+
+SectionHeader.defaultProps = {
+  marginTop: '',
 };
 
 export default SectionHeader;

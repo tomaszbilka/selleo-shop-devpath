@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { fetchProductsApi } from 'utils/api';
+import { fetchCategoriesApi } from 'utils/api';
 import { keyBy } from 'lodash';
 
 const initialState = {
@@ -7,10 +7,10 @@ const initialState = {
   status: null,
 };
 
-export const fetchProducts = createAsyncThunk(
-  'products/fetchProducts',
+export const fetchCategories = createAsyncThunk(
+  'categories/fetchCategories',
   async () => {
-    const response = await fetchProductsApi();
+    const response = await fetchCategoriesApi();
     if (!response.statusText === 'OK' || !response.data) {
       throw new Error('Can not fetch data!');
     }
@@ -18,22 +18,22 @@ export const fetchProducts = createAsyncThunk(
   }
 );
 
-export const productsSlice = createSlice({
-  name: 'products',
+export const categoriesSlice = createSlice({
+  name: 'categories',
   initialState,
   reducers: {},
   extraReducers: {
-    [fetchProducts.fulfilled]: (state, action) => {
+    [fetchCategories.fulfilled]: (state, action) => {
       state.byId = action.payload;
       state.status = 'fulfilled';
     },
-    [fetchProducts.pending]: (state) => {
+    [fetchCategories.pending]: (state) => {
       state.status = 'pending';
     },
-    [fetchProducts.rejected]: (state) => {
+    [fetchCategories.rejected]: (state) => {
       state.status = 'rejected';
     },
   },
 });
 
-export default productsSlice.reducer;
+export default categoriesSlice.reducer;

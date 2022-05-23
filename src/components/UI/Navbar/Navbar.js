@@ -1,6 +1,39 @@
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { getCategories, getCategoriesStatus } from 'store/categories/selectors';
+import LoadingSpinner from 'components/UI/LoadingSpinner';
+import Error from '../Error';
 
 const Navbar = () => {
+  const categories = useSelector(getCategories);
+  const categoriesStatus = useSelector(getCategoriesStatus);
+
+  let categoriesList;
+
+  if (categoriesStatus === 'fulfilled') {
+    categoriesList = categories.map((category, index) => (
+      <Link to={`/products/${category.category_name}`} key={index}>
+        <li>{category.category_name}</li>
+      </Link>
+    ));
+  }
+
+  if (categoriesStatus === 'pending') {
+    categoriesList = (
+      <li>
+        <LoadingSpinner size="small" />
+      </li>
+    );
+  }
+
+  if (categoriesStatus === 'rejected') {
+    categoriesList = (
+      <li>
+        <Error>Problem with fetch categories</Error>
+      </li>
+    );
+  }
+
   return (
     <nav className="main-nav">
       <ul className="main-nav__list">
@@ -14,8 +47,7 @@ const Navbar = () => {
             Products <span className="main-nav__list__item__arrow">&or;</span>
           </div>
           <ul className="main-nav__list__item__dropdown-content">
-            <li>Products 1</li>
-            <li>Products 2</li>
+            {categoriesList}
           </ul>
         </li>
         <li className="main-nav__list__item">Contact</li>

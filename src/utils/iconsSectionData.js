@@ -8,26 +8,26 @@ import {
 
 const linkIcons = [
   {
-    path: '/products',
-    component: <FontAwesomeIcon icon={faBed} className="icons-section-icon" />,
-    title: 'beds',
-  },
-  {
-    path: '/products',
+    path: '/products/seats',
     component: (
       <FontAwesomeIcon icon={faChair} className="icons-section-icon" />
     ),
     title: 'seats',
   },
   {
-    path: '/products',
+    path: '/products/beds',
+    component: <FontAwesomeIcon icon={faBed} className="icons-section-icon" />,
+    title: 'beds',
+  },
+  {
+    path: '/products/office',
     component: (
       <FontAwesomeIcon icon={faLaptop} className="icons-section-icon" />
     ),
     title: 'office',
   },
   {
-    path: '/products',
+    path: '/products/kitchen',
     component: (
       <FontAwesomeIcon icon={faKitchenSet} className="icons-section-icon" />
     ),

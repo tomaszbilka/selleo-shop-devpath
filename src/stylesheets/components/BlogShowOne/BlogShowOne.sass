@@ -1,31 +1,32 @@
 .blog-show
   @include flex($direction: column)
   @include alignX
+  margin-top: $marg-7
 
   &__img
-    margin: 50px
+    margin: $marg-6
 
   &__title
-    font-size: 32px
+    font-size: $b-1
     font-weight: bold
-    margin-bottom: 20px
+    margin-bottom: $marg-3
 
   &__info
     @include flex($main: space-between)
     width: 100%
-    padding: 30px 0
+    padding: $marg-4 0
 
     &__date
       font-style: italic
 
     &__author
-      font-size: 22px
+      font-size: $m-4
       color: $primary-color 
 
     &__text
-      font-size: 16px
+      font-size: $m-1
       color: $font-dark
-      margin-right: 20px
+      margin-right: $marg-3
 
   &__hr
     border: 1px solid $primary-color
@@ -36,5 +37,5 @@
     margin-bottom: 100px
 
   &__content
-    font-size: 20px
+    font-size: $m-3
     line-height: 32px
