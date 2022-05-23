@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { openCartModal } from 'store/appState';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faMagnifyingGlass,
@@ -12,6 +14,7 @@ import Modal from 'components/Modals/Modal';
 
 const Header = () => {
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
+  const dispatch = useDispatch();
 
   const openSearchModalHandler = () => {
     setIsSearchModalOpen(true);
@@ -22,7 +25,7 @@ const Header = () => {
   };
 
   const openCartModalHandler = () => {
-    console.log('open cart modal');
+    dispatch(openCartModal());
   };
 
   return (

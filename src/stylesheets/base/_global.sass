@@ -14,4 +14,13 @@ body
   & a
     text-decoration: none
     color: inherit
-  
+
+.general-container
+  @include flex($direction: column)
+  @include alignX
+  margin-bottom: $marg-6
+
+.general-btn-container
+  @include flex
+  margin: $marg-4 0
+  flex-wrap: wrap

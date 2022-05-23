@@ -21,8 +21,13 @@ const GridItem = ({ imageUrl, name, price, id, description, inStock }) => {
   };
 
   const redirectToDetailPage = (e) => {
-    e.stopPropagation();
-    navigate(`/product/${id}`);
+    if (e.target.tagName === 'IMG' || e.target.tagName === 'LI') {
+      navigate(`/product/${id}`);
+    } else {
+      e.preventDefault();
+      e.stopPropagation();
+      return;
+    }
   };
 
   const showDetailModalHandler = () => {
@@ -38,37 +43,39 @@ const GridItem = ({ imageUrl, name, price, id, description, inStock }) => {
   };
 
   return (
-    <li className="gridItem" onClick={redirectToDetailPage}>
-      <div className="gridItem__img-wrap">
-        <img src={imageUrl} className="gridItem__img-wrap__image" />
-      </div>
-      <div className="gridItem__description">
-        <p className="gridItem__description__text">{name}</p>
-        <p className="gridItem__description__text">${price / 100}</p>
-      </div>
-      <div className="gridItem__first-icon">
-        <ButtonRound
-          icon={iconFav}
-          onClick={favoriteToggleHandler}
-          info="add to favorites"
-          className="button-round"
-        />
-      </div>
-      <div className="gridItem__show-icon">
-        <ButtonRound
-          icon={iconDetail}
-          onClick={showDetailModalHandler}
-          info="show details"
-          className="button-round"
-        />
-      </div>
-      <div className="gridItem__show-button">
-        <ButtonLong
-          title="Shop now"
-          onClick={addToCartHandler}
-          icon={iconBtn}
-        />
-      </div>
+    <>
+      <li className="gridItem" onClick={redirectToDetailPage}>
+        <div className="gridItem__img-wrap">
+          <img src={imageUrl} className="gridItem__img-wrap__image" />
+        </div>
+        <div className="gridItem__description">
+          <p className="gridItem__description__text">{name}</p>
+          <p className="gridItem__description__text">${price / 100}</p>
+        </div>
+        <div className="gridItem__first-icon">
+          <ButtonRound
+            icon={iconFav}
+            onClick={favoriteToggleHandler}
+            info="add to favorites"
+            className="button-round"
+          />
+        </div>
+        <div className="gridItem__show-icon">
+          <ButtonRound
+            icon={iconDetail}
+            onClick={showDetailModalHandler}
+            info="show details"
+            className="button-round"
+          />
+        </div>
+        <div className="gridItem__show-button">
+          <ButtonLong
+            title="Shop now"
+            onClick={addToCartHandler}
+            icon={iconBtn}
+          />
+        </div>
+      </li>
       {isDetailModalVisible && (
         <Modal
           element={
@@ -79,7 +86,7 @@ const GridItem = ({ imageUrl, name, price, id, description, inStock }) => {
           onClick={closeDetailsModalHandler}
         />
       )}
-    </li>
+    </>
   );
 };
 
@@ -88,6 +95,8 @@ GridItem.propTypes = {
   name: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
+  description: PropTypes.string,
+  inStock: PropTypes.number,
 };
 
 export default GridItem;

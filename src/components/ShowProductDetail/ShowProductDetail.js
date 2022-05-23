@@ -23,14 +23,14 @@ const ShowProductDetail = ({ product }) => {
         <img src={imageUrl} alt={name} className="detail__image-wrap__img" />
       </div>
       <div className="detail__info">
-        <p className="detail__info__stock">
-          <span className="detail__info__stock__name">Availability:</span>
+        <p className="detail__stock">
+          <span className="detail__stock__name">Availability:</span>
           {inStock}
         </p>
-        <h2 className="detail__info__title">{name}</h2>
-        <p className="detail__info__price">${price / 100}</p>
-        <p className="detail__info__text">{description}</p>
-        <div className="detail__info__buttons">
+        <h2 className="detail__title">{name}</h2>
+        <p className="detail__price">${price / 100}</p>
+        <p className="detail__text">{description}</p>
+        <div className="detail__buttons">
           <CartCounter />
           <Button title="Add to Cart" onClick={addProductToCartHandler} />
         </div>
