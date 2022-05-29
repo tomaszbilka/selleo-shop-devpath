@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import ButtonLong from 'components/UI/ButtonLong';
 import ButtonRound from 'components/UI/ButtonRound';
@@ -8,17 +9,33 @@ import ShowProductDetail from 'components/ShowProductDetail';
 import { faHeart, faBarChart } from '@fortawesome/free-regular-svg-icons';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { addToCart } from 'store/cart';
+import { toggleFavoriteState } from 'store/products';
+import { getIsFavoriteStatusFromProducts } from 'store/products/selectors';
+import { setFavoritesToLocalStorage } from 'utils/localStorage';
 
-const GridItem = ({ imageUrl, name, price, id, description, inStock }) => {
+const GridItem = ({ product }) => {
   const [isDetailModalVisible, setIsDetailModalVisible] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const isFavoriteStatusAll = useSelector(getIsFavoriteStatusFromProducts);
+  const { imageUrl, name, price, id, description, inStock } = product;
   const iconFav = <FontAwesomeIcon icon={faHeart} />;
   const iconDetail = <FontAwesomeIcon icon={faBarChart} />;
   const iconBtn = <FontAwesomeIcon icon={faCartShopping} />;
 
+  const isFavoriteStatusObject = isFavoriteStatusAll.filter(
+    (item) => item.id === id
+  );
+  const isFavoriteStatus = isFavoriteStatusObject[0].isFavorite;
+
   const favoriteToggleHandler = () => {
-    console.log('add to favorite');
+    dispatch(toggleFavoriteState(id));
   };
+
+  useEffect(() => {
+    setFavoritesToLocalStorage(isFavoriteStatusAll);
+  }, [isFavoriteStatusAll]);
 
   const redirectToDetailPage = (e) => {
     if (e.target.tagName === 'IMG' || e.target.tagName === 'LI') {
@@ -39,8 +56,16 @@ const GridItem = ({ imageUrl, name, price, id, description, inStock }) => {
   };
 
   const addToCartHandler = () => {
-    console.log('add to cart');
+    dispatch(addToCart(product));
   };
+
+  const favoriteClasses = isFavoriteStatus
+    ? 'button-round -favorite'
+    : 'button-round';
+
+  const favoriteInfoText = isFavoriteStatus
+    ? 'remove from favorites'
+    : 'add to favorites';
 
   return (
     <>
@@ -56,8 +81,8 @@ const GridItem = ({ imageUrl, name, price, id, description, inStock }) => {
           <ButtonRound
             icon={iconFav}
             onClick={favoriteToggleHandler}
-            info="add to favorites"
-            className="button-round"
+            info={favoriteInfoText}
+            className={favoriteClasses}
           />
         </div>
         <div className="gridItem__show-icon">
@@ -70,7 +95,7 @@ const GridItem = ({ imageUrl, name, price, id, description, inStock }) => {
         </div>
         <div className="gridItem__show-button">
           <ButtonLong
-            title="Shop now"
+            title="Add to cart"
             onClick={addToCartHandler}
             icon={iconBtn}
           />
@@ -91,12 +116,7 @@ const GridItem = ({ imageUrl, name, price, id, description, inStock }) => {
 };
 
 GridItem.propTypes = {
-  imageUrl: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
-  id: PropTypes.number.isRequired,
-  description: PropTypes.string,
-  inStock: PropTypes.number,
+  product: PropTypes.object.isRequired,
 };
 
 export default GridItem;

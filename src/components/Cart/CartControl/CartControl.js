@@ -1,8 +1,12 @@
+import { clearCart } from 'store/cart';
+import { useDispatch } from 'react-redux';
 import Button from 'components/UI/Button';
 
 const CartControl = () => {
+  const dispatch = useDispatch();
+
   const clearCartHandler = () => {
-    console.log('clear cart');
+    dispatch(clearCart());
   };
 
   const acceptCouponCodeHandler = () => {
@@ -22,11 +26,11 @@ const CartControl = () => {
           className="cart-controls__input"
         />
         <div className="cart-controls__button">
-          <Button title="Apply Coupon" onClick={clearCartHandler} />
+          <Button title="Apply Coupon" onClick={acceptCouponCodeHandler} />
         </div>
       </div>
       <div className="cart-controls__button">
-        <Button title="Clear Cart" onClick={acceptCouponCodeHandler} />
+        <Button title="Clear Cart" onClick={clearCartHandler} />
       </div>
       <div className="cart-controls__button">
         <Button

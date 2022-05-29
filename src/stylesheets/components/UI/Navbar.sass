@@ -9,45 +9,49 @@
     margin: 0
     padding: 0
 
-    &__dropdown-btn
-      position: relative 
+  &__dropdown-btn
+    position: relative 
 
-      &:hover #{$root}__list__item__dropdown-content
-        display: block     
+    &:hover #{$root}__dropdown-content
+      display: block     
 
-    &__item 
-      color: $white-color
-      font-size: $s-3
-      letter-spacing: 0.5px
-      margin: 0 24px
-      cursor: pointer
-      position: relative
-      line-height: 60px
+  &__item 
+    color: $white-color
+    font-size: $s-3
+    letter-spacing: 0.5px
+    margin: 0 24px
+    cursor: pointer
+    position: relative
+    line-height: 60px
 
-      &__dropdown-content 
-        display: none
-        font-size: $s-3
-        position: absolute
-        top: 60px
-        left: 20px
-        padding-left: 0
-        cursor: pointer
-        width: 150px
-        z-index: 2
+    &:hover
+      @include hover 
 
-        & li
-          border: 1px solid #ccc  
-          padding: 5px 10px   
-          background-color: $white-color
+  &__dropdown-content 
+    display: none
+    font-size: $s-3
+    position: absolute
+    top: 60px
+    left: 20px
+    padding-left: 0
+    cursor: pointer
+    width: 150px
+    z-index: 2
 
-          &:hover
-            @include hover
-    
+    & li
+      border: 1px solid #ccc  
+      padding: 5px 10px   
+      background-color: $white-color
+
       &:hover
-        @include hover  
+        @include hover
+    
+  &__arrow  
+    font-size: $s-1
+    position: absolute
+    top: 1px
+    right: -8px   
 
-      &__arrow  
-        font-size: $s-1
-        position: absolute
-        top: 1px
-        right: -8px   
+  &__error
+    color: $error-color
+    font-weight: bold

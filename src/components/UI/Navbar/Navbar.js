@@ -2,8 +2,6 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { getCategories, getCategoriesStatus } from 'store/categories/selectors';
 import LoadingSpinner from 'components/UI/LoadingSpinner';
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 const Navbar = () => {
   const categories = useSelector(getCategories);
@@ -28,27 +26,25 @@ const Navbar = () => {
   }
 
   if (categoriesStatus === 'rejected') {
-    toast.error('could not fetch categories!');
+    categoriesList = <li className="main-nav__error">error</li>;
   }
 
   return (
     <nav className="main-nav">
       <ul className="main-nav__list">
         <li>
-          <Link className="main-nav__list__item" to="/">
+          <Link className="main-nav__item" to="/">
             Home
           </Link>
         </li>
-        <li className="main-nav__list__dropdown-btn">
-          <div className="main-nav__list__item">
-            Products <span className="main-nav__list__item__arrow">&or;</span>
+        <li className="main-nav__dropdown-btn">
+          <div className="main-nav__item">
+            Products <span className="main-nav__arrow">&or;</span>
           </div>
-          <ul className="main-nav__list__item__dropdown-content">
-            {categoriesList}
-          </ul>
+          <ul className="main-nav__dropdown-content">{categoriesList}</ul>
         </li>
         <li>
-          <Link className="main-nav__list__item" to="/contact">
+          <Link className="main-nav__item" to="/contact">
             Contact
           </Link>
         </li>

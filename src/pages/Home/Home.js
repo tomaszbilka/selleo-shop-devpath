@@ -6,13 +6,31 @@ import ShowProductsSection from 'components/ShowProductsSection';
 import BlogLayout from 'components/BlogSection/BlogLayout';
 import { fetchProducts } from 'store/products';
 import { fetchCategories } from 'store/categories';
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
 
 const Home = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchCategories());
-    dispatch(fetchProducts());
+    dispatch(fetchCategories())
+      .then((res) => {
+        if (res.error) {
+          throw new Error('Could not fetch categories');
+        }
+      })
+      .catch((err) => {
+        if (err) {
+          toast.error(err.message);
+        }
+      });
+    dispatch(fetchProducts())
+      .then((res) => {
+        if (res.error) {
+          throw new Error('Could not fetch products');
+        }
+      })
+      .catch((err) => toast.error(err.message));
   }, [dispatch]);
 
   return (

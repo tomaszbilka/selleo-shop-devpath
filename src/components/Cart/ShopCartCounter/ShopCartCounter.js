@@ -1,17 +1,17 @@
-import { useState } from 'react';
+import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { addToCart, removeOneItemFromCart } from 'store/cart';
 
-const ShopCartCounter = () => {
-  const [amount, setAmount] = useState(1);
+const ShopCartCounter = ({ product }) => {
+  const dispatch = useDispatch();
+  const { number_of_items, id } = product;
 
   const amountDecrementHandler = () => {
-    if (amount === 1) {
-      return;
-    }
-    setAmount((prev) => (prev -= 1));
+    dispatch(removeOneItemFromCart(id));
   };
 
   const amountIncrementHandler = () => {
-    setAmount((prev) => (prev += 1));
+    dispatch(addToCart(product));
   };
 
   return (
@@ -19,12 +19,16 @@ const ShopCartCounter = () => {
       <button className="amount__decrement" onClick={amountDecrementHandler}>
         -
       </button>
-      <div className="amount__total">{amount}</div>
+      <div className="amount__total">{number_of_items}</div>
       <button className="amount__increment" onClick={amountIncrementHandler}>
         +
       </button>
     </div>
   );
+};
+
+ShopCartCounter.propTypes = {
+  product: PropTypes.object.isRequired,
 };
 
 export default ShopCartCounter;

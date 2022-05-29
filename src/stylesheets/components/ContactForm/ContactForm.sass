@@ -31,10 +31,12 @@
     margin-bottom: $marg-4
 
   &__names-controls
-    @include flex($main: space-between)
+    @include flex($main: space-between, $cross: flex-start)
+    margin-bottom: $marg-2
 
   &__controls
     @include flex($direction: column,  $cross: flex-start)
+    margin-bottom: $marg-2
 
   &__label
     font-size: $s-3
@@ -43,11 +45,16 @@
   &__input
     width: calc(100% - $marg-4)
     padding: $marg-base $marg-2
-    margin-bottom: $marg-4
+    
     border: 1px solid $secondary-color
-    border-radius: 3px
+    border-radius: $r-s
     resize: vertical
     outline: none
 
     &:focus
       border-color: $accent-color 
+
+  &__error
+    color: $error-color
+    font-size: $s-1
+    

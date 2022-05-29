@@ -21,7 +21,13 @@ export const fetchProducts = createAsyncThunk(
 export const productsSlice = createSlice({
   name: 'products',
   initialState,
-  reducers: {},
+  reducers: {
+    toggleFavoriteState(state, action) {
+      const productToToggleFavoriteState = state.byId[action.payload];
+      productToToggleFavoriteState.isFavorite =
+        !productToToggleFavoriteState.isFavorite;
+    },
+  },
   extraReducers: {
     [fetchProducts.fulfilled]: (state, action) => {
       state.byId = action.payload;
@@ -36,4 +42,5 @@ export const productsSlice = createSlice({
   },
 });
 
+export const { toggleFavoriteState } = productsSlice.actions;
 export default productsSlice.reducer;

@@ -1,28 +1,30 @@
+import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import ShopCartCounter from 'components/Cart/ShopCartCounter';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { removeFromCart } from 'store/cart';
 
-const CartModalItem = () => {
+const CartModalItem = ({ item }) => {
+  const dispatch = useDispatch();
   const icon = <FontAwesomeIcon icon={faTrashCan} />;
+  const { imageUrl, name, price, id, number_of_items } = item;
 
   const deleteItemHandler = () => {
-    console.log('delete item');
+    dispatch(removeFromCart(id));
   };
 
   return (
     <>
       <div className="cart-modal-item">
-        <img
-          src="https://placeimg.com/250/300/people"
-          className="cart-modal-item__image"
-        />
+        <img src={imageUrl} className="cart-modal-item__image" alt={name} />
         <div className="cart-modal-item__wrap">
-          <h3 className="cart-modal-item__title">sofa</h3>
+          <h3 className="cart-modal-item__title">{name}</h3>
           <p className="cart-modal-item__text">
-            <span>1</span>x
-            <span className="cart-modal-item__amount">$199.9</span>
+            <span>{number_of_items}</span>x
+            <span className="cart-modal-item__amount">${price / 100}</span>
           </p>
-          <ShopCartCounter />
+          <ShopCartCounter product={item} />
         </div>
         <button className="cart-modal-item__delete" onClick={deleteItemHandler}>
           {icon}
@@ -31,6 +33,10 @@ const CartModalItem = () => {
       <hr className="cart-modal-item__bottom-line" />
     </>
   );
+};
+
+CartModalItem.propTypes = {
+  item: PropTypes.object.isRequired,
 };
 
 export default CartModalItem;

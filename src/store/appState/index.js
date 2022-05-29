@@ -8,14 +8,11 @@ const appState = createSlice({
   name: 'appState',
   initialState,
   reducers: {
-    openCartModal(state) {
-      state.isCartModalOpen = true;
-    },
-    closeCartModal(state) {
-      state.isCartModalOpen = false;
+    toggleCartModal(state, action) {
+      state.isCartModalOpen = action.payload;
     },
   },
 });
 
-export const { openCartModal, closeCartModal } = appState.actions;
+export const { toggleCartModal } = appState.actions;
 export default appState.reducer;

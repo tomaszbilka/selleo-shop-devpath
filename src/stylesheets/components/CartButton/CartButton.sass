@@ -3,13 +3,14 @@
   right: 0
   top: 50%
   transform: translateY(-50%)
-  padding: 15px
+  padding: $marg-2
   background-color: $primary-color 
-  border-radius: 5px
+  border-radius: $r-m
   cursor: pointer
   @include flex($direction: column)
   box-shadow: 0px 0px 7px $primary-color
   border: none
+  transition: transform 0.2s linear
 
   &__icon
     color: $accent-color
@@ -29,7 +30,10 @@
     width: 100%
     text-align: center
     padding: 3px 0
-    border-radius: 3px
+    border-radius: $r-s
+
+  &.-animation
+    transform: translateY(-58%)
 
 @media (max-width: $l)
   .cart-button

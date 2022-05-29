@@ -5,7 +5,7 @@ const GridProducts = ({ products }) => {
   return (
     <ul className="grid">
       {products.map((el, index) => (
-        <GridItem {...el} key={index} />
+        <GridItem product={el} key={index} />
       ))}
     </ul>
   );

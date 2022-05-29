@@ -1,41 +1,30 @@
-import { useLayoutEffect, useState } from 'react';
+import { useLayoutEffect, useMemo, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import GridProducts from 'components/Products/GridProducts';
 import { getProducts } from 'store/products/selectors';
 import ButtonSlim from 'components/UI/ButtonSlim';
-import { getCategoriesWithProducts } from 'store/reselectors';
-import PageTitle from '../../components/PageTitle';
+import { getProductsWithCategories } from 'store/products/selectors';
+import PageTitle from 'components/PageTitle';
+import { getCategoriesWithSelectedProducts } from 'utils/products';
 
 const Products = () => {
   const { productCategory } = useParams();
   const navigate = useNavigate();
   const [isActive, setIsActive] = useState(productCategory);
-  let selectedProducts = [];
 
-  const catWithProducts = useSelector(getCategoriesWithProducts);
+  const productsWithCategoryName = useSelector(getProductsWithCategories);
   const allProducts = useSelector(getProducts);
 
-  switch (productCategory) {
-    case 'seats':
-      selectedProducts = catWithProducts[0].seats;
-      break;
-    case 'beds':
-      selectedProducts = catWithProducts[1].beds;
-      break;
-    case 'office':
-      selectedProducts = catWithProducts[2].office;
-      break;
-    case 'kitchen':
-      selectedProducts = catWithProducts[3].kitchen;
-      break;
-    case 'all':
-      selectedProducts = allProducts;
-      break;
-    default:
-      [];
-      break;
-  }
+  const selectedProducts = useMemo(
+    () =>
+      getCategoriesWithSelectedProducts(
+        productCategory,
+        productsWithCategoryName,
+        allProducts
+      ),
+    [productCategory, productsWithCategoryName, allProducts]
+  );
 
   useLayoutEffect(() => {
     window.scrollTo(0, 0);

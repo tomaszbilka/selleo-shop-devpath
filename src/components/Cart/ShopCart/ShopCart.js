@@ -1,9 +1,27 @@
+import { useSelector } from 'react-redux';
+import { getAllCartItems } from 'store/cart/selectors';
+import { getSumOfItemsCost } from 'store/cart/selectors';
 import CartControl from '../CartControl';
 import CartItem from '../CartItem';
 
-const cartItems = [1, 2];
-
 const ShopCart = () => {
+  const cartItems = useSelector(getAllCartItems);
+  const totalCost = useSelector(getSumOfItemsCost);
+
+  let cartContent = (
+    <tr>
+      <td colSpan="7" className="table__info">
+        <p>No product yet!</p>
+      </td>
+    </tr>
+  );
+
+  if (cartItems.length > 0) {
+    cartContent = cartItems.map((item, index) => (
+      <CartItem key={index} product={item} />
+    ));
+  }
+
   return (
     <section className="shop-cart-container">
       <div className="table-scroll-wrap">
@@ -15,22 +33,17 @@ const ShopCart = () => {
               <th className="table__title">PRICE</th>
               <th className="table__title">QTY</th>
               <th className="table__title">SUBTOTAL</th>
+              <th className="table__title">SUM</th>
               <th className="table__title">ACTIONS</th>
             </tr>
           </thead>
           <tbody className="table__body">
-            {cartItems.map((item, index) => (
-              <CartItem key={index} item={item} />
-            ))}
+            {cartContent}
             <tr className="table__total">
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td className="table__total__row">
+              <td colSpan="7" className="table__row">
                 <div>
-                  TOTAL: <span className="table__total__amount">$1000</span>
+                  TOTAL:{' '}
+                  <span className="table__amount">${totalCost / 100}</span>
                 </div>
               </td>
             </tr>

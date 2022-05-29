@@ -1,31 +1,38 @@
+import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import ShopCartCounter from 'components/Cart/ShopCartCounter';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
+import { removeFromCart } from 'store/cart';
 
-const CartItem = () => {
+const CartItem = ({ product }) => {
+  const { imageUrl, name, price, id, number_of_items } = product;
+  const dispatch = useDispatch();
   const icon = <FontAwesomeIcon icon={faTrashCan} className="row__delete" />;
 
   const removeItemFromCartHandler = () => {
-    console.log('remove this item from cart!');
+    dispatch(removeFromCart(id));
   };
 
   return (
     <tr className="row">
       <td>
-        <img
-          src="https://placeimg.com/250/300/people"
-          className="row__image"
-        ></img>
+        <img src={imageUrl} className="row__image" alt={name}></img>
       </td>
-      <td>SOFA</td>
-      <td>$69.99</td>
-      <td>1</td>
+      <td>{name}</td>
+      <td>${price / 100}</td>
+      <td>{number_of_items}</td>
       <td>
-        <ShopCartCounter />
+        <ShopCartCounter product={product} />
       </td>
+      <td>${(number_of_items * price) / 100}</td>
       <td onClick={removeItemFromCartHandler}>{icon}</td>
     </tr>
   );
+};
+
+CartItem.propTypes = {
+  product: PropTypes.object.isRequired,
 };
 
 export default CartItem;

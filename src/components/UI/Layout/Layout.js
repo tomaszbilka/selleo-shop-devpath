@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { openCartModal, closeCartModal } from 'store/appState';
+import { toggleCartModal } from 'store/appState';
 import { getCartModalStatus } from 'store/appState/selectors';
 import Header from 'components/UI/Header';
 import Navbar from 'components/UI/Navbar';
@@ -14,12 +14,12 @@ const Layout = ({ children }) => {
   const dispatch = useDispatch();
   const isCartModalOpen = useSelector(getCartModalStatus);
 
-  const closeCartModalHandler = () => {
-    dispatch(closeCartModal());
+  const openCartModalHandler = () => {
+    dispatch(toggleCartModal(true));
   };
 
-  const openCartModalHandler = () => {
-    dispatch(openCartModal());
+  const closeCartModalHandler = () => {
+    dispatch(toggleCartModal(false));
   };
 
   return (
