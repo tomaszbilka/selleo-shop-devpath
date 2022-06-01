@@ -15,10 +15,7 @@ SectionHeader.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string,
   marginTop: PropTypes.string,
-};
-
-SectionHeader.defaultProps = {
-  marginTop: '',
+  extraClassName: PropTypes.string,
 };
 
 export default SectionHeader;

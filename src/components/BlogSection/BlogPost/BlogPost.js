@@ -5,6 +5,8 @@ import PropTypes from 'prop-types';
 const BlogPost = ({ title, author, date, content, imageUrl, id }) => {
   const navigate = useNavigate();
 
+  const truncatedContent = content.slice(0, 100) + '...';
+
   const redirectToPostDetail = () => {
     navigate(`/blog/${id}`);
   };
@@ -25,7 +27,7 @@ const BlogPost = ({ title, author, date, content, imageUrl, id }) => {
           <p className="post__content__info__author">{author}</p>
           <p className="post__content__info__date">{date}</p>
         </div>
-        <div className="post__content__text">{content}</div>
+        <div className="post__content__text">{truncatedContent}</div>
         <Button
           title="Read More"
           className="button -small -color-reverse"

@@ -1,0 +1,30 @@
+.amount
+  @include flex()
+
+  &__increment,
+  &__decrement
+    border: none
+    cursor: pointer
+    font-size: $m-2
+    height: 25px
+    background-color: $secondary-color
+
+    &:hover
+      color: $accent-color
+
+  &__decrement
+    border-top-left-radius: $r-xs
+    border-bottom-left-radius: $r-xs 
+    padding-left: $marg-base
+    
+  &__increment
+    border-top-right-radius: $r-xs
+    border-bottom-right-radius: $r-xs
+    padding-right: $marg-base
+
+  &__total
+    font-size: $s-4
+    height: 25px
+    padding: 0 $marg-base
+    line-height: 25px
+    background-color: $secondary-color

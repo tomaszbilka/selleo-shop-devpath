@@ -1,0 +1,20 @@
+.cart-controls
+  @include flex($main: space-between)
+  flex-wrap: wrap
+  background-color: $secondary-color
+  padding: $marg-2
+  margin-top: $marg-3
+
+  &__wrap
+    @include flex
+
+  &__input
+    height: 48px
+    border: 1px solid $accent-color
+    font-size: $m-2
+    padding-left: $marg-base
+    width: 250px
+    outline: none
+
+  &__button
+    margin-top: -49px

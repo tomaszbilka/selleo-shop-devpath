@@ -1,0 +1,42 @@
+.shop-cart-container 
+  @include alignX
+
+.table-scroll-wrap
+  display: block
+  width: 100%
+  overflow-x: auto
+
+.table 
+  margin-top: $marg-6
+  width: 100%
+  min-width: 800px
+  font-size: $s-2
+
+  &__head
+    background-color: $secondary-color
+    
+  &__title
+    padding: $marg-2 0
+    font-size: $s-4
+
+  &__body
+    text-align: center
+
+  &__total
+    border-top: 1px solid $secondary-color
+    font-size: $s-3
+    color: $accent-color
+
+  &__row
+    display: table-cell
+    text-align: right
+
+  &__amount
+    margin-right: $marg-2
+    color: $primary-color
+    font-weight: bold
+
+  &__info
+    text-align: center
+    line-height: 120px
+    font-size: $m-2

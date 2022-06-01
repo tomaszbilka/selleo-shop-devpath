@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import PropTypes from 'prop-types';
+import { useState, useEffect } from 'react';
 
-const CartCounter = () => {
+const CartCounter = ({ multiplier }) => {
   const [amount, setAmount] = useState(1);
 
   const increaseAmountHandler = () => {
@@ -14,6 +15,10 @@ const CartCounter = () => {
     setAmount((prevAmount) => (prevAmount -= 1));
   };
 
+  useEffect(() => {
+    multiplier(amount);
+  }, [amount]);
+
   return (
     <div className="counter">
       <button className="counter__left" onClick={decreaseAmountHandler}>
@@ -25,6 +30,10 @@ const CartCounter = () => {
       </button>
     </div>
   );
+};
+
+CartCounter.propTypes = {
+  multiplier: PropTypes.func.isRequired,
 };
 
 export default CartCounter;

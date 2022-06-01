@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleCartModal } from 'store/appState';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faMagnifyingGlass,
@@ -9,9 +11,12 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import SearchModal from 'components/Modals/SearchModal';
 import Modal from 'components/Modals/Modal';
+import { getNumberOfItemsInCart } from 'store/cart/selectors';
 
 const Header = () => {
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
+  const dispatch = useDispatch();
+  const numberOfItemsInCart = useSelector(getNumberOfItemsInCart);
 
   const openSearchModalHandler = () => {
     setIsSearchModalOpen(true);
@@ -22,7 +27,7 @@ const Header = () => {
   };
 
   const openCartModalHandler = () => {
-    console.log('open cart modal');
+    dispatch(toggleCartModal(true));
   };
 
   return (
@@ -65,7 +70,9 @@ const Header = () => {
             icon={faCartShopping}
             className="header__top-menu__control__icon"
           />
-          <span className="header__top-menu__control__cart-info">0</span>
+          <span className="header__top-menu__control__cart-info">
+            {numberOfItemsInCart}
+          </span>
         </div>
       </div>
     </header>

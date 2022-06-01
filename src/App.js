@@ -8,6 +8,7 @@ import UserSettings from 'pages/UserSettings';
 import Login from 'pages/Login';
 import Layout from 'components/UI/Layout';
 import Blog from 'pages/Blog';
+import Contact from 'pages/Contact';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/product/:productId" element={<ProductDetail />} />
         <Route path="/blog/:blogId" element={<Blog />} />
         <Route path="/user/settings/:userId" element={<UserSettings />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </Layout>

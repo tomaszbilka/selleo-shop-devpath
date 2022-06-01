@@ -1,21 +1,25 @@
-import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleCartModal } from 'store/appState';
+import { getCartModalStatus } from 'store/appState/selectors';
 import Header from 'components/UI/Header';
 import Navbar from 'components/UI/Navbar';
 import Footer from 'components/UI/Footer';
-import CartModal from 'components/Modals/CartModal';
+import CartModal from 'components/Modals/CartModal/CartModal';
 import CartButton from 'components/CartButton';
 import PropTypes from 'prop-types';
 import Modal from 'components/Modals/Modal';
+import { ToastContainer } from 'react-toastify';
 
 const Layout = ({ children }) => {
-  const [isCartModalOpen, setIsCartModalOpen] = useState(false);
-
-  const closeCartModalHandler = () => {
-    setIsCartModalOpen(false);
-  };
+  const dispatch = useDispatch();
+  const isCartModalOpen = useSelector(getCartModalStatus);
 
   const openCartModalHandler = () => {
-    setIsCartModalOpen(true);
+    dispatch(toggleCartModal(true));
+  };
+
+  const closeCartModalHandler = () => {
+    dispatch(toggleCartModal(false));
   };
 
   return (
@@ -31,6 +35,7 @@ const Layout = ({ children }) => {
       )}
       <CartButton onClick={openCartModalHandler} />
       <Footer />
+      <ToastContainer position="bottom-center" />
     </>
   );
 };

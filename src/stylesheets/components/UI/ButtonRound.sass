@@ -8,6 +8,7 @@
   height: 30px
   width: 30px
   font-size: $s-4
+  transition: all 0.3s ease
 
   &:hover
     color: $white-color
@@ -24,7 +25,7 @@
       background-color: $primary-color
       color: $white-color
       padding: 3px
-      border-radius: 5px
+      border-radius: $r-m
       position: absolute
       right: calc(100% + 4px)
       width: 80px
@@ -45,4 +46,8 @@
         border-top: 5px solid transparent
         border-bottom: 5px solid transparent
         border-left: 5px solid $primary-color
+  
+  &.-favorite
+    background-color: $font-less-dark
+    color: $white-color
    

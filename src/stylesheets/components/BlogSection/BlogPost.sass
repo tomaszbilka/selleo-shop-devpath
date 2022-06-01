@@ -1,7 +1,7 @@
 .post
   width: 260px
   cursor: pointer
-  margin-top: 30px
+  margin-top: $marg-4
   border: none
   border-radius: 0
 
@@ -16,7 +16,7 @@
           height: auto
 
   &__content
-      padding: 22px 20px 32px
+      padding: $marg-3 $marg-3 $marg-4
       color: #292b2c
       background-color: #F4F5F8
 
@@ -38,16 +38,12 @@
 
       &__text
           font-size: $s-3
-          margin-bottom: -$marg-base
-          display: -webkit-box
-          -webkit-line-clamp: 4
-          -webkit-box-orient: vertical
-          overflow: hidden
+          margin-bottom: -20px
+          
 
 @media (max-width: $l)
   .post
       width: 100%
 
       &__img-container
-          height: auto
-        
+          height: auto    
