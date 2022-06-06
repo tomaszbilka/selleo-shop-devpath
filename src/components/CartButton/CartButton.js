@@ -17,7 +17,7 @@ const CartButton = ({ onClick }) => {
       setAnimation(false);
     }, 200);
 
-    return () => clearInterval(animationCycle);
+    return () => clearTimeout(animationCycle);
   }, [totalCost]);
 
   const classes = animation ? 'cart-button -animation' : 'cart-button';

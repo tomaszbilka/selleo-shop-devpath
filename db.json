@@ -312,5 +312,15 @@
       "category_name": "kitchen",
       "id": 4
     }
+  ],
+  "users": [
+    {
+      "user": "Tom",
+      "password": "tom"
+    },
+    {
+      "user": "Anna",
+      "password": "anna"
+    }
   ]
 }

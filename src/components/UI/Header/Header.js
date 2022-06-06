@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleCartModal } from 'store/appState';
@@ -12,10 +12,12 @@ import {
 import SearchModal from 'components/Modals/SearchModal';
 import Modal from 'components/Modals/Modal';
 import { getNumberOfItemsInCart } from 'store/cart/selectors';
+import AuthContext from 'store/auth-context';
 
 const Header = () => {
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
   const dispatch = useDispatch();
+  const authCtx = useContext(AuthContext);
   const numberOfItemsInCart = useSelector(getNumberOfItemsInCart);
 
   const openSearchModalHandler = () => {
@@ -44,6 +46,9 @@ const Header = () => {
           <span className="header__logo__text">LOGO</span>
         </Link>
       </div>
+      {authCtx.isLoggedIn && (
+        <p className="header__user-name">Hi {authCtx.userName}!</p>
+      )}
       <div className="header__top-menu">
         <div
           className="header__top-menu__control"

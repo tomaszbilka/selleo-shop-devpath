@@ -7,8 +7,10 @@ import ButtonSlim from 'components/UI/ButtonSlim';
 import { getProductsWithCategories } from 'store/products/selectors';
 import PageTitle from 'components/PageTitle';
 import { getCategoriesWithSelectedProducts } from 'utils/products';
+import { useTitle } from 'react-use';
 
 const Products = () => {
+  useTitle('Products demo');
   const { productCategory } = useParams();
   const navigate = useNavigate();
   const [isActive, setIsActive] = useState(productCategory);
