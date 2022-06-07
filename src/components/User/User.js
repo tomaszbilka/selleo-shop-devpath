@@ -156,7 +156,7 @@ const User = () => {
             title="login"
             activeTitle={isActive}
             onClick={changeToLoginUpHandler}
-          />{' '}
+          />
           <ButtonSlim
             title="sign up"
             activeTitle={isActive}
