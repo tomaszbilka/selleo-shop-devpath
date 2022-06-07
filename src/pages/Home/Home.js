@@ -8,8 +8,13 @@ import { fetchProducts } from 'store/products';
 import { fetchCategories } from 'store/categories';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
+import { useTitle } from 'react-use';
+import { useFavicon } from 'react-use';
+import favicon from 'images/icons/favicon.png';
 
 const Home = () => {
+  useTitle('demo shop');
+  useFavicon(favicon);
   const dispatch = useDispatch();
 
   useEffect(() => {

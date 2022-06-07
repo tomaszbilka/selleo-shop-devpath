@@ -1,9 +1,16 @@
+import { useRef, useEffect } from 'react';
 import Button from 'components/UI/Button';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { toast } from 'react-toastify';
 
 const ContactForm = () => {
+  const nameInputRef = useRef();
+
+  useEffect(() => {
+    nameInputRef.current.focus();
+  }, []);
+
   const validationSchema = Yup.object({
     name: Yup.string()
       .min(3, 'Must be at least 3 characters long')
@@ -71,6 +78,7 @@ const ContactForm = () => {
               First Name
             </label>
             <input
+              ref={nameInputRef}
               id="name"
               name="name"
               type="text"

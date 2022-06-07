@@ -1,5 +1,10 @@
+import User from 'components/User';
+import { useTitle } from 'react-use';
+
 const Login = () => {
-  return <div>Login page</div>;
+  useTitle('Login demo');
+
+  return <User />;
 };
 
 export default Login;

@@ -7,3 +7,7 @@ export const fetchProductsApi = () => {
 export const fetchCategoriesApi = () => {
   return api.get('/categories');
 };
+
+export const fetchUsersApi = () => {
+  return api.get('/users');
+};
