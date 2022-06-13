@@ -1,0 +1,16 @@
+.address-form
+  @include flex($direction: column, $cross: flex-start)
+  margin-top: $marg-6
+
+  &__input
+    width: 100%
+    padding: $marg-base $marg-2
+    font-size: $m-4
+    border: 1px solid $secondary-color
+    border-radius: $r-s
+    resize: vertical
+    outline: none
+    margin-bottom: -40px
+
+    &:focus
+      border-color: $accent-color 
