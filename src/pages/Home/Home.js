@@ -6,7 +6,6 @@ import ShowProductsSection from 'components/ShowProductsSection';
 import { fetchProducts } from 'store/products';
 import { fetchCategories } from 'store/categories';
 import 'react-toastify/dist/ReactToastify.css';
-import { toast } from 'react-toastify';
 import { useTitle } from 'react-use';
 import { useFavicon } from 'react-use';
 import LoadingSpinner from 'components/UI/LoadingSpinner';
@@ -20,24 +19,8 @@ const Home = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchCategories())
-      .then((res) => {
-        if (res.error) {
-          throw new Error('Could not fetch categories');
-        }
-      })
-      .catch((err) => {
-        if (err) {
-          toast.error(err.message);
-        }
-      });
-    dispatch(fetchProducts())
-      .then((res) => {
-        if (res.error) {
-          throw new Error('Could not fetch products');
-        }
-      })
-      .catch((err) => toast.error(err.message));
+    dispatch(fetchCategories());
+    dispatch(fetchProducts());
   }, [dispatch]);
 
   return (

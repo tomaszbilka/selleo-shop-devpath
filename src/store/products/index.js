@@ -11,9 +11,6 @@ export const fetchProducts = createAsyncThunk(
   'products/fetchProducts',
   async () => {
     const response = await fetchProductsApi();
-    if (!response.statusText === 'OK' || !response.data) {
-      throw new Error('Can not fetch data!');
-    }
     return keyBy(response.data, 'id');
   }
 );

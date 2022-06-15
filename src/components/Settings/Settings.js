@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useMemo } from 'react';
 import { fetchAddresses } from 'store/addresses';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
@@ -15,16 +15,9 @@ const Settings = () => {
   const navigate = useNavigate();
   const addressesStatus = useSelector(getAddressesStatus);
   const addressesArray = useSelector(getAddresses);
-  let addresses;
 
   useEffect(() => {
-    dispatch(fetchAddresses())
-      .then((res) => {
-        if (res.error) {
-          throw new Error('Could not fetch addresses');
-        }
-      })
-      .catch((err) => toast.error(err.message));
+    dispatch(fetchAddresses());
   }, [dispatch]);
 
   const logoutHandler = () => {
@@ -33,25 +26,30 @@ const Settings = () => {
     toast.success('You successfully logout!');
   };
 
-  if (addressesStatus === 'pending') {
-    addresses = <LoadingSpinner />;
-  }
-
-  if (addressesStatus === 'rejected') {
-    addresses = (
-      <p className="settings__error">
-        there is some problem with fetching addresses...
-      </p>
-    );
-  }
-
-  if (addressesStatus === 'fulfilled') {
-    addresses = addressesArray.map((el) => (
-      <li key={el.id} className="settings__list">
-        {el.address}
-      </li>
-    ));
-  }
+  const addresses = useMemo(() => {
+    switch (addressesStatus) {
+      case 'pending':
+        return <LoadingSpinner />;
+      case 'rejected':
+        return (
+          <p className="settings__error">
+            there is some problem with fetching addresses...
+          </p>
+        );
+      case 'fulfilled':
+        return (
+          <ul>
+            {addressesArray.map((el) => (
+              <li key={el.id} className="settings__list">
+                {el.address}
+              </li>
+            ))}
+          </ul>
+        );
+      default:
+        return '';
+    }
+  }, [addressesStatus]);
 
   return (
     <section className="settings">
@@ -64,7 +62,7 @@ const Settings = () => {
       </div>
       <div className="settings__control">
         <h3>All addresses:</h3>
-        <ul>{addresses}</ul>
+        {addresses}
       </div>
     </section>
   );
