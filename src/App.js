@@ -9,6 +9,7 @@ import Login from 'pages/Login';
 import Layout from 'components/UI/Layout';
 import Blog from 'pages/Blog';
 import Contact from 'pages/Contact';
+import ProtectedRoute from 'components/ProtectedRoute';
 
 function App() {
   return (
@@ -20,7 +21,14 @@ function App() {
         <Route path="/products/:productCategory" element={<Products />} />
         <Route path="/product/:productId" element={<ProductDetail />} />
         <Route path="/blog/:blogId" element={<Blog />} />
-        <Route path="/user/settings/:userId" element={<UserSettings />} />
+        <Route
+          path="/user/settings"
+          element={
+            <ProtectedRoute>
+              <UserSettings />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/contact" element={<Contact />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>

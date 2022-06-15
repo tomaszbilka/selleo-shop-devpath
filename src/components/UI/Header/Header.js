@@ -60,7 +60,7 @@ const Header = () => {
           />
         </div>
         <div className="header__top-menu__control">
-          <Link to="/user/settings/someId">
+          <Link to="/user/settings">
             <FontAwesomeIcon
               icon={faUser}
               className="header__top-menu__control__icon"

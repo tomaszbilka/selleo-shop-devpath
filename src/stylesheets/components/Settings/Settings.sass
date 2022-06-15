@@ -1,0 +1,21 @@
+.settings
+  @include alignX
+  @include flex($main: space-between, $cross: stretch)
+  padding: $marg-7 0
+
+  &__error
+    color: $error-color
+    margin: $marg-3 0
+
+  &__list
+    margin: $marg-base 0
+
+  &__control
+    margin-bottom: $marg-5
+
+  &__title
+    font-size: $b-1
+
+@media (max-width: 800px)
+  .settings
+    @include flex($direction: column)

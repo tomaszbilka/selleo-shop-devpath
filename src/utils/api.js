@@ -11,3 +11,7 @@ export const fetchCategoriesApi = () => {
 export const fetchUsersApi = () => {
   return api.get('/users');
 };
+
+export const fetchAddressesApi = () => {
+  return api.get('/addresses');
+};

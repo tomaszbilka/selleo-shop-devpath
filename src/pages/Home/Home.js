@@ -1,16 +1,18 @@
-import { useEffect } from 'react';
+import { useEffect, Suspense, lazy } from 'react';
 import { useDispatch } from 'react-redux';
 import Slider from 'components/Slider';
 import IconsSection from 'components/IconsSection';
 import ShowProductsSection from 'components/ShowProductsSection';
-import BlogLayout from 'components/BlogSection/BlogLayout';
 import { fetchProducts } from 'store/products';
 import { fetchCategories } from 'store/categories';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
 import { useTitle } from 'react-use';
 import { useFavicon } from 'react-use';
+import LoadingSpinner from 'components/UI/LoadingSpinner';
 import favicon from 'images/icons/favicon.png';
+
+const BlogLayout = lazy(() => import('components/BlogSection/BlogLayout'));
 
 const Home = () => {
   useTitle('demo shop');
@@ -43,7 +45,9 @@ const Home = () => {
       <Slider />
       <IconsSection />
       <ShowProductsSection />
-      <BlogLayout />
+      <Suspense fallback={<LoadingSpinner />}>
+        <BlogLayout />
+      </Suspense>
     </>
   );
 };

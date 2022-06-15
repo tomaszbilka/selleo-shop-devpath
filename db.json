@@ -322,5 +322,27 @@
       "user": "Anna",
       "password": "anna"
     }
+  ],
+  "addresses": [
+    {
+      "address": "Mickiewicza 59/100",
+      "id": 1
+    },
+    {
+      "address": "Londzina 108",
+      "id": 2
+    },
+    {
+      "address": "Krakowska 134B/3",
+      "id": 3
+    },
+    {
+      "address": "Aleja Jerozolimska 123",
+      "id": 4
+    },
+    {
+      "address": "Pacanów 1A/33",
+      "id": 5
+    }
   ]
 }
