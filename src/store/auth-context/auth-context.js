@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useCallback } from 'react';
 import { retrieveStoredName } from 'utils/localStorage';
 import { retrieveStoredToken } from 'utils/localStorage';
+import PropTypes from 'prop-types';
 
 const AuthContext = React.createContext({
   isLoggedIn: false,
@@ -13,7 +14,7 @@ const AuthContext = React.createContext({
 
 export default AuthContext;
 
-export const AuthContextProvider = (props) => {
+export const AuthContextProvider = ({ children }) => {
   const tokenData = retrieveStoredToken();
   let initialToken;
   if (tokenData) {
@@ -52,9 +53,11 @@ export const AuthContextProvider = (props) => {
     logout: logoutHandler,
   };
 
+  AuthContextProvider.propTypes = {
+    children: PropTypes.element.isRequired,
+  };
+
   return (
-    <AuthContext.Provider value={contextValue}>
-      {props.children}
-    </AuthContext.Provider>
+    <AuthContext.Provider value={contextValue}>{children}</AuthContext.Provider>
   );
 };

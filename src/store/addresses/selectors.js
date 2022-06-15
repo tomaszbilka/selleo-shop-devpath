@@ -3,5 +3,5 @@ export const getAddresses = (state) => {
 };
 
 export const getAddressesStatus = (state) => {
-  return state.addresses.status;
+  return state?.addresses?.status ?? '';
 };

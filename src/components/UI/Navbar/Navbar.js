@@ -1,3 +1,4 @@
+import { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { getCategories, getCategoriesStatus } from 'store/categories/selectors';
@@ -7,27 +8,26 @@ const Navbar = () => {
   const categories = useSelector(getCategories);
   const categoriesStatus = useSelector(getCategoriesStatus);
 
-  let categoriesList;
-
-  if (categoriesStatus === 'fulfilled') {
-    categoriesList = categories.map((category, index) => (
-      <Link to={`/products/${category.category_name}`} key={index}>
-        <li>{category.category_name}</li>
-      </Link>
-    ));
-  }
-
-  if (categoriesStatus === 'pending') {
-    categoriesList = (
-      <li>
-        <LoadingSpinner size="small" />
-      </li>
-    );
-  }
-
-  if (categoriesStatus === 'rejected') {
-    categoriesList = <li className="main-nav__error">error</li>;
-  }
+  const categoriesList = useMemo(() => {
+    switch (categoriesStatus) {
+      case 'fulfilled':
+        return categories.map((category, index) => (
+          <Link to={`/products/${category.category_name}`} key={index}>
+            <li>{category.category_name}</li>
+          </Link>
+        ));
+      case 'pending':
+        return (
+          <li>
+            <LoadingSpinner size="small" />
+          </li>
+        );
+      case 'rejected':
+        return <li className="main-nav__error">error</li>;
+      default:
+        return '';
+    }
+  }, [categoriesStatus]);
 
   return (
     <nav className="main-nav">

@@ -11,9 +11,6 @@ export const fetchAddresses = createAsyncThunk(
   'addresses/fetchAddresses',
   async () => {
     const response = await fetchAddressesApi();
-    if (!response.statusText === 'OK' || !response.data) {
-      throw new Error('Can not fetch data!');
-    }
     return keyBy(response.data, 'id');
   }
 );
