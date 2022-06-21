@@ -316,11 +316,38 @@
   "users": [
     {
       "user": "Tom",
-      "password": "tom"
+      "password": "tom",
+      "id": 1
     },
     {
       "user": "Anna",
-      "password": "anna"
+      "password": "anna",
+      "id": 2
+    },
+    {
+      "user": "Marta",
+      "password": "marta",
+      "id": 42696
+    },
+    {
+      "user": "John",
+      "password": "john",
+      "id": 61357
+    },
+    {
+      "user": "Kris",
+      "password": "kris",
+      "id": 51055
+    },
+    {
+      "user": "Magda",
+      "password": "magda",
+      "id": 29413
+    },
+    {
+      "user": "Lucek",
+      "password": "lucek",
+      "id": 31193
     }
   ],
   "addresses": [
