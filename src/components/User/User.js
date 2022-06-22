@@ -81,7 +81,6 @@ const User = () => {
       } else {
         //check if user exist and register new user
         const isUserValid = await isUserExist(values.name);
-        console.log(isUserValid);
         if (isUserValid) {
           toast.error('User name already exist! Choose different one, please', {
             autoClose: 3500,

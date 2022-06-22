@@ -1,4 +1,5 @@
 import api from './axios';
+import { v4 as uuidv4 } from 'uuid';
 
 export const fetchProductsApi = () => {
   return api.get('/products');
@@ -19,7 +20,7 @@ export const fetchAddressesApi = () => {
 export const registerNewUser = (data) => {
   const newUser = {
     ...data,
-    id: Math.round(Math.random() * 99999) + 1,
+    id: uuidv4(),
   };
   return api.post('/users', newUser, {
     headers: {
