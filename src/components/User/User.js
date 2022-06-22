@@ -7,6 +7,7 @@ import Button from 'components/UI/Button';
 import ButtonSlim from 'components/UI/ButtonSlim';
 import { isPasswordMatch, isUserExist } from 'utils/user';
 import AuthContext from 'store/auth-context';
+import { registerNewUser } from 'utils/api';
 
 const User = () => {
   const [isRegistered, setIsRegistered] = useState(true);
@@ -79,7 +80,27 @@ const User = () => {
         }
       } else {
         //check if user exist and register new user
-        //TODO
+        const isUserValid = await isUserExist(values.name);
+        if (isUserValid) {
+          toast.error('User name already exist! Choose different one, please', {
+            autoClose: 3500,
+          });
+          formik.resetForm();
+          return;
+        }
+        const response = await registerNewUser({
+          user: values.name,
+          password: values.password,
+        });
+        if (response.statusText === 'Created') {
+          toast.success(
+            `Hello ${response.data.user}! Your are registered! You can log in now!`
+          );
+          formik.resetForm();
+          setIsRegistered(true);
+        } else {
+          toast.error('Something went wrong with register, contact us please!');
+        }
       }
     },
   });
