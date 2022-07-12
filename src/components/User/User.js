@@ -1,13 +1,13 @@
 import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
-import * as Yup from 'yup';
 import { toast } from 'react-toastify';
 import Button from 'components/UI/Button';
 import ButtonSlim from 'components/UI/ButtonSlim';
 import { isPasswordMatch, isUserExist } from 'utils/user';
 import AuthContext from 'store/auth-context';
 import { registerNewUser } from 'utils/api';
+import { signUpSchema, loginSchema } from 'utils/yup';
 
 const User = () => {
   const [isRegistered, setIsRegistered] = useState(true);
@@ -28,28 +28,7 @@ const User = () => {
   const buttonTitle = isRegistered ? 'Login' : 'Sign up';
   const title = isRegistered ? 'Login' : 'Sign up';
 
-  const validationSchema = !isRegistered
-    ? Yup.object({
-        name: Yup.string()
-          .min(3, 'Must be at least 3 characters long')
-          .required('Required'),
-        password: Yup.string()
-          .min(3, 'Must be at least 3 characters long')
-          .required('No password provided')
-          .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.'),
-        repeatPassword: Yup.string()
-          .oneOf([Yup.ref('password'), null], 'Passwords must match')
-          .required('Repeat your password'),
-      })
-    : Yup.object({
-        name: Yup.string()
-          .min(3, 'Must be at least 3 characters long')
-          .required('Required'),
-        password: Yup.string()
-          .min(3, 'Must be at least 3 characters long')
-          .required('No password provided')
-          .matches(/[a-zA-Z]/, 'Password can only contain Latin letters.'),
-      });
+  const validationSchema = !isRegistered ? signUpSchema : loginSchema;
 
   const formik = useFormik({
     initialValues: {
