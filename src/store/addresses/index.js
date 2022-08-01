@@ -1,3 +1,4 @@
+//not use any more - use rtk-query instead
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { fetchAddressesApi } from 'utils/api';
 import { keyBy } from 'lodash';
