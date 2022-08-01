@@ -13,12 +13,17 @@ import SearchModal from 'components/Modals/SearchModal';
 import Modal from 'components/Modals/Modal';
 import { getNumberOfItemsInCart } from 'store/cart/selectors';
 import AuthContext from 'store/auth-context';
+import LoadingSpinner from 'components/UI/LoadingSpinner';
+import Error from '../Error';
+
+import { useGetAddressesQuery } from 'utils/rtk-query-addresses';
 
 const Header = () => {
   const [isSearchModalOpen, setIsSearchModalOpen] = useState(false);
   const dispatch = useDispatch();
   const authCtx = useContext(AuthContext);
   const numberOfItemsInCart = useSelector(getNumberOfItemsInCart);
+  const { data, error, isLoading } = useGetAddressesQuery();
 
   const openSearchModalHandler = () => {
     setIsSearchModalOpen(true);
@@ -48,6 +53,17 @@ const Header = () => {
       </div>
       {authCtx.isLoggedIn && (
         <p className="header__user-name">Hi {authCtx.userName}!</p>
+      )}
+      {authCtx.isLoggedIn && (
+        <div className="header__user-name">
+          {isLoading && !error && <LoadingSpinner />}
+          {!isLoading && error && (
+            <Error>{error.message || 'Sth went wrong'}</Error>
+          )}
+          {!isLoading && !error && (
+            <p>{data[0]?.address ?? 'no main address'}</p>
+          )}
+        </div>
       )}
       <div className="header__top-menu">
         <div
