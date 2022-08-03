@@ -28,6 +28,8 @@ const AddressForm = () => {
     setEnteredAddress('');
   };
 
+  const isFormEmpty = enteredAddress === '' ? true : false;
+
   return (
     <form onSubmit={submitHandler} className="address-form">
       <input
@@ -42,7 +44,7 @@ const AddressForm = () => {
         title="Add new address"
         type="submit"
         className="button -color-reverse"
-        disabled={enteredAddress === '' ? true : false}
+        disabled={isFormEmpty}
       />
     </form>
   );

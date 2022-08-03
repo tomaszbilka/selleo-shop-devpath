@@ -56,7 +56,6 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.4",
-    "jest": "^28.1.3",
     "prettier": "^2.6.2",
     "sass": "^1.51.0",
     "tilg": "^0.1.1"

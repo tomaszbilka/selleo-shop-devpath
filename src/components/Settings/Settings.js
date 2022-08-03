@@ -8,7 +8,7 @@ import LoadingSpinner from 'components/UI/LoadingSpinner';
 
 import AddressForm from 'components/AddressForm';
 import Error from 'components/UI/Error';
-import AddressItem from 'components/AddressItem';
+import AddressLabel from 'components/AddressLabel';
 
 const Settings = () => {
   const authCtx = useContext(AuthContext);
@@ -31,19 +31,12 @@ const Settings = () => {
         <Button onClick={logoutHandler} title="logout" />
       </div>
       <div className="settings__control">
-        <h3>All addresses:</h3>
-        {isLoading && !error && <LoadingSpinner />}
-        {!isLoading && error && (
-          <Error>{error.message || 'Sth went wrong'}</Error>
-        )}
-        {!isLoading &&
-          !error &&
-          data.map((address) => (
-            <AddressItem
-              id={address.id}
-              address={address.address}
-              key={address.id}
-            />
+        <h2 className="settings__addresses">All addresses:</h2>
+        {error && <Error>{error.message || 'Sth went wrong'}</Error>}
+        {isLoading && <LoadingSpinner />}
+        {data &&
+          data.map(({ address, id }) => (
+            <AddressLabel id={id} address={address} key={id} />
           ))}
       </div>
     </section>

@@ -352,16 +352,20 @@
   ],
   "addresses": [
     {
-      "id": "e9e097eb-13f2-4f20-8e71-5b5242e74ac9",
+      "id": "3ef27be4-1905-446d-aa88-2bc7581b2a58",
       "address": "Partyzantow 33"
     },
     {
-      "id": "1b962322-ced4-4d6a-8670-22ee5c392621",
+      "id": "19376c76-9972-4307-af1a-6a1b6bde63b6",
+      "address": "Chopina 5b/22"
+    },
+    {
+      "id": "16223dac-8997-4007-b45d-d13030fd10ab",
       "address": "Majakowskiego 12/c kl II"
     },
     {
-      "id": "24ebcbab-3bd2-4e83-b6e0-66808429357b",
-      "address": "New address 123"
+      "id": "b2d129a4-575a-4f49-8ec1-ca812d85d76e",
+      "address": "Poniatowskiego 33"
     }
   ]
 }

@@ -14,7 +14,7 @@ import Modal from 'components/Modals/Modal';
 import { getNumberOfItemsInCart } from 'store/cart/selectors';
 import AuthContext from 'store/auth-context';
 import LoadingSpinner from 'components/UI/LoadingSpinner';
-import Error from '../Error';
+import Error from 'components/UI/Error';
 
 import { useGetAddressesQuery } from 'utils/rtk-query-addresses';
 
@@ -56,13 +56,9 @@ const Header = () => {
       )}
       {authCtx.isLoggedIn && (
         <div className="header__user-name">
-          {isLoading && !error && <LoadingSpinner />}
-          {!isLoading && error && (
-            <Error>{error.message || 'Sth went wrong'}</Error>
-          )}
-          {!isLoading && !error && (
-            <p>{data[0]?.address ?? 'no main address'}</p>
-          )}
+          {isLoading && <LoadingSpinner />}
+          {error && <Error>{error.message || 'Sth went wrong'}</Error>}
+          {data && <p>{data[0]?.address ?? 'no main address'}</p>}
         </div>
       )}
       <div className="header__top-menu">

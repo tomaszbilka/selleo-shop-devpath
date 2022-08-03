@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-regular-svg-icons';
 import { useUpdateAddressMutation } from 'utils/rtk-query-addresses';
 
-const AddressesItem = ({ id, address }) => {
+const AddressLabel = ({ id, address }) => {
   const [isEditing, setIsEditing] = useState(false);
   const [addressValue, setAddressValue] = useState(address);
   const inputRef = useRef();
@@ -68,7 +68,15 @@ const AddressesItem = ({ id, address }) => {
         info={'remove this address'}
         icon={iconDelete}
       />
-      {!isEditing && <div onClick={changeInputTypeHandler}>{address}</div>}
+      {!isEditing && (
+        <button
+          className="address-item__button"
+          type="button"
+          onClick={changeInputTypeHandler}
+        >
+          {address}
+        </button>
+      )}
       {isEditing && (
         <input
           value={addressValue}
@@ -77,15 +85,16 @@ const AddressesItem = ({ id, address }) => {
           onKeyDown={sendEditRequestOnEnter}
           onBlur={sendEditRequestHandler}
           ref={inputRef}
+          className="address-item__input"
         />
       )}
     </div>
   );
 };
 
-AddressesItem.propTypes = {
+AddressLabel.propTypes = {
   id: PropTypes.string,
   address: PropTypes.string,
 };
 
-export default AddressesItem;
+export default AddressLabel;
