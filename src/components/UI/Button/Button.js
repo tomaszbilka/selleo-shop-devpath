@@ -18,7 +18,7 @@ Button.propTypes = {
   onClick: PropTypes.func,
   type: PropTypes.string,
   className: PropTypes.string,
-  disabled: PropTypes.string,
+  disabled: PropTypes.bool,
 };
 
 Button.defaultProps = {

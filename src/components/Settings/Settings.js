@@ -1,55 +1,25 @@
-import { useContext, useEffect, useMemo } from 'react';
-import { fetchAddresses } from 'store/addresses';
-import { useDispatch, useSelector } from 'react-redux';
+import { useContext } from 'react';
 import { toast } from 'react-toastify';
 import Button from 'components/UI/Button';
 import AuthContext from 'store/auth-context';
 import { useNavigate } from 'react-router-dom';
+import { useGetAddressesQuery } from 'utils/rtk-query-addresses';
 import LoadingSpinner from 'components/UI/LoadingSpinner';
-import { getAddresses, getAddressesStatus } from 'store/addresses/selectors';
+
 import AddressForm from 'components/AddressForm';
+import Error from 'components/UI/Error';
+import AddressLabel from 'components/AddressLabel';
 
 const Settings = () => {
-  const dispatch = useDispatch();
   const authCtx = useContext(AuthContext);
   const navigate = useNavigate();
-  const addressesStatus = useSelector(getAddressesStatus);
-  const addressesArray = useSelector(getAddresses);
-
-  useEffect(() => {
-    dispatch(fetchAddresses());
-  }, [dispatch]);
+  const { data, error, isLoading } = useGetAddressesQuery();
 
   const logoutHandler = () => {
     authCtx.logout();
     navigate('/');
     toast.success('You successfully logout!');
   };
-
-  const addresses = useMemo(() => {
-    switch (addressesStatus) {
-      case 'pending':
-        return <LoadingSpinner />;
-      case 'rejected':
-        return (
-          <p className="settings__error">
-            there is some problem with fetching addresses...
-          </p>
-        );
-      case 'fulfilled':
-        return (
-          <ul>
-            {addressesArray.map((el) => (
-              <li key={el.id} className="settings__list">
-                {el.address}
-              </li>
-            ))}
-          </ul>
-        );
-      default:
-        return '';
-    }
-  }, [addressesStatus]);
 
   return (
     <section className="settings">
@@ -61,8 +31,13 @@ const Settings = () => {
         <Button onClick={logoutHandler} title="logout" />
       </div>
       <div className="settings__control">
-        <h3>All addresses:</h3>
-        {addresses}
+        <h2 className="settings__addresses">All addresses:</h2>
+        {error && <Error>{error.message || 'Sth went wrong'}</Error>}
+        {isLoading && <LoadingSpinner />}
+        {data &&
+          data.map(({ address, id }) => (
+            <AddressLabel id={id} address={address} key={id} />
+          ))}
       </div>
     </section>
   );

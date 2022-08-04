@@ -343,28 +343,29 @@
       "user": "Lucek",
       "password": "lucek",
       "id": "0d65d565-a234-4c48-b748-dc0d12022949"
+    },
+    {
+      "user": "Marek",
+      "password": "marek",
+      "id": "14ad9199-db3f-4850-bf32-e5234a5d5668"
     }
   ],
   "addresses": [
     {
-      "address": "Mickiewicza 59/100",
-      "id": 1
+      "id": "3ef27be4-1905-446d-aa88-2bc7581b2a58",
+      "address": "Partyzantow 33"
     },
     {
-      "address": "Londzina 108",
-      "id": 2
+      "id": "19376c76-9972-4307-af1a-6a1b6bde63b6",
+      "address": "Chopina 5b/22"
     },
     {
-      "address": "Krakowska 134B/3",
-      "id": 3
+      "id": "16223dac-8997-4007-b45d-d13030fd10ab",
+      "address": "Majakowskiego 12/c kl II"
     },
     {
-      "address": "Aleja Jerozolimska 123",
-      "id": 4
-    },
-    {
-      "address": "Pacanów 1A/33",
-      "id": 5
+      "id": "b2d129a4-575a-4f49-8ec1-ca812d85d76e",
+      "address": "Poniatowskiego 33"
     }
   ]
 }
