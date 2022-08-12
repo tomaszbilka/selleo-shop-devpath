@@ -11,8 +11,8 @@ const Navbar = () => {
   const categoriesList = useMemo(() => {
     switch (categoriesStatus) {
       case 'fulfilled':
-        return categories.map((category, index) => (
-          <Link to={`/products/${category.category_name}`} key={index}>
+        return categories.map((category) => (
+          <Link to={`/products/${category.category_name}`} key={category.id}>
             <li>{category.category_name}</li>
           </Link>
         ));

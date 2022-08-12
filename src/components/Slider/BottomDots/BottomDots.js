@@ -7,7 +7,13 @@ const BottomDots = ({ onClick, index, activeIndex }) => {
 
   const dotStyle = activeIndex === index ? 'dot dot--active' : 'dot';
 
-  return <div className={dotStyle} onClick={changeSlideHandler}></div>;
+  return (
+    <div
+      className={dotStyle}
+      onClick={changeSlideHandler}
+      data-testid={index}
+    ></div>
+  );
 };
 
 BottomDots.propTypes = {

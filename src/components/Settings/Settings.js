@@ -13,7 +13,12 @@ import AddressLabel from 'components/AddressLabel';
 const Settings = () => {
   const authCtx = useContext(AuthContext);
   const navigate = useNavigate();
-  const { data, error, isLoading } = useGetAddressesQuery();
+  const { data, error, isLoading, isFetching } = useGetAddressesQuery(
+    'addresses',
+    {
+      pollingInterval: 10000,
+    }
+  );
 
   const logoutHandler = () => {
     authCtx.logout();
@@ -38,6 +43,7 @@ const Settings = () => {
           data.map(({ address, id }) => (
             <AddressLabel id={id} address={address} key={id} />
           ))}
+        {isFetching && <LoadingSpinner />}
       </div>
     </section>
   );

@@ -35,7 +35,7 @@ const Slider = () => {
     <div className="slider">
       {sliderData.map((item, index) => (
         <SliderContent
-          key={index}
+          key={item.title}
           {...item}
           activeIndex={activeIndex}
           index={index}

@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
@@ -22,4 +23,4 @@ ButtonSlim.propTypes = {
   activeTitle: PropTypes.string.isRequired,
 };
 
-export default ButtonSlim;
+export default memo(ButtonSlim);

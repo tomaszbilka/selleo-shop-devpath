@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import {
   getStatus,
@@ -32,18 +32,21 @@ const ShowProductsSection = () => {
     }
   }, [status]);
 
-  const changeActiveButtonsHandler = (title) => {
-    setIsActive(title);
-    if (title === 'Featured') {
-      setSelectedProducts(featuredProducts);
-    }
-    if (title === 'On Sale') {
-      setSelectedProducts(onSaleProducts);
-    }
-    if (title === 'New Arrival') {
-      setSelectedProducts(newProducts);
-    }
-  };
+  const changeActiveButtonsHandler = useCallback(
+    (title) => {
+      setIsActive(title);
+      if (title === 'Featured') {
+        setSelectedProducts(featuredProducts);
+      }
+      if (title === 'On Sale') {
+        setSelectedProducts(onSaleProducts);
+      }
+      if (title === 'New Arrival') {
+        setSelectedProducts(newProducts);
+      }
+    },
+    [isActive]
+  );
 
   return (
     <div className="general-container">

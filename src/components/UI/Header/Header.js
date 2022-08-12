@@ -23,7 +23,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const authCtx = useContext(AuthContext);
   const numberOfItemsInCart = useSelector(getNumberOfItemsInCart);
-  const { data, error, isLoading } = useGetAddressesQuery();
+  const { data, error, isLoading } = useGetAddressesQuery('addresses');
 
   const openSearchModalHandler = () => {
     setIsSearchModalOpen(true);
