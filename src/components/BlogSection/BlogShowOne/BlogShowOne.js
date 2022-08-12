@@ -8,7 +8,13 @@ const BlogShowOne = ({ id }) => {
   }, []);
 
   const post = posts.filter((post) => post.id === id);
+
+  if (post.length === 0) {
+    return <p className="no-posts-found">No post found...</p>;
+  }
+
   const { imageUrl, title, date, author, content } = post[0];
+
   return (
     <section className="blog-show">
       <img src={imageUrl} className="blog-show__img" />

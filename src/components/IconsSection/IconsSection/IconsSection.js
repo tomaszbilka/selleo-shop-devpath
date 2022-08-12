@@ -4,8 +4,8 @@ import IconItem from 'components/IconsSection/IconItem';
 const IconsSection = () => {
   return (
     <section className="icons-section">
-      {linkIcons.map((el, index) => (
-        <IconItem {...el} key={index} />
+      {linkIcons.map((el) => (
+        <IconItem {...el} key={el.title} />
       ))}
     </section>
   );

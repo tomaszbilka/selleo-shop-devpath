@@ -34,8 +34,8 @@ const CartModal = ({ onClick }) => {
             <p className="cart-modal__empty">no products</p>
           )}
           {cartItems.length > 0 &&
-            cartItems.map((item, index) => (
-              <CartModalItem key={index} item={item} />
+            cartItems.map((item) => (
+              <CartModalItem key={item.id} item={item} />
             ))}
         </div>
         <div className="cart-modal__controls">
