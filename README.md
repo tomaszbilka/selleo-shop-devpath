@@ -10,6 +10,10 @@ In the project directory, you can run:
 
 next:
 
+### `json-server --watch db.json --port 3004`
+
+to run json server and in new console tab run:
+
 ### `npm start`
 
 Runs the app in the development mode.\
