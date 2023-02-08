@@ -12,6 +12,8 @@ next:
 
 ### `json-server --watch db.json --port 3004`
 
+(if you don't have installed json-server, use: `npm install -g json-server`)
+
 to run json server and in new console tab run:
 
 ### `npm start`
