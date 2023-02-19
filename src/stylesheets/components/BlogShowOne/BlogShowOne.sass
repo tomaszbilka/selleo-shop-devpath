@@ -12,34 +12,33 @@
 
   &__info
     @include flex($main: space-between)
-    width: 100%
     padding: $marg-3 0
+    width: 100%
 
     &__date
       font-style: italic
 
     &__author
+      color: $primary-color
       font-size: $m-4
-      color: $primary-color 
 
     &__text
-      font-size: $m-1
       color: $font-dark
+      font-size: $m-1
       margin-right: $marg-3
 
   &__hr
-    border: 1px solid $primary-color
+    border-bottom: none
     border-left: none
     border-right: none
-    border-bottom: none
-    width: 100%
+    border: 1px solid $primary-color
     margin-bottom: 100px
+    width: 100%
 
   &__content
     font-size: $m-3
     line-height: 32px
 
 .no-posts-found
-  text-align: center
   margin-top: $marg-8
-    
+  text-align: center

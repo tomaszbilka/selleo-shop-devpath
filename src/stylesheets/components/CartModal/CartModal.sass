@@ -1,30 +1,30 @@
 .cart-modal
   @include flex($direction: column, $main: space-between)
-  position: absolute
-  top: 0
-  right: -350px
-  width: 350px
+  animation: showCart 0.3s linear forwards
   background-color: $white-color
   height: 100vh
-  animation: showCart 0.3s linear forwards
+  position: absolute
+  right: -350px
+  top: 0
+  width: 350px
 
   &__header
-    @include flex($main: space-between)     
-    width: 100%
+    @include flex($main: space-between)
     border-bottom: 1px solid #ccc
+    width: 100%
 
   &__title
-    padding: $marg-3
     font-size: $m-3
+    padding: $marg-3
 
   &__close
-    margin-right: $marg-3
     @include closeBtn
+    margin-right: $marg-3
 
   &__items
-    width: 100%
     font-size: $m-3
     overflow-y: auto
+    width: 100%
 
   &__controls
     @include flex
@@ -32,26 +32,26 @@
     width: 100%
 
   &__btn
-    width: 100%
-    margin: $marg-3
-    border: none
-    border-radius: $r-l
     background-color: $accent-color
+    border-radius: $r-l
+    border: none
     color: $white-color
+    cursor: pointer
     font-size: $m-1
+    margin: $marg-3
     padding: $marg-2
     text-align: left
-    cursor: pointer
+    width: 100%
 
   &__amount
-    position: absolute
-    top: 50%
-    right: 40px
-    transform: translateY(-50%)
     background-color: $white-color
+    border-radius: $r-m
     color: $accent-color
     padding: 5px
-    border-radius: $r-m
+    position: absolute
+    right: 40px
+    top: 50%
+    transform: translateY(-50%)
 
   &__empty
     @include flex

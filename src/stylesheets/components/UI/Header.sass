@@ -1,52 +1,52 @@
-.header 
-  height: 100px
-  @include flex($main: space-between)
+.header
   @include alignX
+  @include flex($main: space-between)
+  height: 100px
 
   &__user-name
     color: $primary-color
     font-size: $s-3
     font-weight: bold
 
-  &__logo 
+  &__logo
     color: $primary-color
 
     &__icon
       color: $accent-color
       font-size: $b-1
       margin-right: $marg-base
-        
+
     &__text
       font-size: $b-1
       font-weight: bold
 
-  &__top-menu 
-      @include flex
+  &__top-menu
+    @include flex
 
-      &__control
-        position: relative
-        margin: 0 24px
+    &__control
+      position: relative
+      margin: 0 24px
 
-        &__icon 
-          font-size: $m-5
-          color: $primary-color
-          cursor: pointer
+      &__icon
+        color: $primary-color
+        cursor: pointer
+        font-size: $m-5
 
-          &:hover
-            @include hover     
+        &:hover
+          @include hover
 
-        &__cart-info
-          background-color: $accent-color
-          border-radius: 50%
-          color: $white-color
-          font-size: $s-2
-          height: 17px
-          line-height: 17px
-          position: absolute
-          right: -8px
-          top: -8px
-          text-align: center
-          width: 17px
+      &__cart-info
+        background-color: $accent-color
+        border-radius: 50%
+        color: $white-color
+        font-size: $s-2
+        height: 17px
+        line-height: 17px
+        position: absolute
+        right: -8px
+        text-align: center
+        top: -8px
+        width: 17px
 
         &:nth-child(1)::before
           background-color: rgb(235,235,235)
@@ -58,10 +58,10 @@
           width: 2px
 
         &:nth-child(2)::before
+          background-color: rgb(235,235,235)
           content: ""
+          height: 24px
+          position: absolute
           right: -24px
           top: 0px
           width: 2px
-          height: 24px
-          position: absolute
-          background-color: rgb(235,235,235)

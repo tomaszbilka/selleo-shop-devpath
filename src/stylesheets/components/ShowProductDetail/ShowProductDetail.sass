@@ -2,25 +2,25 @@
   $root: &
   @include flex
   @include alignX
-  margin-top: $marg-6
-  margin-bottom: $marg-6
   background-color: $white-color
+  margin-bottom: $marg-6
+  margin-top: $marg-6
 
   &__image-wrap
     flex: 1
     @include flex
-    
+
   &__img
     width: 100%
-  
+
   &__info
     @include flex($direction: column, $cross: flex-start)
-    margin: $marg-2 0 $marg-2 $marg-5
     flex: 2
+    margin: $marg-2 0 $marg-2 $marg-5
 
   &__stock
-    margin: $marg-base 0
     font-size: $s-2
+    margin: $marg-base 0
 
   &__name
     font-weight: bold
@@ -37,9 +37,5 @@
     line-height: 25px
 
   &__buttons
-    margin-bottom: $marg-2
     @include flex($cross: flex-end)
-      
-
-
-
+    margin-bottom: $marg-2

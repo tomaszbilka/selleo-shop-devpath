@@ -1,42 +1,42 @@
 .icon-section
   $root: &
-  width: 180px
-  height: 180px
   border-radius: 50%
+  height: 180px
   margin: 0 $marg-2
+  width: 180px
 
   &__icon
     @include flex
-    font-size: $l-2
+    border-radius: 50%
     color: $font-less-dark
+    font-size: $l-2
+    height: 100%
+    margin: 0 $marg-2
     position: relative
     width: 100%
-    height: 100%
-    border-radius: 50%
-    margin: 0 $marg-2
 
     &__border
-      border: 2px solid $font-less-dark
-      width: 100%
-      height: 100%
       border-radius: 50%
+      border: 2px solid $font-less-dark
+      height: 100%
+      left: 0
       position: absolute
       top: 0
-      left: 0
+      width: 100%
 
     &:hover
       color: $accent-color
 
     &:hover #{$root}__icon__border
-      border: 2px dashed $accent-color
       animation: borderRotate 8s linear infinite
+      border: 2px dashed $accent-color
 
     &__container
       @include flex($direction: column)
-                
+
       #{$root}__icon__text
-        font-size: $m-1
         font-family: Raleway
+        font-size: $m-1
         margin: 12px 0 0 0
 
 @media (max-width: $xl)

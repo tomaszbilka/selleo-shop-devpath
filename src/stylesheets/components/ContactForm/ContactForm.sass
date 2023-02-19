@@ -7,22 +7,22 @@
 .form
   background-color: $secondary-color
   padding: $marg-3
-  
+
 .info
-  flex:1
+  flex: 1
   margin-right: $marg-3
 
   &__title
     margin-bottom: $marg-4
-  
+
   &__wrap
     @include flex($main: flex-start, $cross: flex-start)
     margin-bottom: $marg-4
 
   &__subtitle
-    width: 70px
     font-family: Ralway
     font-size: $m-1
+    width: 70px
 
 .form
   flex: 2
@@ -43,18 +43,16 @@
     margin-bottom: $marg-base
 
   &__input
-    width: calc(100% - $marg-4)
-    padding: $marg-base $marg-2
-    
-    border: 1px solid $secondary-color
     border-radius: $r-s
-    resize: vertical
+    border: 1px solid $secondary-color
     outline: none
+    padding: $marg-base $marg-2
+    resize: vertical
+    width: calc(100% - $marg-4)
 
     &:focus
-      border-color: $accent-color 
+      border-color: $accent-color
 
   &__error
     color: $error-color
     font-size: $s-1
-    

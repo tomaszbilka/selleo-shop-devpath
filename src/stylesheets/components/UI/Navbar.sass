@@ -1,56 +1,56 @@
 .main-nav
   $root: &
-  height: 60px
   background-color: $primary-color
+  height: 60px
   widtd: 100%
 
-  &__list 
+  &__list
     @include flex
     margin: 0
     padding: 0
 
   &__dropdown-btn
-    position: relative 
+    position: relative
 
     &:hover #{$root}__dropdown-content
-      display: block     
+      display: block
 
-  &__item 
+  &__item
     color: $white-color
+    cursor: pointer
     font-size: $s-3
     letter-spacing: 0.5px
-    margin: 0 24px
-    cursor: pointer
-    position: relative
     line-height: 60px
+    margin: 0 24px
+    position: relative
 
     &:hover
-      @include hover 
+      @include hover
 
-  &__dropdown-content 
+  &__dropdown-content
+    cursor: pointer
     display: none
     font-size: $s-3
-    position: absolute
-    top: 60px
     left: 20px
     padding-left: 0
-    cursor: pointer
+    position: absolute
+    top: 60px
     width: 150px
     z-index: 2
 
     & li
-      border: 1px solid #ccc  
-      padding: 5px 10px   
       background-color: $white-color
+      border: 1px solid #ccc
+      padding: 5px 10px
 
       &:hover
         @include hover
-    
-  &__arrow  
+
+  &__arrow
     font-size: $s-1
     position: absolute
+    right: -8px
     top: 1px
-    right: -8px   
 
   &__error
     color: $error-color
