@@ -10,27 +10,27 @@
     margin: 0
 
     &__subtitle
-     font-size: $m-5
-     color: $font-less-dark 
+      animation: fadeIn 0.8s ease
+      color: $font-less-dark
       font-family: Raleway
-      animation: fadeIn 0.8s ease 
+      font-size: $m-5
 
     &__title
-      font-size: $l-3
-      color: $font-dark 
+      animation: fadeIn 1.2s ease
+      color: $font-dark
       font-family: Raleway
+      font-size: $l-3
       margin: $marg-base 0
-      animation: fadeIn 1.2s ease 
 
     &__description
-      margin-right: $marg-7
+      animation: fadeIn 1.6s ease
       color: $font-less-dark
-      animation: fadeIn 1.6s ease 
+      margin-right: $marg-7
 
     &__image
-      width: 320px
+      animation: fadeInFar 1s ease
       height: auto
-      animation: fadeInFar 1s ease 
+      width: 320px
 
 @media (max-width: $xl)
   .slider-content__element
@@ -54,9 +54,9 @@
 
 @media (max-width: $s)
   .slider-content
-      &__element
-        &__subtitle
-          font-size: $m-3
+    &__element
+      &__subtitle
+        font-size: $m-3
         &__title
           font-size: $b-2
         &__image

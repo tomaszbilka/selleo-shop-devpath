@@ -1,14 +1,12 @@
-.footer 
+.footer
+  @include flex($main: space-between, $cross: flex-start)
   background-color: #2F333A
   margin-top: $marg-8
   padding: $marg-7 $mx-xl
-  @include flex($main: space-between, $cross: flex-start)
-    
 
   &__section
-    width: 33%
     color: $white-color
-        
+    width: 33%
 
     &--middle
       margin-left: 20%
@@ -25,8 +23,8 @@
       font-size: $s-2
 
       & li
-        margin-bottom: 5px
         cursor: pointer
+        margin-bottom: 5px
         transition: all 0.3s linear
 
         &:hover
@@ -37,14 +35,14 @@
       @include flex($main: flex-start)
 
       &__icon
-        width: 20px
+        border-radius: 50%
+        border: 1px solid $white-color
+        cursor: pointer
         height: 20px
         margin: $marg-base $marg-base 0 0
-        cursor: pointer
-        border: 1px solid $white-color
-        border-radius: 50%
         padding: 4px
         transition: all 0.3s ease
+        width: 20px
 
         &:hover
           border: 1px solid $accent-color
