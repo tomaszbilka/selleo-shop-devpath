@@ -39,6 +39,11 @@
         font-size: $m-1
         margin: 12px 0 0 0
 
-@media (max-width: $xl)
+@media only screen and (max-width: $xl)
   .icon-section
     margin: $marg-2
+
+@media only screen and (max-width: $s)
+  .icon-section
+    &__icon
+      margin: 0

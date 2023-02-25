@@ -16,7 +16,7 @@ const BlogShowOne = ({ id }) => {
   const { imageUrl, title, date, author, content } = post[0];
 
   return (
-    <section className="blog-show">
+    <article className="blog-show">
       <img src={imageUrl} className="blog-show__img" />
       <h2 className="blog-show__title">{title}</h2>
       <div className="blog-show__info">
@@ -28,7 +28,7 @@ const BlogShowOne = ({ id }) => {
       </div>
       <hr className="blog-show__hr" />
       <div className="blog-show__content">{content}</div>
-    </section>
+    </article>
   );
 };
 

@@ -20,7 +20,7 @@ const CartModal = ({ onClick }) => {
 
   return (
     <Overlay onClick={onClick}>
-      <div className="cart-modal">
+      <aside className="cart-modal">
         <div className="cart-modal__header">
           <h3 className="cart-modal__title">CART</h3>
           <button
@@ -44,7 +44,7 @@ const CartModal = ({ onClick }) => {
           </button>
           <div className="cart-modal__amount">${totalCost / 100}</div>
         </div>
-      </div>
+      </aside>
     </Overlay>
   );
 };

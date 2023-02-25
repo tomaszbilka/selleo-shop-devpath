@@ -46,3 +46,17 @@
 
         &:hover
           border: 1px solid $accent-color
+
+@media only screen and (max-width: $l)
+  .footer
+    &__section
+      &--middle
+        margin-left: 0
+
+@media only screen and (max-width: $s)
+  .footer
+    @include flex($direction: column)
+
+    &__section
+      margin-bottom: $marg-4
+      width: 80%

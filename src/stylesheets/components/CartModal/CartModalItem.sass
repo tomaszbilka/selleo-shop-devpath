@@ -1,8 +1,8 @@
 .cart-modal-item
   @include flex($main: flex-start)
-  margin-top: $marg-base
-  margin-left: $marg-2
   margin-bottom: $marg-2
+  margin-left: $marg-2
+  margin-top: $marg-base
 
   &__image
     height: 100px
@@ -23,20 +23,20 @@
     color: $accent-color
 
   &__delete
+    background-color: transparent
     border: none
+    cursor: pointer
     font-size: $m-3
     margin-left: $marg-4
-    cursor: pointer
     transition: color 0.3s linear
-    background-color: transparent
 
     &:hover
       color: $accent-color
 
   &__bottom-line
-    width: 100%
-    margin-bottom: $marg-3
-    border: 1px solid $secondary-color
+    border-bottom: none
     border-left: none
     border-right: none
-    border-bottom: none
+    border: 1px solid $secondary-color
+    margin-bottom: $marg-3
+    width: 100%

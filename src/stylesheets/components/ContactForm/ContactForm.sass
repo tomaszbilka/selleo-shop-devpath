@@ -56,3 +56,22 @@
   &__error
     color: $error-color
     font-size: $s-1
+
+@media only screen and (max-width: $l)
+  .contact-container
+    @include flex($direction: column)
+
+  .info
+    margin-bottom: $marg-3
+    margin-right: 0
+    width: 100%
+
+  .form
+    width: 100%
+
+@media only screen and (max-width: $s)
+  .form
+    &__names-controls
+      @include flex($direction: column, $main: streth, $cross: flex-start)
+    &__controls
+      width: 100%

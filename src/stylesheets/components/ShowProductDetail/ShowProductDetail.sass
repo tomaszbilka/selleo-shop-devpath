@@ -39,3 +39,7 @@
   &__buttons
     @include flex($cross: flex-end)
     margin-bottom: $marg-2
+
+@media only screen and (max-width: $l)
+  .detail
+    @include flex($direction: column)

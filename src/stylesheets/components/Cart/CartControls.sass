@@ -18,3 +18,11 @@
 
   &__button
     margin-top: -49px
+
+  @media only screen and (max-width: $xl)
+    .cart-controls
+      @include flex($direction: column)
+
+      &__wrap
+        margin-bottom: $marg-base
+        width: 100%
