@@ -1,43 +1,37 @@
 .icon-section
   $root: &
+  @include flex
   border-radius: 50%
+  color: $color-neutral-500
+  font-size: $font-size-2xl
   height: 180px
   margin: 0 $marg-2
+  position: relative
   width: 180px
 
-  &__icon
-    @include flex
+  &:hover
+    color: $color-primary
+
+  &__border
     border-radius: 50%
-    color: $color-neutral-500
-    font-size: $font-size-2xl
+    border: 2px solid $color-neutral-500
     height: 100%
-    margin: 0 $marg-2
-    position: relative
+    left: 0
+    position: absolute
+    top: 0
     width: 100%
 
-    &__border
-      border-radius: 50%
-      border: 2px solid $color-neutral-500
-      height: 100%
-      left: 0
-      position: absolute
-      top: 0
-      width: 100%
-
-    &:hover
-      color: $color-primary
-
-    &:hover #{$root}__icon__border
+  &:hover #{$root}__border
       animation: borderRotate 8s linear infinite
       border: 2px dashed $color-primary
 
-    &__container
-      @include flex($direction: column)
+  &__container
+    @include flex($direction: column)
 
-      #{$root}__icon__text
-        font-family: Raleway
-        font-size: $font-size-base
-        margin: 12px 0 0 0
+  &__text
+    font-family: Raleway
+    font-size: $font-size-base
+    margin: $marg-base 0 0 0
 
 @media only screen and (max-width: $xl)
   .icon-section

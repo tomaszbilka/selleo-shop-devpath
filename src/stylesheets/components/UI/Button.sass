@@ -6,19 +6,16 @@
   cursor: pointer
   font-family: Raleway
   font-size: $font-size-base
-  height: 50px
   margin-top: 3rem
-  transition: all 0.3s ease 0s
-  width: 150px
+  padding: $marg-3 $marg-5
 
   &:hover
     background-color: $color-black
     color: $color-primary
 
   &.-small
-    font-size: $font-size-xs
-    height: 35px
-    width: 90px
+    font-size: $font-size-sm
+    padding: $marg-2 $marg-4
 
   &.-color-reverse
     background-color: $color-neutral-700
@@ -29,5 +26,8 @@
       color: $color-white
 
   &:disabled
-    background-color: #ccc
+    background-color: $color-neutral-300
     cursor: not-allowed
+  
+    &:hover
+      background-color: $color-neutral-300
