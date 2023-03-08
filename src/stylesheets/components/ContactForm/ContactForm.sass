@@ -5,7 +5,7 @@
 
 .info,
 .form
-  background-color: $secondary-color
+  background-color: $color-secondary
   padding: $marg-3
 
 .info
@@ -21,7 +21,7 @@
 
   &__subtitle
     font-family: Ralway
-    font-size: $m-1
+    font-size: $font-size-sm
     width: 70px
 
 .form
@@ -39,23 +39,23 @@
     margin-bottom: $marg-2
 
   &__label
-    font-size: $s-3
+    font-size: $font-size-sm
     margin-bottom: $marg-base
 
   &__input
     border-radius: $r-s
-    border: 1px solid $secondary-color
+    border: 1px solid $color-secondary
     outline: none
     padding: $marg-base $marg-2
     resize: vertical
     width: calc(100% - $marg-4)
 
     &:focus
-      border-color: $accent-color
+      border-color: $color-primary
 
   &__error
-    color: $error-color
-    font-size: $s-1
+    color: $color-error
+    font-size: $font-size-xs
 
 @media only screen and (max-width: $l)
   .contact-container

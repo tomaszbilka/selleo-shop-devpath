@@ -1,6 +1,6 @@
 .main-nav
   $root: &
-  background-color: $primary-color
+  background-color: $color-neutral-700
   height: 60px
   widtd: 100%
 
@@ -16,9 +16,9 @@
       display: block
 
   &__item
-    color: $white-color
+    color: $color-white
     cursor: pointer
-    font-size: $s-3
+    font-size: $font-size-sm
     letter-spacing: 0.5px
     line-height: 60px
     margin: 0 24px
@@ -30,7 +30,7 @@
   &__dropdown-content
     cursor: pointer
     display: none
-    font-size: $s-3
+    font-size: $font-size-sm
     left: 20px
     padding-left: 0
     position: absolute
@@ -39,7 +39,7 @@
     z-index: 2
 
     & li
-      background-color: $white-color
+      background-color: $color-white
       border: 1px solid #ccc
       padding: 5px 10px
 
@@ -47,11 +47,11 @@
         @include hover
 
   &__arrow
-    font-size: $s-1
+    font-size: $font-size-xs
     position: absolute
     right: -8px
     top: 1px
 
   &__error
-    color: $error-color
+    color: $color-error
     font-weight: bold

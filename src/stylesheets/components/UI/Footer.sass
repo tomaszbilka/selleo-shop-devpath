@@ -1,34 +1,34 @@
 .footer
   @include flex($main: space-between, $cross: flex-start)
-  background-color: #2F333A
+  background-color: $color-neutral-700
   margin-top: $marg-8
   padding: $marg-7 $mx-xl
 
   &__section
-    color: $white-color
-    width: 33%
+    color: $color-white
+    flex: 1
 
     &--middle
       margin-left: 20%
 
     &__title
       font-family: Raleway
-      font-size: $s-3
+      font-size: $font-size-sm
       margin-bottom: $marg-base
 
     &__description
-      font-size: $s-2
+      font-size: $font-size-xs
 
     &__list
-      font-size: $s-2
+      font-size: $font-size-xs
 
       & li
         cursor: pointer
         margin-bottom: 5px
-        transition: all 0.3s linear
+        transition: margin-left 0.3s linear
 
         &:hover
-          color: $accent-color
+          color: $color-primary
           margin-left: 5px
 
     &__icons
@@ -36,7 +36,7 @@
 
       &__icon
         border-radius: 50%
-        border: 1px solid $white-color
+        border: 1px solid $color-white
         cursor: pointer
         height: 20px
         margin: $marg-base $marg-base 0 0
@@ -45,7 +45,7 @@
         width: 20px
 
         &:hover
-          border: 1px solid $accent-color
+          border: 1px solid $color-primary
 
 @media only screen and (max-width: $l)
   .footer
