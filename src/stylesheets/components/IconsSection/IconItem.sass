@@ -8,8 +8,8 @@
   &__icon
     @include flex
     border-radius: 50%
-    color: $font-less-dark
-    font-size: $l-2
+    color: $color-neutral-500
+    font-size: $font-size-2xl
     height: 100%
     margin: 0 $marg-2
     position: relative
@@ -17,7 +17,7 @@
 
     &__border
       border-radius: 50%
-      border: 2px solid $font-less-dark
+      border: 2px solid $color-neutral-500
       height: 100%
       left: 0
       position: absolute
@@ -25,18 +25,18 @@
       width: 100%
 
     &:hover
-      color: $accent-color
+      color: $color-primary
 
     &:hover #{$root}__icon__border
       animation: borderRotate 8s linear infinite
-      border: 2px dashed $accent-color
+      border: 2px dashed $color-primary
 
     &__container
       @include flex($direction: column)
 
       #{$root}__icon__text
         font-family: Raleway
-        font-size: $m-1
+        font-size: $font-size-base
         margin: 12px 0 0 0
 
 @media only screen and (max-width: $xl)

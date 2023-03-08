@@ -1,32 +1,32 @@
 .button
   animation: fadeIn 1.8s ease
-  background-color: $accent-color
+  background-color: $color-primary
   border: none
-  color: $white-color
+  color: $color-white
   cursor: pointer
   font-family: Raleway
-  font-size: $m-1
+  font-size: $font-size-base
   height: 50px
   margin-top: 3rem
   transition: all 0.3s ease 0s
   width: 150px
 
   &:hover
-    background-color: $font-dark
-    color: $accent-color
+    background-color: $color-black
+    color: $color-primary
 
   &.-small
-    font-size: $s-1
+    font-size: $font-size-xs
     height: 35px
     width: 90px
 
   &.-color-reverse
-    background-color: $primary-color
-    color: $white-color
+    background-color: $color-neutral-700
+    color: $color-white
 
     &:hover
-      background-color: $accent-color
-      color: $white-color
+      background-color: $color-primary
+      color: $color-white
 
   &:disabled
     background-color: #ccc
