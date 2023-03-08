@@ -1,36 +1,27 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faChair,
-  faLaptop,
-  faBed,
-  faKitchenSet,
-} from '@fortawesome/free-solid-svg-icons';
+import { ReactComponent as ChairIcon } from 'images/icons/chair.svg';
+import { ReactComponent as BedIcon } from 'images/icons/bed.svg';
+import { ReactComponent as LaptopIcon } from 'images/icons/laptop.svg';
+import { ReactComponent as KitchenIcon } from 'images/icons/kitchen.svg';
 
 const linkIcons = [
   {
     path: '/products/seats',
-    component: (
-      <FontAwesomeIcon icon={faChair} className="icons-section-icon" />
-    ),
+    component: <ChairIcon />,
     title: 'seats',
   },
   {
     path: '/products/beds',
-    component: <FontAwesomeIcon icon={faBed} className="icons-section-icon" />,
+    component: <BedIcon />,
     title: 'beds',
   },
   {
     path: '/products/office',
-    component: (
-      <FontAwesomeIcon icon={faLaptop} className="icons-section-icon" />
-    ),
+    component: <LaptopIcon />,
     title: 'office',
   },
   {
     path: '/products/kitchen',
-    component: (
-      <FontAwesomeIcon icon={faKitchenSet} className="icons-section-icon" />
-    ),
+    component: <KitchenIcon />,
     title: 'kitchen',
   },
 ];
