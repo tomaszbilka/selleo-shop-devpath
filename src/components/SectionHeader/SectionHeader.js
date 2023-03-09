@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const SectionHeader = ({ title, description, extraClassName }) => {
+const SectionHeader = ({ title, description, extraClassName = '' }) => {
   const style = `title-container ${extraClassName}`;
 
   return (
