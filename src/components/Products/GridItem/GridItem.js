@@ -69,36 +69,38 @@ const GridItem = ({ product }) => {
 
   return (
     <>
-      <li className="gridItem" onClick={redirectToDetailPage}>
-        <div className="gridItem__img-wrap">
-          <img src={imageUrl} className="gridItem__img-wrap__image" />
-        </div>
-        <div className="gridItem__description">
-          <p className="gridItem__description__text">{name}</p>
-          <p className="gridItem__description__text">${price / 100}</p>
-        </div>
-        <div className="gridItem__first-icon">
-          <ButtonRound
-            icon={iconFav}
-            onClick={favoriteToggleHandler}
-            info={favoriteInfoText}
-            className={favoriteClasses}
-          />
-        </div>
-        <div className="gridItem__show-icon">
-          <ButtonRound
-            icon={iconDetail}
-            onClick={showDetailModalHandler}
-            info="show details"
-            className="button-round"
-          />
-        </div>
-        <div className="gridItem__show-button">
-          <ButtonLong
-            title="Add to cart"
-            onClick={addToCartHandler}
-            icon={iconBtn}
-          />
+      <li className="gridItem-container" onClick={redirectToDetailPage}>
+        <div className="gridItem">
+          <div className="gridItem__img-wrap">
+            <img src={imageUrl} />
+          </div>
+          <div className="gridItem__description">
+            <p className="gridItem__text">{name}</p>
+            <p className="gridItem__text">${price / 100}</p>
+          </div>
+          <div className="gridItem__first-icon">
+            <ButtonRound
+              icon={iconFav}
+              onClick={favoriteToggleHandler}
+              info={favoriteInfoText}
+              className={favoriteClasses}
+            />
+          </div>
+          <div className="gridItem__show-icon">
+            <ButtonRound
+              icon={iconDetail}
+              onClick={showDetailModalHandler}
+              info="show details"
+              className="button-round"
+            />
+          </div>
+          <div className="gridItem__show-button">
+            <ButtonLong
+              title="Add to cart"
+              onClick={addToCartHandler}
+              icon={iconBtn}
+            />
+          </div>
         </div>
       </li>
       {isDetailModalVisible && (
