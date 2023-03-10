@@ -1,13 +1,9 @@
 .main-nav
   $root: &
   background-color: $color-neutral-700
-  height: 60px
-  widtd: 100%
 
   &__list
     @include flex
-    margin: 0
-    padding: 0
 
   &__dropdown-btn
     position: relative
@@ -32,25 +28,20 @@
     display: none
     font-size: $font-size-sm
     left: 20px
-    padding-left: 0
     position: absolute
     top: 60px
-    width: 150px
-    z-index: 2
+    z-index: $z-base
 
     & li
       background-color: $color-white
-      border: 1px solid #ccc
-      padding: 5px 10px
+      border: 1px solid $color-neutral-300
+      padding: $marg-1 $marg-4 $marg-1 $marg-2
 
       &:hover
         @include hover
 
   &__arrow
     font-size: $font-size-xs
-    position: absolute
-    right: -8px
-    top: 1px
 
   &__error
     color: $color-error

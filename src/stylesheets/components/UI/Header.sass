@@ -11,42 +11,42 @@
   &__logo
     color: $color-neutral-700
 
-    &__icon
-      color: $color-primary
-      font-size: $font-size-xl
-      margin-right: $marg-base
+  &__icon
+    color: $color-primary
+    font-size: $font-size-xl
+    margin-right: $marg-base
 
-    &__text
-      font-size: $font-size-xl
-      font-weight: bold
+  &__text
+    font-size: $font-size-xl
+    font-weight: bold
 
   &__top-menu
     @include flex
 
-    &__control
-      position: relative
-      margin: 0 $marg-3
+  &__controls
+    position: relative
+    margin: 0 $marg-3
 
-      &__icon
-        color: $color-neutral-700
-        cursor: pointer
-        font-size: $font-size-lg
+    &--icon
+      color: $color-neutral-700
+      cursor: pointer
+      font-size: $font-size-lg
 
-        &:hover
-          @include hover
+      &:hover
+        @include hover
 
-      &__cart-info
-        background-color: $color-primary
-        border-radius: 50%
-        color: $color-white
-        font-size: $font-size-xs
-        height: 17px
-        line-height: 17px
-        position: absolute
-        right: -8px
-        text-align: center
-        top: -8px
-        width: 17px
+  &__cart-info
+    background-color: $color-primary
+    border-radius: 50%
+    color: $color-white
+    font-size: $font-size-xs
+    height: 17px
+    line-height: 17px
+    position: absolute
+    right: -8px
+    text-align: center
+    top: -8px
+    width: 17px
 
 @media only screen and (max-width: $xl)
   .header
@@ -55,10 +55,10 @@
 
 @media only screen and (max-width: $s)
   .header
-    &__logo
-      &__text
-        display: none
+    height: 80px
 
-    &__top-menu
-      &__control
-        margin: 0 $marg-base
+    &__text
+      display: none
+
+    &__controls
+      margin: 0 $marg-base

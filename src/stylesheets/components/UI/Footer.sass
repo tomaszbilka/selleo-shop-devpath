@@ -11,47 +11,44 @@
     &--middle
       margin-left: 20%
 
-    &__title
-      font-family: Raleway
-      font-size: $font-size-sm
-      margin-bottom: $marg-base
+  &__title
+    font-family: Raleway
+    font-size: $font-size-sm
+    margin-bottom: $marg-base
 
-    &__description
-      font-size: $font-size-xs
+  &__description
+    font-size: $font-size-xs
 
-    &__list
-      font-size: $font-size-xs
+  &__list
+    font-size: $font-size-xs
 
-      & li
-        cursor: pointer
-        margin-bottom: 5px
-        transition: margin-left 0.3s linear
+    li
+      cursor: pointer
+      margin-bottom: $marg-1
+      transition: margin-left 0.3s linear
 
-        &:hover
-          color: $color-primary
-          margin-left: 5px
+      &:hover
+        color: $color-primary
+        margin-left: $marg-1
 
-    &__icons
-      @include flex($main: flex-start)
+  &__icon
+    border-radius: 50%
+    border: 1px solid $color-white
+    cursor: pointer
+    height: $marg-3
+    margin: $marg-base $marg-base 0 0
+    padding: 2px
+    transition: all 0.3s ease
+    width: $marg-3
 
-      &__icon
-        border-radius: 50%
-        border: 1px solid $color-white
-        cursor: pointer
-        height: 20px
-        margin: $marg-base $marg-base 0 0
-        padding: 4px
-        transition: all 0.3s ease
-        width: 20px
-
-        &:hover
-          border: 1px solid $color-primary
+    &:hover
+      border: 1px solid $color-primary
 
 @media only screen and (max-width: $l)
   .footer
     &__section
       &--middle
-        margin-left: 0
+        margin: 0 $marg-base
 
 @media only screen and (max-width: $s)
   .footer

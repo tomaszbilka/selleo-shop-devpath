@@ -1,14 +1,15 @@
-import { useDispatch, useSelector } from 'react-redux';
-import { toggleCartModal } from 'store/appState';
-import { getCartModalStatus } from 'store/appState/selectors';
-import Header from 'components/UI/Header';
-import Navbar from 'components/UI/Navbar';
-import Footer from 'components/UI/Footer';
-import CartModal from 'components/Modals/CartModal/CartModal';
-import CartButton from 'components/CartButton';
-import PropTypes from 'prop-types';
-import Modal from 'components/Modals/Modal';
 import { ToastContainer } from 'react-toastify';
+import { useDispatch, useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
+
+import { getCartModalStatus } from 'store/appState/selectors';
+import { toggleCartModal } from 'store/appState';
+import CartButton from 'components/CartButton';
+import CartModal from 'components/Modals/CartModal/CartModal';
+import Footer from 'components/UI/Footer';
+import Header from 'components/UI/Header';
+import Modal from 'components/Modals/Modal';
+import Navbar from 'components/UI/Navbar';
 
 const Layout = ({ children }) => {
   const dispatch = useDispatch();
