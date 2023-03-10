@@ -13,14 +13,11 @@ const SearchModal = ({ closeModal }) => {
       <div className="search">
         <div className="search__controls">
           <input
-            className="search__controls__input"
+            className="search__input"
             type="text"
             placeholder="Enter your search keyword..."
           />
-          <button
-            className="search__controls__button"
-            onClick={startSearchHandler}
-          >
+          <button className="search__button" onClick={startSearchHandler}>
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </button>
         </div>

@@ -6,33 +6,42 @@
   position: absolute
   top: -160px
   width: 100%
-  z-index: 30
+  z-index: $z-base
 
   &__controls
     @include flex
     padding: $marg-4 0
     width: 40%
 
-    &__input
-      border-bottom-left-radius: 5px
-      border-top-left-radius: 5px
-      border: 1px solid #ccc
-      font-size: $font-size-base
-      height: 50px
-      padding: 8px 12px
-      width: 100%
+  &__input
+    border-bottom-left-radius: $r-m
+    border-top-left-radius: $r-m
+    border: 1px solid $color-neutral-300
+    font-size: $font-size-base
+    height: 50px
+    padding: $marg-base $marg-2
+    width: 100%
 
-    &__button
-      background-color: $color-primary
-      border-bottom-right-radius: $r-m
-      border-top-right-radius: $r-m
-      border: none
-      color: $color-white
-      cursor: pointer
-      font-size: $font-size-lg
-      height: 50px
-      width: 70px
+  &__button
+    background-color: $color-primary
+    border-bottom-right-radius: $r-m
+    border-top-right-radius: $r-m
+    border: none
+    color: $color-white
+    cursor: pointer
+    font-size: $font-size-lg
+    height: 50px
+    padding: 0 $marg-3
 
   &__close
     @include closeBtn
     margin-bottom: $marg-3
+
+@media only screen and (max-width: $xs)
+  .search
+    &__input
+      height: 40px
+
+    &__button
+      height: 40px
+      padding: 0 $marg-base

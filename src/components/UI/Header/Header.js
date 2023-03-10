@@ -47,8 +47,8 @@ const Header = () => {
       )}
       <div className="header__logo">
         <Link to="/">
-          <FontAwesomeIcon icon={faChair} className="header__logo__icon" />
-          <span className="header__logo__text">LOGO</span>
+          <FontAwesomeIcon icon={faChair} className="header__icon" />
+          <span className="header__text">LOGO</span>
         </Link>
       </div>
       {authCtx.isLoggedIn && (
@@ -62,34 +62,23 @@ const Header = () => {
         </div>
       )}
       <div className="header__top-menu">
-        <div
-          className="header__top-menu__control"
-          onClick={openSearchModalHandler}
-        >
+        <div className="header__controls" onClick={openSearchModalHandler}>
           <FontAwesomeIcon
             icon={faMagnifyingGlass}
-            className="header__top-menu__control__icon"
+            className="header__controls--icon"
           />
         </div>
-        <div className="header__top-menu__control">
+        <div className="header__controls">
           <Link to="/user/settings">
-            <FontAwesomeIcon
-              icon={faUser}
-              className="header__top-menu__control__icon"
-            />
+            <FontAwesomeIcon icon={faUser} className="header__controls--icon" />
           </Link>
         </div>
-        <div
-          className="header__top-menu__control"
-          onClick={openCartModalHandler}
-        >
+        <div className="header__controls" onClick={openCartModalHandler}>
           <FontAwesomeIcon
             icon={faCartShopping}
-            className="header__top-menu__control__icon"
+            className="header__controls--icon"
           />
-          <span className="header__top-menu__control__cart-info">
-            {numberOfItemsInCart}
-          </span>
+          <span className="header__cart-info">{numberOfItemsInCart}</span>
         </div>
       </div>
     </header>
