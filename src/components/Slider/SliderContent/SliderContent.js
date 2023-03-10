@@ -21,18 +21,14 @@ const SliderContent = ({
 
   return (
     <div className={containerStyle}>
-      <div className="slider-content__element">
-        <h3 className="slider-content__element__subtitle">{subtitle}</h3>
-        <h1 className="slider-content__element__title">{title}</h1>
-        <p className="slider-content__element__description">{description}</p>
+      <div>
+        <h3 className="slider-content__subtitle">{subtitle}</h3>
+        <h1 className="slider-content__title">{title}</h1>
+        <p className="slider-content__description">{description}</p>
         <Button title="Shop Now" onClick={onClickHandler} className="button" />
       </div>
-      <div className="slider-content__element">
-        <img
-          src={source}
-          alt="title"
-          className="slider-content__element__image"
-        />
+      <div>
+        <img src={source} alt="title" className="slider-content__image" />
       </div>
     </div>
   );

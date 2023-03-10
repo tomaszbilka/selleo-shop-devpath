@@ -1,11 +1,11 @@
 .slider
   background-color: $color-secondary
-  height: 550px
+  padding: $marg-8 0
   position: relative
 
   &__dotsContainer
     @include flex
-    bottom: 10px
+    bottom: $marg-base
     left: 50%
     position: absolute
     transform: translateX(-50%)
@@ -15,7 +15,14 @@
     top: 50%
 
     &--left
-      left: 10px
+      left: $marg-base
 
     &--right
-      right: 10px
+      right: $marg-base
+
+@media only screen and (max-width: $s)
+  .slider
+    padding: $marg-6 0
+
+    &__dotsContainer
+      display: none
