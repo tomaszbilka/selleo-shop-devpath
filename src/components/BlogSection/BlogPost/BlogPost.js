@@ -19,13 +19,13 @@ const BlogPost = ({ title, author, date, content, imageUrl, id }) => {
       type="button"
     >
       <div className="post__img-container">
-        <img src={imageUrl} className="post__img-container__img" />
+        <img src={imageUrl} className="post__img" />
       </div>
       <div className="post__content">
-        <h2 className="post__content__title">{title}</h2>
-        <div className="post__content__info">
-          <p className="post__content__info__author">{author}</p>
-          <p className="post__content__info__date">{date}</p>
+        <h2 className="post__title">{title}</h2>
+        <div className="post__info">
+          <p className="post__author">{author}</p>
+          <p className="post__date">{date}</p>
         </div>
         <div className="post__content__text">{truncatedContent}</div>
         <Button
