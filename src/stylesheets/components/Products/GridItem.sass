@@ -1,50 +1,50 @@
 .gridItem-container
-  @include flex
+    @include flex
 
 .gridItem
-  $root: &
-  @include flex($direction: column)
-  cursor: pointer
-  margin: 0 0 $marg-4 0
-  position: relative
-  width: 250px
+    $root: &
+    @include flex($direction: column)
+    cursor: pointer
+    margin: 0 0 $marg-4 0
+    position: relative
+    width: 250px
 
-  &:hover img
-    transform: scale(1.1) rotate(5deg)
+    &:hover img
+        transform: scale(1.1) rotate(5deg)
 
-  &:hover #{$root}__show-icon,
-  &:hover #{$root}__show-button
-    display: block
+    &:hover #{$root}__show-icon,
+    &:hover #{$root}__show-button
+        display: block
 
-  &__img-wrap
-    overflow: hidden
+    &__img-wrap
+        overflow: hidden
 
-  &__description
-    margin-top: $marg-base
-    text-align: center
+    &__description
+        margin-top: $marg-base
+        text-align: center
 
-  &__text
-    font-family: Montserrat
-    ont-size: $font-size-base
-    font-weight: 500
-    line-height: 24px
+    &__text
+        font-family: Montserrat
+        ont-size: $font-size-base
+        font-weight: 500
+        line-height: 24px
 
-  &__first-icon
-    position: absolute
-    right: $marg-base
-    top: $marg-base
+    &__first-icon
+        position: absolute
+        right: $marg-base
+        top: $marg-base
 
-  &__show-icon
-    animation: fadeInShort 0.6s ease
-    display: none
-    position: absolute
-    right: $marg-base
-    top: $marg-6
+    &__show-icon
+        animation: fadeInShort 0.6s ease
+        display: none
+        position: absolute
+        right: $marg-base
+        top: $marg-6
 
-  &__show-button
-    animation: fadeInShort 0.6s ease
-    bottom: 80px
-    display: none
-    position: absolute
-    text-align: center
-    width: 100%
+    &__show-button
+        animation: fadeInShort 0.6s ease
+        bottom: 80px
+        display: none
+        position: absolute
+        text-align: center
+        width: 100%
