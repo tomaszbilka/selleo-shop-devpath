@@ -15,7 +15,7 @@
     color: $color-white
     transition: all 0.3s ease 0s
 
-  &:hover #{$root}__icon__info
+  &:hover #{$root}__info
     display: block
 
   &__info
@@ -47,3 +47,17 @@
   &.-favorite
     background-color: $color-neutral-500
     color: $color-white
+
+  &.-first-icon
+      position: absolute
+      right: $marg-4
+      top: $marg-base
+      z-index: $z-lower
+
+  &.-show-icon
+      animation: fadeInShort 0.6s ease
+      display: none
+      position: absolute
+      right: $marg-4
+      top: $marg-6
+      z-index: $z-lower

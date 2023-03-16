@@ -1,6 +1,4 @@
 .button-long
-  $root: &
-  @include flex
   background-color: $color-white
   border-radius: $r-m
   border: none
@@ -14,3 +12,10 @@
 
   &__title
     margin-left: $marg-1
+
+  &.-show-button
+    animation: fadeInShort 0.4s ease
+    bottom: 80px
+    display: none
+    position: absolute
+    z-index: $z-lower

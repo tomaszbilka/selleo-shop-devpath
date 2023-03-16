@@ -1,18 +1,19 @@
 import PropTypes from 'prop-types';
 
-const ButtonLong = ({ title, onClick, icon }) => {
+const ButtonLong = ({ title, onClick, icon, className }) => {
     return (
-        <button onClick={onClick} className="button-long">
+        <button onClick={onClick} className={`button-long ${className}`}>
             {icon}
-            <p className="buttonLong__title">{title}</p>
+            <p className="button-long__title">{title}</p>
         </button>
     );
 };
 
 ButtonLong.propTypes = {
-    title: PropTypes.string.isRequired,
+    className: PropTypes.string,
     icon: PropTypes.element.isRequired,
     onClick: PropTypes.func.isRequired,
+    title: PropTypes.string.isRequired,
 };
 
 export default ButtonLong;

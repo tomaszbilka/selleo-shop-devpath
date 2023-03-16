@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 const ButtonRound = ({ icon, className, info, onClick }) => {
     return (
         <>
-            <button onClick={onClick} className={className} type="button">
+            <button onClick={onClick} className={className}>
                 {icon}
-                <div className="button-round__info">{info}</div>
+                <p className="button-round__info">{info}</p>
             </button>
         </>
     );

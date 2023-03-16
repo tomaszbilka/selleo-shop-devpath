@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import ButtonLong from 'components/UI/ButtonLong';
@@ -16,7 +17,7 @@ import { setFavoritesToLocalStorage } from 'utils/localStorage';
 
 const GridItem = ({ product }) => {
     const [isDetailModalVisible, setIsDetailModalVisible] = useState(false);
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const dispatch = useDispatch();
     const isFavoriteStatusAll = useSelector(getIsFavoriteStatusFromProducts);
     const { imageUrl, name, price, id, description, inStock } = product;
@@ -37,15 +38,15 @@ const GridItem = ({ product }) => {
         setFavoritesToLocalStorage(isFavoriteStatusAll);
     }, [isFavoriteStatusAll]);
 
-    const redirectToDetailPage = (e) => {
-        if (e.target.tagName === 'IMG' || e.target.tagName === 'LI') {
-            navigate(`/product/${id}`);
-        } else {
-            e.preventDefault();
-            e.stopPropagation();
-            return;
-        }
-    };
+    // const redirectToDetailPage = (e) => {
+    //     if (e.target.tagName === 'IMG' || e.target.tagName === 'LI') {
+    //         navigate(`/product/${id}`);
+    //     } else {
+    //         e.preventDefault();
+    //         e.stopPropagation();
+    //         return;
+    //     }
+    // };
 
     const showDetailModalHandler = () => {
         setIsDetailModalVisible(true);
@@ -60,8 +61,8 @@ const GridItem = ({ product }) => {
     };
 
     const favoriteClasses = isFavoriteStatus
-        ? 'button-round -favorite'
-        : 'button-round';
+        ? 'button-round -favorite -first-icon'
+        : 'button-round -first-icon';
 
     const favoriteInfoText = isFavoriteStatus
         ? 'remove from favorites'
@@ -69,8 +70,26 @@ const GridItem = ({ product }) => {
 
     return (
         <>
-            <li className="grid-item-container" onClick={redirectToDetailPage}>
-                <div className="grid-item">
+            <li className="grid-item-container">
+                <ButtonRound
+                    className={favoriteClasses}
+                    icon={iconFav}
+                    info={favoriteInfoText}
+                    onClick={favoriteToggleHandler}
+                />
+                <ButtonRound
+                    className="button-round -show-icon"
+                    icon={iconDetail}
+                    info="show details"
+                    onClick={showDetailModalHandler}
+                />
+                <ButtonLong
+                    className="-show-button"
+                    icon={iconBtn}
+                    onClick={addToCartHandler}
+                    title="Add to cart"
+                />
+                <Link className="grid-item" to={`/product/${id}`}>
                     <div className="grid-item__img-wrap">
                         <img src={imageUrl} />
                     </div>
@@ -78,30 +97,7 @@ const GridItem = ({ product }) => {
                         {name}
                         <br />${price / 100}
                     </p>
-                    <div className="grid-item__first-icon">
-                        <ButtonRound
-                            icon={iconFav}
-                            onClick={favoriteToggleHandler}
-                            info={favoriteInfoText}
-                            className={favoriteClasses}
-                        />
-                    </div>
-                    <div className="grid-item__show-icon">
-                        <ButtonRound
-                            icon={iconDetail}
-                            onClick={showDetailModalHandler}
-                            info="show details"
-                            className="button-round"
-                        />
-                    </div>
-                    <div className="grid-item__show-button">
-                        <ButtonLong
-                            title="Add to cart"
-                            onClick={addToCartHandler}
-                            icon={iconBtn}
-                        />
-                    </div>
-                </div>
+                </Link>
             </li>
             {isDetailModalVisible && (
                 <Modal
