@@ -69,16 +69,16 @@ const GridItem = ({ product }) => {
 
     return (
         <>
-            <li className="gridItem-container" onClick={redirectToDetailPage}>
-                <div className="gridItem">
-                    <div className="gridItem__img-wrap">
+            <li className="grid-item-container" onClick={redirectToDetailPage}>
+                <div className="grid-item">
+                    <div className="grid-item__img-wrap">
                         <img src={imageUrl} />
                     </div>
-                    <div className="gridItem__description">
-                        <p className="gridItem__text">{name}</p>
-                        <p className="gridItem__text">${price / 100}</p>
-                    </div>
-                    <div className="gridItem__first-icon">
+                    <p className="grid-item__description">
+                        {name}
+                        <br />${price / 100}
+                    </p>
+                    <div className="grid-item__first-icon">
                         <ButtonRound
                             icon={iconFav}
                             onClick={favoriteToggleHandler}
@@ -86,7 +86,7 @@ const GridItem = ({ product }) => {
                             className={favoriteClasses}
                         />
                     </div>
-                    <div className="gridItem__show-icon">
+                    <div className="grid-item__show-icon">
                         <ButtonRound
                             icon={iconDetail}
                             onClick={showDetailModalHandler}
@@ -94,7 +94,7 @@ const GridItem = ({ product }) => {
                             className="button-round"
                         />
                     </div>
-                    <div className="gridItem__show-button">
+                    <div className="grid-item__show-button">
                         <ButtonLong
                             title="Add to cart"
                             onClick={addToCartHandler}

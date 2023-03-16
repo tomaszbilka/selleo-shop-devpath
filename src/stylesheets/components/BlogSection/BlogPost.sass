@@ -1,14 +1,6 @@
 .post
-    border-radius: 0
-    border: none
     cursor: pointer
     margin-top: $marg-4
-    width: 100%
-
-    &__img-container
-        background-color: $color-neutral-300
-        height: auto
-        overflow: hidden
 
     &__img
         height: auto
@@ -17,8 +9,9 @@
     &__content
         background-color: $color-neutral-300
         color: $color-neutral-700
-        padding: $marg-3 $marg-3 $marg-4
         font-size: $font-size-xl
+        margin-top: -$marg-base
+        padding: $marg-3 $marg-3 $marg-4
 
     &__title
         font-size: $font-size-2xl
@@ -29,16 +22,15 @@
         overflow: hidden
 
     &__info
-        @include flex($main: flex-start)
         font-size: $font-size-base
         margin: $marg-base 0
 
     &__author
-        margin-right: 5px
+        margin-right: $marg-1
 
     &__text
-        font-size: $font-size-sm
-        margin-bottom: -20px
+        font-size: $font-size-lg
+        margin-bottom: $marg-3  
 
 @media only screen and (max-width: $xxl)
     .post

@@ -24,11 +24,7 @@ const SearchModal = ({ closeModal }) => {
                         <FontAwesomeIcon icon={faMagnifyingGlass} />
                     </button>
                 </div>
-                <button
-                    type="button"
-                    className="search__close"
-                    onClick={closeModal}
-                ></button>
+                <button className="search__close" onClick={closeModal}></button>
             </div>
         </Overlay>
     );

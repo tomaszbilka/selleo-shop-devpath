@@ -1,21 +1,16 @@
-.buttonLong
+.button-long
   $root: &
   @include flex
+  background-color: $color-white
+  border-radius: $r-m
+  border: none
+  cursor: pointer
+  margin: 0 auto
+  padding: $marg-base 0
+  width: 80%
 
-  &__btn
-    @include flex
-    background-color: $color-white
-    border-radius: $r-m
-    border: none
-    cursor: pointer
-    padding: $marg-base 0
-    width: 80%
+  &:hover
+     @include hover
 
-    &:hover
-      @include hover
-
-    &:hover #{$root}__btn__title
-      @include hover
-
-    &__title
-      margin-left: 5px
+  &__title
+    margin-left: $marg-1
