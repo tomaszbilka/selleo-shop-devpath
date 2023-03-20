@@ -6,7 +6,13 @@
 
 @mixin hover
   color: $color-primary
-  transition: color 0.3s ease 
+  transition: color 0.3s ease
 
 @mixin alignX
   margin: 0 $mx-xl
+
+@mixin truncate($rows: 2)
+  display: -webkit-box
+  -webkit-line-clamp: $rows
+  -webkit-box-orient: vertical
+  overflow: hidden

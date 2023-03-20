@@ -4,9 +4,9 @@ const RoundButton = ({ onClick, direction }) => {
     const arrow = direction === 'left' ? '<' : '>';
 
     return (
-        <div onClick={onClick} className="roundBtnContainer">
+        <button onClick={onClick} className="roundBtnContainer">
             <span className="roundBtnContainer__arrow">{arrow}</span>
-        </div>
+        </button>
     );
 };
 

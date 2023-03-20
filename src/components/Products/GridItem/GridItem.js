@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-// import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -17,7 +16,6 @@ import { setFavoritesToLocalStorage } from 'utils/localStorage';
 
 const GridItem = ({ product }) => {
     const [isDetailModalVisible, setIsDetailModalVisible] = useState(false);
-    // const navigate = useNavigate();
     const dispatch = useDispatch();
     const isFavoriteStatusAll = useSelector(getIsFavoriteStatusFromProducts);
     const { imageUrl, name, price, id, description, inStock } = product;
@@ -37,16 +35,6 @@ const GridItem = ({ product }) => {
     useEffect(() => {
         setFavoritesToLocalStorage(isFavoriteStatusAll);
     }, [isFavoriteStatusAll]);
-
-    // const redirectToDetailPage = (e) => {
-    //     if (e.target.tagName === 'IMG' || e.target.tagName === 'LI') {
-    //         navigate(`/product/${id}`);
-    //     } else {
-    //         e.preventDefault();
-    //         e.stopPropagation();
-    //         return;
-    //     }
-    // };
 
     const showDetailModalHandler = () => {
         setIsDetailModalVisible(true);
