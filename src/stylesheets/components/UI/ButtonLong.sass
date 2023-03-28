@@ -1,9 +1,17 @@
+@keyframes fadeInButtonLong
+  0%
+    opacity: 0
+    transform: translate(-50%,30px)
+  100%
+    opacity: 1
+    transform: translate(-50%,0)
+
 .button-long
+  left: 50%
   background-color: $color-white
   border-radius: $r-m
   border: none
   cursor: pointer
-  margin: 0 auto
   padding: $marg-base 0
   width: 80%
 
@@ -14,7 +22,7 @@
     margin-left: $marg-1
 
   &.-show-button
-    animation: fadeInShort 0.4s ease
+    animation: fadeInButtonLong 0.4s ease both
     bottom: 80px
     display: none
     position: absolute

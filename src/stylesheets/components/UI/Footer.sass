@@ -1,8 +1,9 @@
 .footer
-    @include flex($main: space-between, $cross: flex-start)
     background-color: $color-neutral-700
+    display: flex
     margin-top: $marg-8
     padding: $marg-7 $mx-xl
+    gap: $marg-4 $marg-2
 
     &__section
         color: $color-white
@@ -25,11 +26,11 @@
         li
             cursor: pointer
             margin-bottom: $marg-1
-            transition: margin-left 0.3s linear
+            transition: transform 0.3s linear
 
             &:hover
                 color: $color-primary
-                margin-left: $marg-1
+                transform: translateX($marg-1)
 
     &__icon
         border-radius: 50%
@@ -38,7 +39,7 @@
         height: $marg-3
         margin: $marg-base $marg-base 0 0
         padding: 2px
-        transition: margin-left 0.3s ease
+        transition: border-color 0.3s ease
         width: $marg-3
 
         &:hover
@@ -48,12 +49,8 @@
     .footer
         &__section
             &--middle
-                margin: 0 $marg-base
+                margin-left: 0
 
 @media only screen and (max-width: $s)
     .footer
-        @include flex($direction: column)
-
-        &__section
-            margin-bottom: $marg-4
-            width: 80%
+        flex-direction: column
