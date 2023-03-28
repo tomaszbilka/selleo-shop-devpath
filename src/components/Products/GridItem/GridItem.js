@@ -79,7 +79,7 @@ const GridItem = ({ product }) => {
                 />
                 <Link className="grid-item" to={`/product/${id}`}>
                     <div className="grid-item__img-wrap">
-                        <img src={imageUrl} />
+                        <img decoding="async" loading="lazy" src={imageUrl} />
                     </div>
                     <p className="grid-item__description">
                         {name}
