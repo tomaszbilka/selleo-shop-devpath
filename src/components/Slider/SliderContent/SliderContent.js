@@ -31,13 +31,7 @@ const SliderContent = ({
                     className="button"
                 />
             </div>
-            <div>
-                <img
-                    src={source}
-                    alt="title"
-                    className="slider-content__image"
-                />
-            </div>
+            <img src={source} alt="title" className="slider-content__image" />
         </div>
     );
 };
