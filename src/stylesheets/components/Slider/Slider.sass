@@ -1,28 +1,28 @@
 .slider
-  background-color: $color-secondary
-  padding: $marg-8 0
-  position: relative
-
-  &__dotsContainer
-    @include flex
-    bottom: $marg-base
-    left: 50%
-    position: absolute
-    transform: translateX(-50%)
-
-  &__arrowContainer
-    position: absolute
-    top: 50%
-
-    &--left
-      left: $marg-base
-
-    &--right
-      right: $marg-base
-
-@media only screen and (max-width: $s)
-  .slider
-    padding: $marg-6 0
+    background-color: $color-secondary
+    padding: $marg-8 0
+    position: relative
 
     &__dotsContainer
-      display: none
+        @include flex
+        bottom: $marg-base
+        left: 50%
+        position: absolute
+        transform: translateX(-50%)
+
+    &__arrowContainer
+        position: absolute
+        top: 50%
+
+        &--left
+            left: $marg-base
+
+        &--right
+            right: $marg-base
+
+@media only screen and (max-width: $s)
+    .slider
+        padding: $marg-6 0
+
+        &__dotsContainer
+            display: none

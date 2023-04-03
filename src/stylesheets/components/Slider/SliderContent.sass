@@ -1,66 +1,65 @@
 .slider-content
-  @include alignX
-  display: none
+    @include alignX
+    display: none
 
-  &--active
-    @include flex
-
-  &__subtitle
-    animation: fadeIn 0.8s ease
-    color: $color-neutral-500
-    font-family: Raleway
-    font-size: $font-size-xl
-
-  &__title
-    animation: fadeIn 1.2s ease
-    color: $color-black
-    font-family: Raleway
-    font-size: $font-size-3xl
-    margin: $marg-base 0
-
-  &__description
-    animation: fadeIn 1.6s ease
-    color: $color-neutral-500
-    margin-right: $marg-7
-
-  &__image
-    animation: fadeInFar 1s ease
-    height: 250px
-
-@media only screen and (max-width: $xxl)
-  .slider-content
-    &__title
-      font-size: $font-size-2xl
-
-@media only screen and (max-width: $xl)
-  .slider-content
-    &__title
-      font-size: $font-size-2xl
-    &__image
-      height: 200px
-
-@media only screen and (max-width: $l)
-  .slider-content
     &--active
-      @include flex($direction: column-reverse)
+        @include flex
+
+    &__subtitle
+        animation: fadeIn 0.8s ease
+        color: $color-neutral-500
+        font-family: Raleway
+        font-size: $font-size-xl
+
+    &__title
+        animation: fadeIn 1.2s ease
+        color: $color-black
+        font-family: Raleway
+        font-size: $font-size-3xl
+        margin: $marg-base 0
 
     &__description
-      margin-right: 0
+        animation: fadeIn 1.6s ease
+        color: $color-neutral-500
+        margin-right: $marg-7
 
     &__image
-      margin-bottom: $marg-6
-      max-height: 150px
+        animation: fadeInFar 1s ease
+        flex: 0 0 auto
+        width: 50%
+
+@media only screen and (max-width: $xxl)
+    .slider-content
+        &__title
+            font-size: $font-size-2xl
+
+@media only screen and (max-width: $xl)
+    .slider-content
+        &__title
+            font-size: $font-size-2xl
+        &__image
+            height: 200px
+
+@media only screen and (max-width: $l)
+    .slider-content
+        &--active
+            @include flex($direction: column-reverse)
+
+        &__description
+            margin-right: 0
+
+        &__image
+            margin-bottom: $marg-6
+            max-height: 150px
 
 @media only screen and  (max-width: $s)
-  .slider-content
-    &__subtitle
-      font-size: $font-size-base
+    .slider-content
+        &__subtitle
+            font-size: $font-size-base
 
-    &__title
-      font-size: $font-size-xl
+        &__title
+            font-size: $font-size-xl
 
-    &__image
-      margin-bottom: $marg-base
-      height: 100px
-      
-   
+        &__image
+            margin-bottom: $marg-base
+            height: 100px

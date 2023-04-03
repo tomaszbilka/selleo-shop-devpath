@@ -1,21 +1,29 @@
-.buttonLong
-  $root: &
-  @include flex
+@keyframes fadeInButtonLong
+  0%
+    opacity: 0
+    transform: translate(-50%,30px)
+  100%
+    opacity: 1
+    transform: translate(-50%,0)
 
-  &__btn
-    @include flex
-    background-color: $color-white
-    border-radius: $r-m
-    border: none
-    cursor: pointer
-    padding: $marg-base 0
-    width: 80%
+.button-long
+  left: 50%
+  background-color: $color-white
+  border-radius: $r-m
+  border: none
+  cursor: pointer
+  padding: $marg-base 0
+  width: 80%
 
-    &:hover
-      @include hover
+  &:hover
+     @include hover
 
-    &:hover #{$root}__btn__title
-      @include hover
+  &__title
+    margin-left: $marg-1
 
-    &__title
-      margin-left: 5px
+  &.-show-button
+    animation: fadeInButtonLong 0.4s ease both
+    bottom: 80px
+    display: none
+    position: absolute
+    z-index: $z-lower

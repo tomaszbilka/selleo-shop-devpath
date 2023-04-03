@@ -12,37 +12,37 @@ import Modal from 'components/Modals/Modal';
 import Navbar from 'components/UI/Navbar';
 
 const Layout = ({ children }) => {
-  const dispatch = useDispatch();
-  const isCartModalOpen = useSelector(getCartModalStatus);
+    const dispatch = useDispatch();
+    const isCartModalOpen = useSelector(getCartModalStatus);
 
-  const openCartModalHandler = () => {
-    dispatch(toggleCartModal(true));
-  };
+    const openCartModalHandler = () => {
+        dispatch(toggleCartModal(true));
+    };
 
-  const closeCartModalHandler = () => {
-    dispatch(toggleCartModal(false));
-  };
+    const closeCartModalHandler = () => {
+        dispatch(toggleCartModal(false));
+    };
 
-  return (
-    <>
-      <Header />
-      <Navbar />
-      <main>{children}</main>
-      {isCartModalOpen && (
-        <Modal
-          element={<CartModal onClick={closeCartModalHandler} />}
-          onClick={closeCartModalHandler}
-        />
-      )}
-      <CartButton onClick={openCartModalHandler} />
-      <Footer />
-      <ToastContainer position="bottom-center" />
-    </>
-  );
+    return (
+        <>
+            <Header />
+            <Navbar />
+            <main>{children}</main>
+            {isCartModalOpen && (
+                <Modal
+                    element={<CartModal onClick={closeCartModalHandler} />}
+                    onClick={closeCartModalHandler}
+                />
+            )}
+            <CartButton onClick={openCartModalHandler} />
+            <Footer />
+            <ToastContainer position="bottom-center" />
+        </>
+    );
 };
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+    children: PropTypes.node.isRequired,
 };
 
 export default Layout;

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import PropTypes from 'prop-types';
 import ButtonLong from 'components/UI/ButtonLong';
@@ -15,110 +15,101 @@ import { getIsFavoriteStatusFromProducts } from 'store/products/selectors';
 import { setFavoritesToLocalStorage } from 'utils/localStorage';
 
 const GridItem = ({ product }) => {
-  const [isDetailModalVisible, setIsDetailModalVisible] = useState(false);
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
-  const isFavoriteStatusAll = useSelector(getIsFavoriteStatusFromProducts);
-  const { imageUrl, name, price, id, description, inStock } = product;
-  const iconFav = <FontAwesomeIcon icon={faHeart} />;
-  const iconDetail = <FontAwesomeIcon icon={faBarChart} />;
-  const iconBtn = <FontAwesomeIcon icon={faCartShopping} />;
+    const [isDetailModalVisible, setIsDetailModalVisible] = useState(false);
+    const dispatch = useDispatch();
+    const isFavoriteStatusAll = useSelector(getIsFavoriteStatusFromProducts);
+    const { imageUrl, name, price, id, description, inStock } = product;
+    const iconFav = <FontAwesomeIcon icon={faHeart} />;
+    const iconDetail = <FontAwesomeIcon icon={faBarChart} />;
+    const iconBtn = <FontAwesomeIcon icon={faCartShopping} />;
 
-  const isFavoriteStatusObject = isFavoriteStatusAll.filter(
-    (item) => item.id === id
-  );
-  const isFavoriteStatus = isFavoriteStatusObject[0].isFavorite;
+    const isFavoriteStatusObject = isFavoriteStatusAll.filter(
+        (item) => item.id === id
+    );
+    const isFavoriteStatus = isFavoriteStatusObject[0].isFavorite;
 
-  const favoriteToggleHandler = () => {
-    dispatch(toggleFavoriteState(id));
-  };
+    const favoriteToggleHandler = () => {
+        dispatch(toggleFavoriteState(id));
+    };
 
-  useEffect(() => {
-    setFavoritesToLocalStorage(isFavoriteStatusAll);
-  }, [isFavoriteStatusAll]);
+    useEffect(() => {
+        setFavoritesToLocalStorage(isFavoriteStatusAll);
+    }, [isFavoriteStatusAll]);
 
-  const redirectToDetailPage = (e) => {
-    if (e.target.tagName === 'IMG' || e.target.tagName === 'LI') {
-      navigate(`/product/${id}`);
-    } else {
-      e.preventDefault();
-      e.stopPropagation();
-      return;
-    }
-  };
+    const showDetailModalHandler = () => {
+        setIsDetailModalVisible(true);
+    };
 
-  const showDetailModalHandler = () => {
-    setIsDetailModalVisible(true);
-  };
+    const closeDetailsModalHandler = () => {
+        setIsDetailModalVisible(false);
+    };
 
-  const closeDetailsModalHandler = () => {
-    setIsDetailModalVisible(false);
-  };
+    const addToCartHandler = () => {
+        dispatch(addToCart(product));
+    };
 
-  const addToCartHandler = () => {
-    dispatch(addToCart(product));
-  };
+    const favoriteClasses = isFavoriteStatus
+        ? 'button-round -favorite -first-icon'
+        : 'button-round -first-icon';
 
-  const favoriteClasses = isFavoriteStatus
-    ? 'button-round -favorite'
-    : 'button-round';
+    const favoriteInfoText = isFavoriteStatus
+        ? 'remove from favorites'
+        : 'add to favorites';
 
-  const favoriteInfoText = isFavoriteStatus
-    ? 'remove from favorites'
-    : 'add to favorites';
-
-  return (
-    <>
-      <li className="gridItem-container" onClick={redirectToDetailPage}>
-        <div className="gridItem">
-          <div className="gridItem__img-wrap">
-            <img src={imageUrl} />
-          </div>
-          <div className="gridItem__description">
-            <p className="gridItem__text">{name}</p>
-            <p className="gridItem__text">${price / 100}</p>
-          </div>
-          <div className="gridItem__first-icon">
-            <ButtonRound
-              icon={iconFav}
-              onClick={favoriteToggleHandler}
-              info={favoriteInfoText}
-              className={favoriteClasses}
-            />
-          </div>
-          <div className="gridItem__show-icon">
-            <ButtonRound
-              icon={iconDetail}
-              onClick={showDetailModalHandler}
-              info="show details"
-              className="button-round"
-            />
-          </div>
-          <div className="gridItem__show-button">
-            <ButtonLong
-              title="Add to cart"
-              onClick={addToCartHandler}
-              icon={iconBtn}
-            />
-          </div>
-        </div>
-      </li>
-      {isDetailModalVisible && (
-        <Modal
-          element={
-            <ShowProductDetail
-              product={{ imageUrl, name, price, id, description, inStock }}
-            />
-          }
-          onClick={closeDetailsModalHandler}
-        />
-      )}
-    </>
-  );
+    return (
+        <>
+            <li className="grid-item-container">
+                <ButtonRound
+                    className={favoriteClasses}
+                    icon={iconFav}
+                    info={favoriteInfoText}
+                    onClick={favoriteToggleHandler}
+                />
+                <ButtonRound
+                    className="button-round -show-icon"
+                    icon={iconDetail}
+                    info="show details"
+                    onClick={showDetailModalHandler}
+                />
+                <ButtonLong
+                    className="-show-button"
+                    icon={iconBtn}
+                    onClick={addToCartHandler}
+                    title="Add to cart"
+                />
+                <Link className="grid-item" to={`/product/${id}`}>
+                    <div className="grid-item__img-wrap">
+                        <img decoding="async" loading="lazy" src={imageUrl} />
+                    </div>
+                    <p className="grid-item__description">
+                        {name}
+                        <br />${price / 100}
+                    </p>
+                </Link>
+            </li>
+            {isDetailModalVisible && (
+                <Modal
+                    element={
+                        <ShowProductDetail
+                            product={{
+                                imageUrl,
+                                name,
+                                price,
+                                id,
+                                description,
+                                inStock,
+                            }}
+                        />
+                    }
+                    onClick={closeDetailsModalHandler}
+                />
+            )}
+        </>
+    );
 };
 
 GridItem.propTypes = {
-  product: PropTypes.object.isRequired,
+    product: PropTypes.object.isRequired,
 };
 
 export default GridItem;

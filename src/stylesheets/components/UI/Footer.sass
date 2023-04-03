@@ -1,59 +1,56 @@
 .footer
-  @include flex($main: space-between, $cross: flex-start)
-  background-color: $color-neutral-700
-  margin-top: $marg-8
-  padding: $marg-7 $mx-xl
+    background-color: $color-neutral-700
+    display: flex
+    margin-top: $marg-8
+    padding: $marg-7 $mx-xl
+    gap: $marg-4 $marg-2
 
-  &__section
-    color: $color-white
-    flex: 1
+    &__section
+        color: $color-white
+        flex: 1
 
-    &--middle
-      margin-left: 20%
+        &--middle
+            margin-left: 20%
 
-  &__title
-    font-family: Raleway
-    font-size: $font-size-sm
-    margin-bottom: $marg-base
+    &__title
+        font-family: Raleway
+        font-size: $font-size-sm
+        margin-bottom: $marg-base
 
-  &__description
-    font-size: $font-size-xs
+    &__description
+        font-size: $font-size-xs
 
-  &__list
-    font-size: $font-size-xs
+    &__list
+        font-size: $font-size-xs
 
-    li
-      cursor: pointer
-      margin-bottom: $marg-1
-      transition: margin-left 0.3s linear
+        li
+            cursor: pointer
+            margin-bottom: $marg-1
+            transition: transform 0.3s linear
 
-      &:hover
-        color: $color-primary
-        margin-left: $marg-1
+            &:hover
+                color: $color-primary
+                transform: translateX($marg-1)
 
-  &__icon
-    border-radius: 50%
-    border: 1px solid $color-white
-    cursor: pointer
-    height: $marg-3
-    margin: $marg-base $marg-base 0 0
-    padding: 2px
-    transition: all 0.3s ease
-    width: $marg-3
+    &__icon
+        border-radius: 50%
+        border: 1px solid $color-white
+        cursor: pointer
+        height: $marg-3
+        margin: $marg-base $marg-base 0 0
+        padding: 2px
+        transition: border-color 0.3s ease
+        width: $marg-3
 
-    &:hover
-      border: 1px solid $color-primary
+        &:hover
+            border-color: $color-primary
 
 @media only screen and (max-width: $l)
-  .footer
-    &__section
-      &--middle
-        margin: 0 $marg-base
+    .footer
+        &__section
+            &--middle
+                margin-left: 0
 
 @media only screen and (max-width: $s)
-  .footer
-    @include flex($direction: column)
-
-    &__section
-      margin-bottom: $marg-4
-      width: 80%
+    .footer
+        flex-direction: column

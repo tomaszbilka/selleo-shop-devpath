@@ -1,64 +1,64 @@
 .header
-  @include alignX
-  @include flex($main: space-between)
-  height: 100px
+    @include alignX
+    @include flex($main: space-between)
+    height: 100px
 
-  &__user-name
-    color: $color-neutral-700
-    font-size: $font-size-sm
-    font-weight: bold
-
-  &__logo
-    color: $color-neutral-700
-
-  &__icon
-    color: $color-primary
-    font-size: $font-size-xl
-    margin-right: $marg-base
-
-  &__text
-    font-size: $font-size-xl
-    font-weight: bold
-
-  &__top-menu
-    @include flex
-
-  &__controls
-    position: relative
-    margin: 0 $marg-3
-
-    &--icon
-      color: $color-neutral-700
-      cursor: pointer
-      font-size: $font-size-lg
-
-      &:hover
-        @include hover
-
-  &__cart-info
-    background-color: $color-primary
-    border-radius: 50%
-    color: $color-white
-    font-size: $font-size-xs
-    height: 17px
-    line-height: 17px
-    position: absolute
-    right: -8px
-    text-align: center
-    top: -8px
-    width: 17px
-
-@media only screen and (max-width: $xl)
-  .header
     &__user-name
-      display: none
+        color: $color-neutral-700
+        font-size: $font-size-sm
+        font-weight: bold
 
-@media only screen and (max-width: $s)
-  .header
-    height: 80px
+    &__logo
+        color: $color-neutral-700
+
+    &__icon
+        color: $color-primary
+        font-size: $font-size-xl
+        margin-right: $marg-base
 
     &__text
-      display: none
+        font-size: $font-size-xl
+        font-weight: bold
+
+    &__top-menu
+        @include flex
 
     &__controls
-      margin: 0 $marg-base
+        position: relative
+        margin: 0 $marg-3
+
+        &--icon
+            color: $color-neutral-700
+            cursor: pointer
+            font-size: $font-size-lg
+
+            &:hover
+                @include hover
+
+    &__cart-info
+        background-color: $color-primary
+        border-radius: 50%
+        color: $color-white
+        font-size: $font-size-xs
+        height: 17px
+        line-height: 17px
+        position: absolute
+        right: -8px
+        text-align: center
+        top: -8px
+        width: 17px
+
+@media only screen and (max-width: $xl)
+    .header
+        &__user-name
+            display: none
+
+@media only screen and (max-width: $s)
+    .header
+        height: 80px
+
+        &__text
+            display: none
+
+        &__controls
+            margin: 0 $marg-base

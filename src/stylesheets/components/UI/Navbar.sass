@@ -1,48 +1,48 @@
 .main-nav
-  $root: &
-  background-color: $color-neutral-700
+    $root: &
+    background-color: $color-neutral-700
 
-  &__list
-    @include flex
+    &__list
+        @include flex
 
-  &__dropdown-btn
-    position: relative
+    &__dropdown-btn
+        position: relative
 
-    &:hover #{$root}__dropdown-content
-      display: block
+        &:hover #{$root}__dropdown-content
+            display: block
 
-  &__item
-    color: $color-white
-    cursor: pointer
-    font-size: $font-size-sm
-    letter-spacing: 0.5px
-    line-height: 60px
-    margin: 0 24px
-    position: relative
+    &__item
+        color: $color-white
+        cursor: pointer
+        font-size: $font-size-sm
+        letter-spacing: 0.5px
+        line-height: 60px
+        margin: 0 24px
+        position: relative
 
-    &:hover
-      @include hover
+        &:hover
+            @include hover
 
-  &__dropdown-content
-    cursor: pointer
-    display: none
-    font-size: $font-size-sm
-    left: 20px
-    position: absolute
-    top: 60px
-    z-index: $z-base
+    &__dropdown-content
+        cursor: pointer
+        display: none
+        font-size: $font-size-sm
+        left: 20px
+        position: absolute
+        top: 60px
+        z-index: $z-base
 
-    & li
-      background-color: $color-white
-      border: 1px solid $color-neutral-300
-      padding: $marg-1 $marg-4 $marg-1 $marg-2
+        li
+            background-color: $color-white
+            border: 1px solid $color-neutral-300
+            padding: $marg-1 $marg-4 $marg-1 $marg-2
 
-      &:hover
-        @include hover
+            &:hover
+                @include hover
 
-  &__arrow
-    font-size: $font-size-xs
+    &__arrow
+        font-size: $font-size-xs
 
-  &__error
-    color: $color-error
-    font-weight: bold
+    &__error
+        color: $color-error
+        font-weight: bold
